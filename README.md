@@ -1,5 +1,5 @@
-```sh
-Compiler
+```
++ Compiler
 Program komputer yang menerjemahkan kode yang ditulis dalam satu bahasa pemrograman ke bahasa lain yang dimengerti oleh mesin.
 Debugging
 Proses mengidentifikasi dan menghilangkan error pada aplikasi.
