@@ -50,9 +50,12 @@ Mengikuti perkembangan teknologi dan banyaknya bisnis yang mulai merambah ke ran
 <p align="justify">Menulis kode dalam suatu bahasa pemrograman sederhananya adalah menuliskan instruksi-instruksi untuk dijalankan oleh komputer. Kode di bawah ini merupakan instruksi bagi terminal atau konsol untuk mencatat (log) kalimat “Hello, World!”. <b>console.log</b> adalah kode bawaan JavaScript untuk menampilkan pesan ke konsol, bisa berupa web konsol atau konsol dari terminal/command prompt. Kode atau teks yang berada di dalam tanda kurung adalah pesan yang ingin ditampilkan. Pada contoh kode di atas, kita menggunakan tanda kutip (“”) untuk menandakan bahwa pesan yang ingin ditampilkan merupakan sebuah string atau teks. </p>
 
 ```plantuml 
-|  Code  :| console.log("Hello, World!"); |
-| Output :|           Hello, World!       |
+ console.log("Hello, World!"); 
 ```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
 
 ### Comments
 <p align="justify">Comments adalah Salah satu instruksi yang penting adalah memberi tahu komputer untuk mengabaikan perintah yang kita tulis. Instruksi yang ditulis dalam suatu program tetapi tidak dijalankan oleh komputer.Terdapat dua metode untuk memberikan komentar. Pertama, untuk memberikan komentar pada satu baris saja, kita bisa gunakan tanda dua garis miring (//) di awal baris. Lalu, untuk memberikan komentar lebih dari satu baris kita bisa menggunakan tanda /* sebagai pembuka komentar dan tanda */ untuk penutup komentar. Teks apa pun yang berada di antara tanda tersebut akan dijadikan komentar dan tidak akan dieksekusi.</p>
@@ -60,85 +63,680 @@ Mengikuti perkembangan teknologi dan banyaknya bisnis yang mulai merambah ke ran
 // console.log("Halo!"); 
 ```
 
+### Variable
+<p align="justify"> Pada JavaScript setidaknya ada tiga cara untuk mendeklarasikan sebuah variabel, yaitu menggunakan keyword var, let, dan const. Pada versi ECMAScript 2015 (ES6) dikenalkan deklarasi variabel dengan let dan const untuk menggantikan var yang dinilai kontroversial dan rawan menimbulkan bug.</p>
 ```plantuml
+  let lastName;
+lastName = "Skywalker";
+console.log(lastName);
 ```
+<details>
+<summary markdown="span">Output :</summary>
+Skywalker
+</details>
 
-Output :
+### Data Type
+<p align="justify"> Nilai yang kita tetapkan pada variabel pasti memiliki tipe data. Tipe data merupakan pengklasifikasian data berdasarkan jenisnya. Pada JavaScript terdapat beberapa tipe data sebagai berikut: </p>
+1. Undefined
+Tipe data ini terbentuk ketika sebuah variabel tidak memiliki nilai. Artinya, ketika kita mendeklarasikan variabel tanpa menginisialisasikan nilainya, variabel tersebut menjadi undefined.
 ```plantuml
-
+let x;
+console.log(typeof(x));
 ```
+<details>
+<summary markdown="span">Output :</summary>
+undefined
+</details>
 
-
-```plantuml
-
-```
-
-Output :
-```plantuml
-
-```
-
-```plantuml
-
-```
-
-
-Output :
-```plantuml
-
-```
-```plantuml
-
-```
-Output :
-```plantuml
-
-```
 ```plantuml
 
 ```
 
-Output :
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
 ```plantuml
 
 ```
 ```plantuml
 
 ```
-Output :
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
 ```plantuml
 
 ```
 ```plantuml
 
 ```
+```plantuml
 
-Output :
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
 ```plantuml
 
 ```
 ```plantuml
 
 ```
+```plantuml
 
-Output :
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
 ```plantuml
 
 ```
 ```plantuml
 
 ```
-
-Output :
 ```plantuml
 
 ```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
+```plantuml
+
+```
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
 ```plantuml
 
 ```
 
 
-Output :
+<details>
+<summary markdown="span">Output :</summary>
+Hello, World!
+</details>
 ```plantuml
 
 ```
