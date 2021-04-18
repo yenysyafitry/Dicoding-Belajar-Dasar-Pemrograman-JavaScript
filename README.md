@@ -114,6 +114,15 @@ Pada contoh kode di atas, kita mendeklarasikan variabel x, tetapi kita tidak men
 3
 </details>
 
+<form action="/action_page.php">
+  <label for="male">Male</label>
+  <input type="radio" name="gender" id="male" value="male"><br>
+  <label for="female">Female</label>
+  <input type="radio" name="gender" id="female" value="female"><br>
+  <label for="other">Other</label>
+  <input type="radio" name="gender" id="other" value="other"><br><br>
+  <input type="submit" value="Submit">
+</form>
 
 ```plantuml
 
