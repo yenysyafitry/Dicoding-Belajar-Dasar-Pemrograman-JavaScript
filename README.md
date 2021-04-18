@@ -46,3 +46,99 @@ JavaScript termasuk salah satu bahasa pemrograman yang ramah bagi pemula. Anda t
 <li> Potensi karir yang meyakinkan
 Mengikuti perkembangan teknologi dan banyaknya bisnis yang mulai merambah ke ranah digital, JavaScript menjadi salah satu skill yang paling banyak dicari di industri. Jika Anda mencari kata kunci “JavaScript” pada laman pencarian kerja seperti JobStreet, akan muncul hampir 1.500 lowongan pekerjaan di Indonesia yang bisa Anda lamar. </li> </ol>
 
+### Menulis Kode JavaScript Pertama
+<p align="justify">Menulis kode dalam suatu bahasa pemrograman sederhananya adalah menuliskan instruksi-instruksi untuk dijalankan oleh komputer. Kode di bawah ini merupakan instruksi bagi terminal atau konsol untuk mencatat (log) kalimat “Hello, World!”. <b>console.log</b> adalah kode bawaan JavaScript untuk menampilkan pesan ke konsol, bisa berupa web konsol atau konsol dari terminal/command prompt. Kode atau teks yang berada di dalam tanda kurung adalah pesan yang ingin ditampilkan. Pada contoh kode di atas, kita menggunakan tanda kutip (“”) untuk menandakan bahwa pesan yang ingin ditampilkan merupakan sebuah string atau teks. </p>
+```plantuml
+console.log("Hello, World!");
+```
+Output :
+```plantuml
+Hello, World!
+```
+
+```plantuml
+```
+
+Output :
+```plantuml
+
+```
+
+
+```plantuml
+
+```
+
+Output :
+```plantuml
+
+```
+
+```plantuml
+
+```
+
+
+Output :
+```plantuml
+
+```
+```plantuml
+
+```
+Output :
+```plantuml
+
+```
+```plantuml
+
+```
+
+Output :
+```plantuml
+
+```
+```plantuml
+
+```
+Output :
+```plantuml
+
+```
+```plantuml
+
+```
+
+Output :
+```plantuml
+
+```
+```plantuml
+
+```
+
+Output :
+```plantuml
+
+```
+```plantuml
+
+```
+
+Output :
+```plantuml
+
+```
+```plantuml
+
+```
+
+
+Output :
+```plantuml
+
+```
+```plantuml
+
+```
+
