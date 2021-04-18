@@ -13,6 +13,5 @@ String Concatenation
 Proses penggabungan dua String atau lebih menggunakan operator penjumlahan (+).
 String Interpolation
 Proses mengganti placeholder di dalam String dengan nilai dari variabel tertentu.
-
 ```
 
