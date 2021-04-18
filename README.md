@@ -50,9 +50,8 @@ Mengikuti perkembangan teknologi dan banyaknya bisnis yang mulai merambah ke ran
 <p align="justify">Menulis kode dalam suatu bahasa pemrograman sederhananya adalah menuliskan instruksi-instruksi untuk dijalankan oleh komputer. Kode di bawah ini merupakan instruksi bagi terminal atau konsol untuk mencatat (log) kalimat “Hello, World!”. <b>console.log</b> adalah kode bawaan JavaScript untuk menampilkan pesan ke konsol, bisa berupa web konsol atau konsol dari terminal/command prompt. Kode atau teks yang berada di dalam tanda kurung adalah pesan yang ingin ditampilkan. Pada contoh kode di atas, kita menggunakan tanda kutip (“”) untuk menandakan bahwa pesan yang ingin ditampilkan merupakan sebuah string atau teks. </p>
 
 ```plantuml 
-|  Code  | console.log("Hello, World!"); |
-|:--     |  :--:                         |
-| Output |           Hello, World!       |
+|  Code  :| console.log("Hello, World!"); |
+| Output :|           Hello, World!       |
 ```
 
 ### Comments
