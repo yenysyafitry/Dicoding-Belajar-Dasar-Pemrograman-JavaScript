@@ -1,4 +1,4 @@
-```
+```diff
 + Compiler
 Program komputer yang menerjemahkan kode yang ditulis dalam satu bahasa pemrograman ke bahasa lain yang dimengerti oleh mesin.
 Debugging
