@@ -53,7 +53,9 @@ Mengikuti perkembangan teknologi dan banyaknya bisnis yang mulai merambah ke ran
 console.log("Hello, World!"); 
 ```
 
-Output : ```plantuml Hello, World!  ```
+Output : 
+```plantuml 
+Hello, World!  ```
 
 ```plantuml
 ```
