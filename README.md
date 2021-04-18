@@ -55,7 +55,8 @@ console.log("Hello, World!");
 
 Output : 
 ```plantuml 
-Hello, World!  ```
+Hello, World!  
+```
 
 ```plantuml
 ```
