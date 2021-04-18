@@ -22,7 +22,8 @@ Proses mengganti placeholder di dalam String dengan nilai dari variabel tertentu
 ```
 
 ### Apa itu JavaScript?
-<p align="justify">
+
 ```ruby 
+<p align="justify">
 JavaScript adalah bahasa pemrograman tingkat tinggi yang pada awalnya dikembangkan untuk membuat website menjadi lebih “hidup”. Bersama dengan HTML dan CSS, JavaScript menjadi bahasa pemrograman paling populer untuk mengembangkan aplikasi berbasis web. Bahasa ini mampu memberikan logic ke dalam website, sehingga website tersebut memiliki fungsionalitas tambahan dan lebih interaktif.```
 </p>
