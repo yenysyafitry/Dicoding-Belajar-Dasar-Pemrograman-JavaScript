@@ -79,7 +79,7 @@ Skywalker
 
 ### Data Type
 <p align="justify"> Nilai yang kita tetapkan pada variabel pasti memiliki tipe data. Tipe data merupakan pengklasifikasian data berdasarkan jenisnya. Pada JavaScript terdapat beberapa tipe data sebagai berikut: </p>
-<ul><li> Undefined </br>
+<ul align="justify"><li> Undefined </br>
 Tipe data ini terbentuk ketika sebuah variabel tidak memiliki nilai. Artinya, ketika kita mendeklarasikan variabel tanpa menginisialisasikan nilainya, variabel tersebut menjadi undefined.</li></ul>
 
 ```plantuml
