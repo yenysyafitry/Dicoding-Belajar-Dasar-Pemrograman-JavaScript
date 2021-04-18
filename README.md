@@ -53,8 +53,8 @@ Mengikuti perkembangan teknologi dan banyaknya bisnis yang mulai merambah ke ran
  console.log("Hello, World!"); 
 ```
 <details>
-<summary markdown="span">Output :</summary>
-Hello, World!
+  <summary markdown="span">Output :</summary>
+  Hello, World!
 </details>
 
 ### Comments
