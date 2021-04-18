@@ -86,6 +86,7 @@ Tipe data ini terbentuk ketika sebuah variabel tidak memiliki nilai. Artinya, ke
    let x;
    console.log(typeof(x));
 ```
+</br>
 <details>
 <summary markdown="span">Output :</summary>
 undefined </br></br>
@@ -95,14 +96,13 @@ Pada contoh kode di atas, kita mendeklarasikan variabel x, tetapi kita tidak men
 <ul align="justify"><li><b>Numbers</b></br>Nilai dari tipe data number adalah angka. Variabel bertipe data number dituliskan seperti angka pada umumnya:</li></ul>
 
 ```plantuml
-let a = 12;
-let b = 9;
-
-console.log(a + b)
-console.log(a - b)
-console.log(a * b)
-console.log(a / b)
-console.log(a % b)
+   let a = 12;
+   let b = 9;
+   console.log(a + b)
+   console.log(a - b)
+   console.log(a * b)
+   console.log(a / b)
+   console.log(a % b)
 ```
 
 <details>
