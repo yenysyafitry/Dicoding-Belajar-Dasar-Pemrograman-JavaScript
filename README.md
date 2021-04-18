@@ -83,8 +83,8 @@ Skywalker
 Tipe data ini terbentuk ketika sebuah variabel tidak memiliki nilai. Artinya, ketika kita mendeklarasikan variabel tanpa menginisialisasikan nilainya, variabel tersebut menjadi undefined.</li></ul>
 
 ```plantuml
-let x;
-console.log(typeof(x));
+   let x;
+   console.log(typeof(x));
 ```
 <details>
 <summary markdown="span">Output :</summary>
