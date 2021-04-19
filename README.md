@@ -174,8 +174,7 @@ console.log(answer);
 | :--     | 
 | /home/glot/main.js:1 </br>
 const answer = '"I think it's awesome!" he answered confidently'; </br>
-                            ^ </br>
-SyntaxError: Unexpected identifier </br>
+                  SyntaxError: Unexpected identifier </br>
     at wrapSafe (internal/modules/cjs/loader.js:979:16)</br>
     at Module._compile (internal/modules/cjs/loader.js:1027:27)</br>
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)</br>
@@ -436,12 +435,7 @@ console.log(!(a < 15 && b > 10)); // !(true && true) -> !(true) -> false
 
 |Output : |
 | :--     | 
-|true</br>
-false</br>
-true</br>
-true</br>
-false</br>
-false |
+|true</br>false</br>true</br>true</br>false</br>false |
 
 <p align="justify">Mungkin sebagian dari kita bertanya, sebenarnya apa kegunaan dari nilai boolean selain hanya menampilkan nilai true dan false saja? Pada pembahasan tipe data sudah pernah disebutkan bahwa boolean merupakan salah satu kunci dari logika pemrograman, karena boolean dapat mengontrol bagaimana alur program kita akan berjalan.
 
@@ -456,6 +450,7 @@ Ketika mengembangkan sebuah program, kita akan bertemu dengan alur bercabang ter
 
 Statement if akan menguji suatu kondisi. Jika kondisi bernilai true, maka blok kode di dalamnya akan dijalankan. Sebaliknya, jika bernilai false, maka proses yang ditentukan akan dilewatkan.
  </p>
+ ![logo](https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/2021032614212952aba0a5b1a44e18d7e5234517c4f671.png)
  
 ```plantuml
 
