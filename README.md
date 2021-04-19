@@ -172,16 +172,7 @@ console.log(answer);
 
 |Output : |
 | :--     | 
-| /home/glot/main.js:1 </br>
-const answer = '"I think it's awesome!" he answered confidently'; </br>
-                  SyntaxError: Unexpected identifier </br>
-    at wrapSafe (internal/modules/cjs/loader.js:979:16)</br>
-    at Module._compile (internal/modules/cjs/loader.js:1027:27)</br>
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)</br>
-    at Module.load (internal/modules/cjs/loader.js:928:32)</br>
-    at Function.Module._load (internal/modules/cjs/loader.js:769:14)</br>
-    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)</br>
-    at internal/main/run_main_module.js:17:47 |
+| /home/glot/main.js:1 </br>const answer = '"I think it's awesome!" he answered confidently'; </br>SyntaxError: Unexpected identifier </br>at wrapSafe (internal/modules/cjs/loader.js:979:16)</br>at Module._compile (internal/modules/cjs/loader.js:1027:27)</br>at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)</br>at Module.load (internal/modules/cjs/loader.js:928:32)</br>at Function.Module._load (internal/modules/cjs/loader.js:769:14)</br>at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)</br>at internal/main/run_main_module.js:17:47 |
 
 <p align="justify"> Tentunya kode di atas akan menghasilkan eror. Solusinya, gunakan backslash(\) untuk mengurangi ambiguitas dalam tanda petik. Mekanisme ini juga dikenal dengan nama escape string. Sehingga kode di atas akan menjadi seperti berikut:
  </p>
@@ -355,14 +346,14 @@ Terdapat serangkaian karakter khusus yang disebut dengan operator pembanding/kom
 
 | Operator | 	Fungsi |
 | :-- | :-- |
-|==	|Membandingkan kedua nilai apakah sama. (tidak identik).|
-|!=|	Membandingkan kedua nilai apakah tidak sama. (tidak identik).|
-|===|	Membandingkan kedua nilai apakah identik.|
-|!==|	Membandingkan kedua nilai apakah tidak identik.|
-|>	|Membandingkan dua nilai apakah nilai pertama lebih dari nilai kedua.|
-|>=|	Membandingkan dua nilai apakah nilai pertama lebih atau sama dengan nilai kedua.|
-|<|	Membandingkan dua nilai apakah nilai pertama kurang dari nilai kedua.|
-|<=|	Membandingkan dua nilai apakah nilai pertama kurang atau sama dengan nilai kedua.|
+| ==	| Membandingkan kedua nilai apakah sama. (tidak identik).|
+| != |	Membandingkan kedua nilai apakah tidak sama. (tidak identik).|
+| === |	Membandingkan kedua nilai apakah identik.|
+| !== |	Membandingkan kedua nilai apakah tidak identik.|
+| >	| Membandingkan dua nilai apakah nilai pertama lebih dari nilai kedua.|
+| >= |	Membandingkan dua nilai apakah nilai pertama lebih atau sama dengan nilai kedua.|
+| < |	Membandingkan dua nilai apakah nilai pertama kurang dari nilai kedua.|
+| <=|	Membandingkan dua nilai apakah nilai pertama kurang atau sama dengan nilai kedua.|
 
 <p align="justify">
 Ketika kita melakukan perbandingan antara dua nilai, JavaScript akan mengevaluasi kedua nilai tersebut dan mengembalikan boolean dengan nilai hasil perbandingan tersebut, baik false atau true. Berikut contohnya
@@ -450,7 +441,10 @@ Ketika mengembangkan sebuah program, kita akan bertemu dengan alur bercabang ter
 
 Statement if akan menguji suatu kondisi. Jika kondisi bernilai true, maka blok kode di dalamnya akan dijalankan. Sebaliknya, jika bernilai false, maka proses yang ditentukan akan dilewatkan.
  </p>
- ![logo](https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/2021032614212952aba0a5b1a44e18d7e5234517c4f671.png)
+ <p align="center">
+  <img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/2021032614212952aba0a5b1a44e18d7e5234517c4f671.png" width="350" title="hover text">
+</p>
+
  
 ```plantuml
 
