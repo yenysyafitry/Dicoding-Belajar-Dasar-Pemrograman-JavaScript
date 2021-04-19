@@ -377,7 +377,7 @@ console.log(aString === aNumber) //false, karena walaupun nilainya sama, tetapi 
 | Operator	| Deskripsi|
 | :--:     | :--     | 
 |&&|	Operator dan (and). Logika akan menghasilkan nilai true apabila semua kondisi terpenuhi (bernilai true).|
-||||	Operator atau (or). Logika akan menghasilkan nilai true apabila ada salah satu kondisi terpenuhi (bernilai true).|
+| || |	Operator atau (or). Logika akan menghasilkan nilai true apabila ada salah satu kondisi terpenuhi (bernilai true).|
 |!| Operator tidak (not). Digunakan untuk membalikkan suatu kondisi.|
 
 <p align="justify">Berikut contoh penerapannya pada JavaScript:
