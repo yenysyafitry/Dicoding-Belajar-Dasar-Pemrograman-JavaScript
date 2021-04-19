@@ -125,612 +125,2736 @@ console.log(bigNumber);
 console.log(myInt);
 ```
 
-
 |Output : |
 | :--     | 
 |1234567890123456789012345678901234567890n </br>1.2345678901234568e+39 |
 
-<details>
-<summary markdown="span">Output :</summary>
-1234567890123456789012345678901234567890n</br>
-1.2345678901234568e+39
-</details>
+<p align="justify">Kita juga bisa menggunakan BigInt untuk operasi aritmatika pada umumnya. Yang membedakan adalah pada operasi pembagian, hasilnya akan dibulatkan ke bawah dan tanpa mengandung nilai desimal. Contohnya adalah seperti ini:</p>
 
+```plantuml
+console.log(5n + 2n);
+console.log(5n - 2n);
+console.log(5n * 2n);
+console.log(5n / 2n);
+console.log(5n % 2n);
+```
+|Output : |
+| :--     | 
+| 7n </br> 3n </br>10n </br> 2n </br> 1n |
+
+### Strings
+<p align="justify"> Tipe data selanjutnya adalah string yang merupakan sebuah teks. Untuk menetapkan nilai sebagai string pada variabel gunakan tanda petik satu (‘) atau petik dua (“) di antara teksnya. Contohnya: </p>
+
+```plantuml
+let greet = "Hello";
+console.log(typeof(greet))
+```
+|Output : |
+| :--     | 
+| string |
+
+<p align="justify">Tidak ada perbedaan antara menggunakan petik satu atau petik dua. Anda dapat menggunakan tanda petik secara bergantian, khususnya jika Anda memiliki teks yang mengandung tanda petik. </p>
+
+```plantuml
+const question = '"What do you think of JavaScript?" I asked';
+console.log(question)
+```
+|Output : |
+| :--     | 
+| "What do you think of JavaScript?" I asked |
+
+<p align="justify">Lalu bagaimana jika teks memiliki kedua tanda petik seperti ini?</p>
+
+```plantuml
+const answer = '"I think it's awesome!" he answered confidently';
+console.log(answer);
+```
+
+|Output : |
+| :--     | 
+| /home/glot/main.js:1
+const answer = '"I think it's awesome!" he answered confidently';</br>
+                            ^</br>
+SyntaxError: Unexpected identifier </br>
+    at wrapSafe (internal/modules/cjs/loader.js:979:16)</br>
+    at Module._compile (internal/modules/cjs/loader.js:1027:27)</br>
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)</br>
+    at Module.load (internal/modules/cjs/loader.js:928:32)</br>
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)</br>
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)</br>
+    at internal/main/run_main_module.js:17:47 |
+
+<p align="justify"> 
+ </p>
+ 
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+
+<p align="justify"> 
+ </p>
+
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+
+<p align="justify"> 
+ </p>
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+<p align="justify"> 
+ </p>
+
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+
+<p align="justify"> 
+ </p>
+
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+```plantuml
+
+```
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+```plantuml
+
+```
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+```plantuml
+
+```
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+```plantuml
+
+```
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+```plantuml
+
+```
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+```plantuml
+
+```
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
 
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
 
+```
 
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
 
+```
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+
+
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+```plantuml
 
+```
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
+
+
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
+
+
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
+|Output : |
+| :--     | 
+| </br> |
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
+|Output : |
+| :--     | 
+| </br> |
+
+```plantuml
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
 
+```
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
 
+```
 
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
 
+```
 
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
 
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+
 
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+
+
 ```plantuml
 
 ```
+|Output : |
+| :--     | 
+| </br> |
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
+
 ```plantuml
 
 ```
+|Output : |
+| :--     | 
+| </br> |
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+
+|Output : |
+| :--     | 
+| </br> |
+
 ```plantuml
 
 ```
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
+
+```
 
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+```
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
+
+|Output : |
+| :--     | 
+| </br> |
+
 ```plantuml
 
 ```
+|Output : |
+| :--     | 
+| </br> |
+
+
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
+
 
+```plantuml
 
+```
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 
+```plantuml
 
+```
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
+
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
 
+```
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
 
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+```
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+
+
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
+```plantuml
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+```
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
+
+
 ```plantuml
 
 ```
+|Output : |
+| :--     | 
+| </br> |
+
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
+|Output : |
+| :--     | 
+| </br> |
 
+```plantuml
+
+```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+```
+|Output : |
+| :--     | 
+| </br> |
+
 ```plantuml
 
 ```
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
 
+```
 
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
 
+```
 
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
 
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+
+
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
 
+```
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
+
+
 ```plantuml
 
 ```
+|Output : |
+| :--     | 
+| </br> |
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
+
 ```plantuml
 
 ```
+|Output : |
+| :--     | 
+| </br> |
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+
+|Output : |
+| :--     | 
+| </br> |
+
 ```plantuml
 
 ```
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
 
+```
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
+
+|Output : |
+| :--     | 
+| </br> |
+
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 
 
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 
 
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
 
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
@@ -740,130 +2864,122 @@ Hello, World!
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 
 
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 
 
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
 
 
-<details>
-<summary markdown="span">Output :</summary>
-Hello, World!
-</details>
+|Output : |
+| :--     | 
+| </br> |
 ```plantuml
 
 ```
 ```plantuml
 
 ```
+|Output : |
+| :--     | 
+| </br> |
+```plantuml
 
+```
+|Output : |
+| :--     | 
+| </br> |
