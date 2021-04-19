@@ -414,20 +414,293 @@ console.log(!(a < 15 && b > 10)); // !(true && true) -> !(true) -> false
  
  <p align="center">
   <img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/2021032614212952aba0a5b1a44e18d7e5234517c4f671.png" width="350" title="hover text">
+</br>Flowchart di atas jika diterjemahkan menjadi kode, akan menjadi seperti berikut:
 </p>
 
  
 ```plantuml
+const isRaining = true;
 
+console.log("Persiapan sebelum berangkat kegiatan.");
+if (isRaining) {
+    console.log("Hari ini hujan. Bawa payung.");
+}
+console.log("Berangkat kegiatan.");
 ```
 |Output : |
 | :--     | 
-| </br> |
+| Persiapan sebelum berangkat kegiatan.</br>Hari ini hujan. Bawa payung.</br>Berangkat kegiatan. |
 
-<p align="justify">
+<p align="justify">Jika Anda mengubah nilai isRaining menjadi false, maka kode di dalam blok kode if akan dilewatkan. Sehingga program Anda tidak akan mengingatkan untuk membawa payung. Lalu bagaimana jika Anda ingin melakukan operasi lain ketika kondisi bernilai false? Jawabannya adalah statement else. Pada contoh kode berikut kita akan melakukan pengecekan kondisi menggunakan operator perbandingan.
  </p>
 
 
+```plantuml
+let x = 50;
+
+if(x > 70) {
+    console.log(x);
+} else {
+    console.log("Nilai kurang dari 70");
+}
+```
+|Output : |
+| :--     | 
+| Nilai kurang dari 70|
+
+<p align="justify">Terdapat variabel x dengan nilai 50, kemudian kita bertanya, “Hai JavaScript! Apakah x lebih dari 70?” Jika kondisi tersebut benar, maka kita dapat memerintahkan JavaScript untuk menampilkan nilainya. Jika salah, kita perintahkan JavaScript untuk menampilkan teks “Nilai kurang dari 70”. Kita juga bisa mengecek beberapa kondisi sekaligus dengan menggabungkan else dan if. Contohnya adalah seperti program berikut:
+ </p>
+
+```plantuml
+let language = "French";
+let greeting = "Selamat Pagi"
+
+if(language === "English") {
+    greeting = "Good Morning!";
+} else if(language === "French") {
+    greeting = "Bonjour!"
+} else if(language === "Japanese") {
+    greeting = "Ohayou Gozaimasu!"
+}
+
+console.log(greeting);
+```
+|Output : |
+| :--     | 
+| Bonjour! |
+
+
+<p align="justify">Pengecekan kondisi akan dilakukan dari statement if paling awal. Sehingga, ketika nilai language adalah “French”, maka pengecekan untuk language === “Japanese” tidak akan dilakukan. Selain if statement di atas, JavaScript juga mendukung ternary operator atau conditional expressions. Dengan ini, kita bisa menuliskan if-else statement hanya dalam satu baris.
+ </p>
+
+```plantuml
+const isMember = false;
+const discount = isMember ? 0.1 : 0;
+console.log(`Anda mendapatkan diskon sebesar ${discount * 100}%`)
+```
+|Output : |
+| :--     | 
+| Anda mendapatkan diskon sebesar 0% |
+
+<p align="justify">Ternary operator membutuhkan tiga operand. Sebelum tanda tanya (?) berisi kondisi yang ingin kita evaluasi. Kemudian diikuti dengan expression apabila nilai kondisinya benar sebelum tanda titik dua. Terakhir adalah expression yang dieksekusi ketika kondisinya salah. Karena merupakan conditional expression, maka operand kedua dan ketiga harus mengembalikan nilai.
+ </p>
+
+### Truthy & Falsy
+<p align="justify">Di dalam if statement kita perlu memasukkan expression yang akan dievaluasi. Umumnya, expression tersebut mengembalikan nilai boolean untuk menentukan kondisi true atau false. Lalu bagaimana jika kita menuliskan expression yang tidak mengembalikan nilai boolean? Jawabannya bisa.</br>
+Setiap nilai pada JavaScript pada dasarnya juga mewarisi sifat boolean. Nilai ini dikenal dengan truthy atau falsy. Nilai truthy berarti nilai yang ketika dievaluasi akan menghasilkan nilai true, begitu pula falsy bernilai false. Jadi manakah yang termasuk truthy dan falsy? Selain nilai boolean false, tipe data atau nilai yang dianggap falsy, antara lain: </p>
+
+<ul><li>Number 0</li>
+<li>BigInt 0n</li>
+<li>String kosong seperti “” atau ‘’</li>
+<li>null</li>
+<li>undefined</li>
+<li>NaN, atau Not a Number</li></ul>
+
+<p align="justify">Selain contoh di atas maka nilainya adalah truthy dan ketika dievaluasi ke dalam if statement akan bernilai true. Berikut ini contohnya dalam kode:</p>
+ 
+```plantuml
+let name = "";
+
+if (name) {
+    console.log(`Halo, ${name}`);
+} else {
+    console.log("Nama masih kosong");
+}
+```
+
+|Output : |
+| :--     | 
+| Nama masih kosong |
+
+
+### Switch Case Statement
+<p align="justify">Sebelumnya kita telah mempelajari bagaimana percabangan logika menggunakan if statement. Selain if, JavaScript juga mendukung switch statement untuk melakukan pengecekan banyak kondisi dengan lebih mudah dan ringkas.
+ </p>
+
+
+```plantuml
+switch (expression) {
+  case value1:
+    // do something
+    break;
+  case value2:
+    // do something
+    break;
+  ...
+  ...
+  default:
+    // do something else
+}
+```
+
+<p align="justify">Tanda kurung setelah keyword switch berisi variabel atau expression yang akan dievaluasi. Kemudian untuk setiap kondisi yang mungkin terjadi, kita masukkan keyword case diikuti dengan nilai yang valid. Jika kondisi pada case sama dengan variabel pada switch, maka blok kode setelah titik dua (:) akan dijalankan. Keyword break digunakan untuk keluar dari proses switch. Terdapat satu case bernama default yang memiliki fungsi yang sama dengan keyword else pada control flow if-else. Jika tidak ada nilai yang sama dengan variabel pada switch, maka blok kode ini akan dijalankan.</br> Berikut ini adalah contoh kode dari materi if-else yang dikonversi menjadi statement switch:
+ </p>
+
+```plantuml
+let language = "French";
+let greeting = null;
+
+switch (language) {
+    case "English":
+        greeting = "Good Morning!";
+        break;
+    case "French":
+        greeting = "Bonjour!";
+        break;
+    case "Japanese":
+        greeting = "Ohayou Gozaimasu!";
+        break;
+    default:
+        greeting = "Selamat Pagi!";
+}
+console.log(greeting);
+```
+
+|Output : |
+| :--     | 
+| Bonjour! |
+
+### Loop
+<p align="justify">Ketika menulis program komputer, akan ada situasi di mana kita perlu melakukan hal yang sama berkali-kali. Misalnya kita ingin menampilkan semua nama pengguna yang terdaftar di aplikasi atau sesederhana menampilkan angka 1 sampai 10. Tentunya tidak praktis jika kita menulis kode seperti berikut:
+ </p>
+
+
+```plantuml
+console.log(1);
+console.log(2);
+console.log(3);
+console.log(4);
+console.log(5);
+console.log(6);
+console.log(7);
+console.log(8);
+console.log(9);
+console.log(10);
+```
+
+<p align="justify">Bagaimana jika kita perlu menampilkan angka 1 sampai 100? Sudah terbayang repotnya, bukan? Maka dari itu kita perlu mempelajari teknik yang dapat mengatasi permasalahan tersebut, teknik ini disebut dengan looping. JavaScript memiliki banyak opsi untuk melakukan looping atau perulangan kode, antara lain:
+</p>
+### For loop
+<p align="justify">Dari beberapa cara melakukan proses loop pada JavaScript, “for” merupakan salah satu cara yang banyak digunakan. Struktur dasar dari for tampak seperti berikut:
+ </p>
+
+
+```plantuml
+for(inisialisasi variabel; test kondisi; perubahan nilai variabel) {
+    // do something
+}
+```
+
+<p align="justify">Berikut ini contoh penerapannya secara nyata:
+ </p>
+
+```plantuml
+for(let i = 0; i < 5; i++) {
+    console.log(i);
+}
+```
+|Output : |
+| :--     | 
+| 0</br>1</br>2</br>3</br>4 |
+
+<p align="justify">Lebih ringkas, bukan? Mungkin kode tersebut sulit dipahami, jadi mari kita bahas sedikit demi sedikit. Terdapat tiga bagian utama dalam sintaks for di atas:
+<ul><li>
+<li>Pertama, variabel i sebagai index iterasi. Pada variabel ini kita menginisialisasi nilai awal dari perulangan.</li>
+<li>Kedua, operasi perbandingan. Pada bagian ini, JavaScript akan melakukan pengecekan kondisi apakah perulangan masih perlu dilakukan. Jika bernilai true, maka kode di dalam blok for akan dijalankan.</li>
+<li>Ketiga, increment/decrement. Di sini kita melakukan penambahan atau pengurangan variabel iterasi. Jadi, pada contoh di atas variabel i akan ditambah dengan 1 di setiap akhir perulangan. Perubahan nilai ini penting karena jika kita mengubah nilainya, proses perulangan dapat berjalan selamanya karena kondisi akan terus terpenuhi.</br></li>
+JIka diartikan, maka kode di atas bisa dimaknai dengan “Jika i kurang dari 5, maka tampilkan nilai i.”
+ </p>
+ 
+ ### For of loop
+ <p align="justify">Cara lain dalam melakukan looping adalah menggunakan for..of. For of mulai hadir pada ECMAScript 2015 (ES6). Cara ini jauh lebih sederhana dan modern dibanding for loop biasa. Sintaks dasar dari for of loop adalah seperti ini:
+ </p>
+```plantuml
+for(arrayItem of myArray) {
+    // do something
+}
+
+```
+
+<p align="justify">Yup, for of tidak membutuhkan banyak statement untuk melakukan looping pada array. Penjelasan tentang array akan lebih detail dibahas pada modul berikutnya. Sebagai permulaan, kita bisa menganggap array sebagai kumpulan nilai yang disimpan dalam satu variabel. </br>
+Dengan for..of nilai tiap array akan diinisialisasi pada variabel baru yang kita tentukan pada tiap proses looping-nya. Jumlah proses looping-nya pun akan menyesuaikan dengan ukuran dari array. Sederhananya seperti kita melakukan perintah “Hei JavaScript! Lakukan perulangan pada myArray, akses tiap nilainya, dan simpan pada variabel arrayItem”. Pada proses looping kita gunakan variabel arrayItem untuk mengakses tiap nilai dari item myArray. </br>
+Agak sulit memang menjelaskan dengan kata-kata, mari kita terjemahkan dalam kode secara langsung.
+ </p>
+
+```plantuml
+let myArray = ["Luke", "Han", "Chewbacca", "Leia"];
+
+for(const arrayItem of myArray) {
+    console.log(arrayItem)
+}
+```
+
+|Output : |
+| :--     | 
+| Luke</br>Han</br>Chewbacca</br>Leia|
+
+### While and do-while
+<p align="justify">Metode lain untuk melakukan looping adalah dengan statement while. Sama seperti for, instruksi while mengevaluasi ekspresi boolean dan menjalankan kode di dalam blok while ketika bernilai true.</br> 
+Untuk menampilkan angka 1 sampai 100 dengan while kita bisa menulis kode seperti berikut:
+ </p>
+
+```plantuml
+let i = 1;
+
+while (i <= 10) {
+    console.log(i);
+    i++;
+}
+```
+|Output : |
+| :--     | 
+|1</br>2</br>3</br>4</br>5</br>6</br>7</br>8</br>9</br>10 |
+
+<p align="justify">Bisa dilihat pada kode di atas bahwa looping dengan while tidak memiliki ketergantungan dengan variabel iterasi seperti pada for loop. Karena itu, meskipun while dapat melakukan perulangan yang sama dengan for, while lebih cocok digunakan pada kasus di mana kita tidak tahu pasti berapa banyak perulangan yang diperlukan.</br>
+Bentuk lain dari while adalah perulangan do-while.
+ </p>
+
+```plantuml
+let i = 1;
+
+do {
+    console.log(i);
+    i++;
+} while (i <= 100);
+```
+|Output : |
+| :--     | 
+|1</br>2</br>3</br>4</br>5</br>6</br>7</br>8</br>9</br>10 |
+
+<p align="justify">Kondisi pada while akan dievaluasi sebelum blok kode di dalamnya dijalankan, sedangkan do-while akan mengevaluasi boolean expression setelah blok kodenya berjalan. Ini artinya kode di dalam do-while akan dijalankan setidaknya satu kali.
+ </p>
+ 
+ ### Infinite loops
+<p align="justify">Ketika menerapkan perulangan pada program, ada satu kondisi yang perlu kita hindari yaitu infinite loop. Infinite loop atau endless loop adalah kondisi di mana program kita stucked di dalam perulangan. Ia akan berjalan terus hingga menyebabkan crash pada aplikasi dan komputer kecuali ada intervensi secara eksternal, seperti mematikan aplikasi.</br>
+Kode berikut ini adalah contoh di mana kondisi infinite loop dapat terjadi:
+ </p>
+
+```plantuml
+let i = 1;
+ 
+while (i <= 5) {
+    console.log(i);
+}
+```
+
+dan 
+```plantuml
+for(let i = 1; i <= 5; i=1) {
+    console.log(i);
+}
+```
+
+<p align="justify">Dapatkah Anda menemukan apa yang salah dari kode di atas sehingga terjadi infinite loop? Jawabannya adalah karena variabel i selalu bernilai 1. Alhasil, kondisi i <= 5 akan selalu bernilai true yang mengakibatkan aplikasi akan terus mencetak 1 ke konsol sehingga mengalami crash.
+ </p>
+
+### Kuis Coding: Variabel dan Tipe Data
+<p align="justify">Untuk menguji kemampuan praktikal Anda dalam memahami materi variabel dan tipe data di JavaScript, silakan selesaikan kuis berikut. Sebelum Anda mengerjakan kuis, ada beberapa hal yang perlu Anda perhatikan.</br> Mohon untuk membaca secara seksama perintah, kriteria, atau soal pada komentar kode yang diberi tanda TODO.  </br>
+Lakukan pengujian pada kode yang Anda tulis contohnya dengan menggunakan console.log() untuk memastikan hasil sesuai dengan yang Anda harapkan. Gunakan tombol Jalankan.
+ </p>
 ```plantuml
 
 ```
@@ -435,156 +708,7 @@ console.log(!(a < 15 && b > 10)); // !(true && true) -> !(true) -> false
 | :--     | 
 | </br> |
 
-<p align="justify">
- </p>
 
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-
-```plantuml
-
-```
-
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-
-|Output : |
-| :--     | 
-| </br> |
-
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
 
 ```plantuml
 
