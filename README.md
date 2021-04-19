@@ -377,7 +377,7 @@ console.log(aString === aNumber) //false, karena walaupun nilainya sama, tetapi 
 | Operator	| Deskripsi|
 | :--:     | :--     | 
 |&&|	Operator dan (and). Logika akan menghasilkan nilai true apabila semua kondisi terpenuhi (bernilai true).|
-| || |	Operator atau (or). Logika akan menghasilkan nilai true apabila ada salah satu kondisi terpenuhi (bernilai true).|
+| '||' |	Operator atau (or). Logika akan menghasilkan nilai true apabila ada salah satu kondisi terpenuhi (bernilai true).|
 |!| Operator tidak (not). Digunakan untuk membalikkan suatu kondisi.|
 
 <p align="justify">Berikut contoh penerapannya pada JavaScript:
@@ -799,420 +799,747 @@ Gunakan comments untuk memberitahu interpreter supaya mengabaikan kode atau teks
 Pengambilan keputusan adalah hal yang penting dalam pemrograman. Kita bisa memanfaatkan if-else statement atau switch-case untuk memilih satu opsi berdasarkan kondisi yang diberikan.</li>
 <li>Pemrograman juga membantu kita untuk melakukan pekerjaan yang berulang. Dengan kode for atau while, kita bisa melakukan perulangan terhadap suatu kode sebanyak ratusan bahkan ribuan kali hanya dengan beberapa baris saja.</li></ol>
 
+### Object
+<p align="justify">Kali ini kita akan berkenalan dengan tipe data object. Sebuah tipe data yang sangat berguna dalam pengembangan aplikasi dengan JavaScript. Object mampu menyimpan nilai dari beragam tipe data dan membentuk data yang lebih kompleks. Untuk menetapkan objek pada sebuah variabel kita gunakan tanda kurung kurawal {}. </p>
 
 ```plantuml
+const user = {};
+```
 
+<p align="justify">Object berisi pasangan key dan value yang juga dikenal dengan property. Key berperan mirip seperti nama variabel yang menyimpan sebuah nilai. Sementara, value berisi nilai dengan tipe data apa pun termasuk objek lain. Key dan value di dalam object dituliskan seperti berikut:
+ </p>
+```plantuml
+let object = {key1: "value1", key2: "value2", key3: "value3"}
+```
+
+<p align="justify">Kemudian untuk mengakses nilai dari properti object, kita dapat memanggil nama object lalu tanda titik dan diikuti nama propertinya. Contoh:
+ </p>
+
+```plantuml
+const user = {
+    firstName: "Luke",
+    lastName: "Skywalker",
+    age: 19,
+    isJedi: true,
+};
+
+console.log(`Halo, nama saya ${user.firstName} ${user.lastName}`);
+console.log(`Umur saya ${user.age} tahun`);
+```
+
+|Output : |
+| :--     | 
+| Halo, nama saya Luke Skywalker</br>Umur saya 19 tahun |
+
+<p align="justify">Untuk mengakses key yang memiliki spasi atau karakter khusus lainnya maka kita perlu menggunakan bracket seperti di atas.
+ </p>
+
+```plantuml
+const user = {
+    firstName: "Luke",
+    lastName: "Skywalker",
+    age: 19,
+    isJedi: true,
+    "home world": "Tattooine"
+};
+console.log(`Halo, nama saya ${user.firstName} ${user.lastName}`);
+console.log(`Umur saya ${user.age} tahun`);
+console.log(`Saya berasal dari ${user["home world"]}`);
 ```
 |Output : |
 | :--     | 
-| </br> |
+| Halo, nama saya Luke Skywalker</br>Umur saya 19 tahun</br>Saya berasal dari Tattooine |
 
-<p align="justify">
+
+<p align="justify">Setelah mempelajari bagaimana membuat object dan menampilkan property di dalamnya, selanjutnya kita akan memodifikasi sebuah object. Untuk mengubah nilai properti di dalam object kita gunakan assignment operator (=).
+ </p>
+
+```plantuml
+const spaceship = {
+    name: "Millenium Falcon",
+    manufacturer: "Corellian Engineering Corporation",
+    maxSpeed: 1200,
+    color: "Light gray"
+};
+
+spaceship.color = "Glossy red";
+spaceship["maxSpeed"] = 1300;
+console.log(spaceship);
+```
+
+|Output : |
+| :--     | 
+| { </br>name: 'Millenium Falcon', </br>manufacturer: 'Corellian Engineering Corporation',</br> maxSpeed: 1300,</br>color: 'Glossy red'</br>} |
+
+<p align="justify">Ketika kita mengubah object menggunakan assignment operator dan property/key-nya sudah ada, maka nilai di dalamnya akan tergantikan dengan nilai yang baru. Sedangkan, jika property dengan nama key yang ditentukan tidak ditemukan, maka property baru akan ditambahkan ke object.
  </p>
 
 
 ```plantuml
+const spaceship = {
+    name: "Millenium Falcon",
+    manufacturer: "Corellian Engineering Corporation",
+    maxSpeed: 1200,
+    color: "Light gray"
+};
 
+spaceship.color = "Glossy red";
+spaceship["maxSpeed"] = 1300;
+spaceship.class = "Light freighter";
+
+console.log(spaceship);
 ```
+
 |Output : |
 | :--     | 
-| </br> |
+| { </br>name: 'Millenium Falcon', </br>manufacturer: 'Corellian Engineering Corporation', </br>maxSpeed: 1300, </br>color: 'Glossy red',</br> class: 'Light freighter' </br>} |
 
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
+<p align="justify">Kita juga dapat menghapus property pada object menggunakan keyword delete seperti berikut:
  </p>
 
 
 ```plantuml
+const spaceship = {
+    name: "Millenium Falcon",
+    manufacturer: "Corellian Engineering Corporation",
+    maxSpeed: 1200,
+    color: "Light gray"
+};
 
+spaceship.color = "Glossy red";
+spaceship["maxSpeed"] = 1300;
+
+delete spaceship.manufacturer;
+
+console.log(spaceship);
+```
+|Output : |
+| :--     | 
+| { name: 'Millenium Falcon', maxSpeed: 1300, color: 'Glossy red' } |
+
+### Array
+<p align="justify">Array merupakan tipe data yang dapat mengelompokkan lebih dari satu nilai dan menempatkannya dalam satu variabel. Contoh:
+ </p>
+
+```plantuml
+let myArray = ["Cokelat", 42.5, 22, true, "Programming"];
+console.log(myArray);
 ```
 
 |Output : |
 | :--     | 
-| </br> |
+| [ 'Cokelat', 42.5, 22, true, 'Programming' ] |
 
-<p align="justify">
+<p align="justify">Perbedaan array dengan object adalah data pada array disusun secara berurutan dan diakses menggunakan index. Untuk mengakses nilai di dalam array, kita gunakan tanda kurung siku [] yang di dalamnya berisi angka yang merupakan posisi nilai yang ingin diakses.
  </p>
 
 
 ```plantuml
-
+let myArray = ["Coklat", 42.5, 22, true, "Programming"];
+console.log(myArray[1]);
 ```
+
 |Output : |
 | :--     | 
-| </br> |
+| 42.5|
 
 
-<p align="justify">
+<p align="justify">Lalu, apa yang akan terjadi jika kita berusaha mengakses index di luar ukuran array-nya? Jika kita mengakses nilai array lebih dari index-nya, maka hasilnya akan undefined. Index terakhir array selalu jumlah nilai array - 1.
  </p>
 
 ```plantuml
-
+let myArray = ["Coklat", 42.5, 22, true, "Programming"];
+console.log(myArray[0]);
+console.log(myArray[1]);
+console.log(myArray[2]);
+console.log(myArray[3]);
+console.log(myArray[4]);
+console.log(myArray[5]);
+console.log("Panjang nilai myArray adalah " + myArray.length + ".");
 ```
 
 |Output : |
 | :--     | 
-| </br> |
-
-<p align="justify">
- </p>
+| Coklat</br>42.5</br>22</br>true</br>Programming</br>undefined</br>Panjang nilai myArray adalah 5. |
 
 
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-
-<p align="justify">
+<p align="justify">Sejauh ini kita baru belajar menginisialisasi dan mengakses elemen dari sebuah array. Pastinya Anda bertanya, “Bagaimana kita memanipulasi data pada array tersebut?” Nah, untuk menambahkan data ke dalam array, kita bisa menggunakan metode push(). Fungsi push ini akan menambahkan data di akhir array.
  </p>
 
 ```plantuml
+const myArray = ["Coklat", 42.5, 22, true, "Programming"];
 
+myArray.push('JavaScript');
+console.log(myArray);
 ```
 
 |Output : |
 | :--     | 
-| </br> |
+|[ 'Coklat', 42.5, 22, true, 'Programming', 'JavaScript' ] |
 
-
-<p align="justify">
+<p align="justify">Sedangkan untuk mengeluarkan data atau elemen terakhir dari array, kita bisa gunakan metode pop().
  </p>
 
 ```plantuml
+const myArray = ["Orange", 42.5, 22, true, "Programming"];
 
+myArray.pop();
+console.log(myArray);
 ```
+
 |Output : |
 | :--     | 
-| </br> |
+| [ 'Orange', 42.5, 22, true ] |
 
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
+<p align="justify">Metode lain yang bisa kita gunakan untuk memanipulasi data pada array adalah shift() dan unshift(). Metode shift() digunakan untuk mengeluarkan elemen pertama dari array, sementara unshift() digunakan untuk menambahkan elemen di awal array.
  </p>
 
 ```plantuml
+const myArray = ["Cokelat", 42.5, 22, true, "Programming"];
 
+myArray.shift();
+myArray.unshift("Apple");
+
+console.log(myArray);
 ```
 
 |Output : |
 | :--     | 
-| </br> |
+| [ 'Apple', 42.5, 22, true, 'Programming' ] |
 
-<p align="justify">
+<p align="justify">Lalu bagaimana jika kita ingin menghapus data dari array? Sama seperti object, kita bisa menggunakan keyword delete.
  </p>
 
 ```plantuml
+const myArray = ["Cokelat", 42.5, 22, true, "Programming"];
 
+delete myArray[1];
+console.log(myArray);
 ```
+
 |Output : |
 | :--     | 
-| </br> |
+| [ 'Cokelat', &lt;1 empty item&gt;, 22, true, 'Programming' ] |
 
-<p align="justify">
+<p align="justify">Namun, perhatikan di sini bahwa keyword delete hanya menghapus data pada index yang ditentukan lalu membiarkan posisi tersebut kosong. Untuk menghapus elemen, gunakan metode splice() seperti ini:
  </p>
 
 ```plantuml
+const myArray = ["Cokelat", 42.5, 22, true, "Programming"];
 
+myArray.splice(2, 1);   // Menhapus dari index 2 sebanyak 1 elemen
+console.log(myArray);
 ```
+
 |Output : |
 | :--     | 
-| </br> |
+| [ 'Cokelat', 42.5, true, 'Programming' ] |
 
-<p align="justify">
+### Spread Operator
+<p align="justify">fitur ini digunakan untuk menyebarkan nilai array atau lebih tepatnya iterable object menjadi beberapa elemen. Spread operator dituliskan dengan tiga titik (...). Mari kita lihat contoh kode berikut:
  </p>
 
 ```plantuml
-
+const favorites = ["Seafood", "Salad", "Nugget", "Soup"];
+ 
+console.log(favorites);
 ```
+
 |Output : |
 | :--     | 
-| </br> |
+| [ 'Seafood', 'Salad', 'Nugget', 'Soup' ] |
 
-<p align="justify">
+<p align="justify">Pada kode tersebut hasil yang dicetak adalah sebuah array (ditunjukkan dengan tanda [ ]), karena memang kita mencetak nilai favorites itu sendiri. Nah, dengan menggunakan spread operator kita dapat menyebarkan nilai-nilai dalam array tersebut.
  </p>
 
 ```plantuml
+const favorites = ["Seafood", "Salad", "Nugget", "Soup"];
 
+console.log(...favorites);
 ```
 |Output : |
 | :--     | 
-| </br> |
+|Seafood Salad Nugget Soup |
 
-<p align="justify">
+<p align="justify">Spread operator dapat digunakan untuk menggabungkan dua buah array ke dalam array baru. Jika tidak menggunakan spread operator ini maka hasilnya akan seperti ini:
  </p>
 
 ```plantuml
+const favorites = ["Seafood", "Salad", "Nugget", "Soup"];
+const others = ["Cake", "Pie", "Donut"];
 
+const allFavorites = [favorites, others];
+
+console.log(allFavorites);
 ```
 
 |Output : |
 | :--     | 
-| </br> |
+| [ </br>[ 'Seafood', 'Salad', 'Nugget', 'Soup' ],</br>[ 'Cake', 'Pie', 'Donut' ]</br>] |
 
-<p align="justify">
+<p align="justify">Nilai array tidak akan tergabung. Alih-alih menggabungkan nilainya, variabel allFavorites menjadi array baru yang menampung dua array di dalamnya. Nah, lantas bagaimana jika kita mencoba menggunakan spread operator?
  </p>
 
 ```plantuml
+const favorites = ["Seafood", "Salad", "Nugget", "Soup"];
+const others = ["Cake", "Pie", "Donut"];
 
+const allFavorites = [...favorites, ...others];
+
+console.log(allFavorites);
 ```
 |Output : |
 | :--     | 
-| </br> |
+| [ 'Seafood', 'Salad', 'Nugget', 'Soup', 'Cake', 'Pie', 'Donut' ]|
 
-<p align="justify">
+### Destructuring Object & Array
+<p align="justify">Destructuring dalam JavaScript merupakan sintaksis yang dapat mengeluarkan nilai dari array atau properties dari sebuah object ke dalam satuan yang lebih kecil. Secara tidak sadar mungkin kita pernah melakukan destructuring. Namun, sebelum ES6 hal tersebut dilakukan dengan cara seperti ini:
  </p>
 
-
+<p align="justify">Array  </p>
 ```plantuml
-
+const foods = ['Pie', 'Cake', 'Honey']
+const myFood = foods[0]
+const yourFood = foods[1]
+const ourFood = foods[2]
+console.log(myFood, yourFood, ourFood)
 ```
+
 |Output : |
 | :--     | 
-| </br> |
+| Pie Cake Honey |
 
-<p align="justify">
- </p>
-
+<p align="justify">Object </p>
 ```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-
-```plantuml
-
+const profile = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 18
+}
+ 
+const firstName = profile.firstName
+const lastName = profile.lastName
+const age = profile.age
+ 
+console.log(firstName, lastName, age)
 ```
 
 |Output : |
 | :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-
-<p align="justify">
- </p>
+| John Doe 18 |
 
 ```plantuml
 
 ```
 
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
+### Destructuring Object
+<p align="justify">Penulisan sintaksis destructuring object pada ES6 menggunakan object literal ({ }) di sisi kiri dari operator assignment.
  </p>
-
-
 ```plantuml
-
+const profile = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 18
+}
+const {firstName, lastName, age} = profile;
+console.log(firstName, lastName, age);
 ```
+
 |Output : |
 | :--     | 
-| </br> |
+| John Doe 18|
 
 
-<p align="justify">
+<p align="justify">kita telah melakukan destructuring object pada deklarasi variabel. Namun, pada kasus tertentu mungkin kita perlu melakukannya pada variabel yang sudah dideklarasikan.
  </p>
 
 ```plantuml
-
+const profile = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 18
+}
+ 
+let firstName = "Dimas";
+let age = 20;
+ 
+// menginisialisasi nilai baru melalui object destruction
+({firstName, age} = profile);
+ 
+console.log(firstName);
+console.log(age);
 ```
 
 |Output : |
 | :--     | 
-| </br> |
+| John</br>18 |
 
 
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
+### Default Values
+<p align="justify">Ketika kita mendestruksikan objek dan menetapkan variabel dengan nama yang bukan merupakan properti dari objek, maka nilai dari variabel tersebut menjadi undefined. Contohnya:
  </p>
 
 
 ```plantuml
-
+const profile = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 18
+}
+ 
+ 
+const {firstName, age, isMale} = profile;
+ 
+console.log(firstName)
+console.log(age)
+console.log(isMale)
 ```
+
 |Output : |
 | :--     | 
-| </br> |
+| John </br>18</br>undefined |
 
-<p align="justify">
+<p align="justify">Alternatifnya, kita bisa secara opsional mendefinisikan nilai default pada properti tertentu jika tidak ditemukan. Untuk melakukanya, tambahkan tanda assignment (=) setelah nama variabel dan tentukan nilai default-nya seperti ini:
  </p>
 
 ```plantuml
-
+const profile = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 18
+}
+ 
+ 
+const {firstName, age, isMale = false} = profile;
+ 
+console.log(firstName)
+console.log(age)
+console.log(isMale)
 ```
+
 |Output : |
 | :--     | 
-| </br> |
+| John </br>18 </br>false |
+
+### Assigning to Different Local Variable Names
 
 
-<p align="justify">
+<p align="justify">ES6 menyediakan sintaksis tambahan yang membuat kita dapat melakukan hal tersebut. Penulisannya mirip seperti ketika kita membuat properti beserta nilainya pada object. Contohnya seperti ini:
  </p>
 
 ```plantuml
-
+const profile = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 18
+}
+const {firstName: localFirstName, lastName: localLastName, age: localAge} = profile;
+console.log(localFirstName);
+console.log(localLastName);
+console.log(localAge);
 ```
+
 |Output : |
 | :--     | 
-| </br> |
+| John </br>Doe </br>18 |
 
-<p align="justify">
+<p align="justify">Destructuring array serupa dengan destructuring object. Object menggunakan tanda kurung kurawal { } sedangkan array menggunakan tanda kurung siku [ ]. Perbedaan lainnya adalah destructuring array bekerja berdasarkan posisi daripada penamaan propertinya. Berikut contoh dari destructuring array pada ES6:
  </p>
 
 
 ```plantuml
+const favorites = ["Seafood", "Salad", "Nugget", "Soup"];
+ 
+const [firstFood, secondFood, thirdFood, fourthFood] = favorites;
+ 
+console.log(firstFood);
+console.log(secondFood);
+console.log(thirdFood);
+console.log(fourthFood);
+```
+
+|Output : |
+| :--     | 
+| Seafood</br>Salad</br>Nugget</br>Soup |
+
+
+<p align="justify">jika ingin mengambil nilai ketiga dari array, kita tidak perlu menyiapkan variabel lokal untuk menampung nilai array pertama, kedua, atau pun keempat. Kita bisa melakukannya dengan membiarkan index array yang tidak kita inginkan tetap kosong (tanpa menulis variabel lokal). Lebih lanjut, tanda koma (,) tetap diperlukan untuk menunjukkan posisi index-nya seperti ini:
+ </p>
+
+```plantuml
+const favorites = ["Seafood", "Salad", "Nugget", "Soup"];
+ 
+const [, , thirdFood ] = favorites;
+ 
+console.log(thirdFood);
+```
+
+|Output : |
+| :--     | 
+| Nugget |
+
+
+<p align="justify">Kita juga bisa melakukan destructuring assignment pada array. Namun, tidak seperti object, kita tidak perlu membungkusnya dengan tanda kurung. Contohnya seperti berikut:
+ </p>
+
+```plantuml
+const favorites = ["Seafood", "Salad", "Nugget", "Soup"];
+ 
+let myFood = "Ice Cream";
+let herFood = "Noodles";
+ 
+[myFood, herFood] = favorites;
+ 
+console.log(myFood);
+console.log(herFood);
+```
+
+|Output : |
+| :--     | 
+| Seafood </br>Salad |
+
+<p align="justify">Array destructuring assignment sangat berguna ketika kita hendak menukar nilai antara dua variabel. Sebelum ES6, untuk melakukan hal ini kita menggunakan cara manual menggunakan algoritma sorting seperti ini:
+ </p>
+
+```plantuml
+var a = 1;
+var b = 2;
+var temp;
+ 
+console.log("Sebelum swap");
+console.log("Nilai a: " + a);
+console.log("Nilai b: " + b);
+ 
+temp = a;
+a = b;
+b = temp;
+ 
+console.log("Setelah swap");
+console.log("Nilai a: " + a);
+console.log("Nilai b: " + b);
+ 
+```
+|Output : |
+| :--     | 
+| Sebelum swap</br>Nilai a: 1</br>Nilai b: 2</br>Setelah swap</br>Nilai a: 2</br>Nilai b: 1 |
+
+<p align="justify">Dengan array destructuring assignment, kita bisa menukar nilai variabel dengan mudah tanpa membuat variabel tambahan
+ </p>
+
+```plantuml
+let a = 1;
+let b= 2;
+ 
+console.log("Sebelum swap");
+console.log("Nilai a: " + a);
+console.log("Nilai b: " + b);
+ 
+[a, b] = [b, a]
+ 
+console.log("Setelah swap");
+console.log("Nilai a: " + a);
+console.log("Nilai b: " + b);
+```
+
+|Output : |
+| :--     | 
+| Sebelum swap</br>Nilai a: 1</br>Nilai b: 2</br>Setelah swap</br>Nilai a: 2</br>Nilai b: 1 |
+
+<p align="justify">Ketika melakukan destructuring array, tetapi terdapat variabel yang posisinya tidak dapat terjangkau oleh array, maka variabel tersebut akan bernilai undefined. Contohnya:
+ </p>
+
+```plantuml
+const favorites = ["Seafood"];
+const [myFood, herFood] = favorites
+ 
+console.log(myFood);
+console.log(herFood);
+```
+
+|Output : |
+| :--     | 
+| Seafood </br> undefined|
+
+<p align="justify">Sama seperti object, pada destructuring array kita juga dapat memberikan nilai default pada variabel yang tidak dapat terjangkau oleh array, sehingga nilai pada variabel tidak akan menjadi undefined.
+ </p>
+
+```plantuml
+const favorites = ["Seafood"];
+ 
+const [myFood, herFood = "Salad"] = favorites
+ 
+console.log(myFood);
+console.log(herFood);
+```
+
+|Output : |
+| :--     | 
+| Seafood </br>Salad |
+
+### Map
+<p align="justify">Map adalah tipe data yang menyimpan koleksi data dengan format key-value layaknya Object. Yang membedakan adalah Map memperbolehkan key dengan tipe data apa pun, dibandingkan Object yang hanya mengizinkan key bertipe String atau Symbol. Untuk mendefinisikan Map gunakan constructor seperti di bawah ini:
+ </p>
+
+```plantuml
+const myMap = new Map([
+    ['1', 'a String key'],
+    [1, 'a number key'],
+    [true, true]
+]);
+
+console.log(myMap);
+```
+
+|Output : |
+| :--     | 
+| Map(3) { '1' => 'a String key', 1 => 'a number key', true => true } |
+
+<p align="justify">kita bisa mendapatkan nilainya berdasarkan key tertentu dengan metode get(). Lalu, untuk menambahkan pasangan key-value baru gunakan metode set().
+ </p>
+
+```plantuml
+const capital = new Map([
+    ["Jakarta", "Indonesia"],
+    ["London", "England"],
+    ["Tokyo", "Japan"]
+]);
+
+console.log(capital.size);
+console.log(capital.get("London"));
+capital.set("New Delhi", "India");
+console.log(capital.size);
+console.log(capital.get("New Delhi"));
+```
+
+|Output : |
+| :--     | 
+| 3</br>England</br>4</br>India |
+
+<p align="justify">Ketika kita menetapkan nilai map seperti di atas, data akan disimpan sebagai generic object. Ini akan mengakibatkan data tidak tersimpan dalam Map query dan tidak bisa menggunakan fitur dari Map seperti .has atau .delete.
+ </p>
+
+```plantuml
+const wrongMap = new Map();
+wrongMap["My Key"] = "My Value";
+
+console.log(wrongMap.has("My Key"));
+console.log(wrongMap.delete("My Key"));
+```
+
+|Output : |
+| :--     | 
+| false</br>false |
+
+### Set
+<p align="justify">Struktur data yang akan kita bahas berikutnya adalah Set. Set sederhananya merupakan kumpulan nilai (set of values). Hal yang membedakan Set dengan struktur data yang lain adalah data pada Set tidak berurutan dan juga tidak diindeks. Selain itu, data di dalam Set juga bersifat unik dan tidak ada duplikasi. Perhatikan contoh deklarasi Set di bawah ini:
+ </p>
+
+```plantuml
+const numberSet = new Set([1, 4, 6, 4, 1]);
+
+console.log(numberSet);
+```
+
+|Output : |
+| :--     | 
+| Set(3) { 1, 4, 6 }|
+
+<p align="justify">Pada kode di atas terdapat beberapa angka yang duplikat, yaitu angka 1 dan 4. Secara otomatis Set akan membuang angka yang sama, sehingga nilai yang tersimpan adalah {1, 4, 6}. Untuk menambahkan data ke dalam Set kita bisa memanfaatkan fungsi add().
+ </p>
+
+
+```plantuml
+const numberSet = new Set([1, 4, 6, 4, 1]);
+numberSet.add(5);
+numberSet.add(10);
+numberSet.add(6);
+
+console.log(numberSet);
+```
+
+|Output : |
+| :--     | 
+| Set(5) { 1, 4, 6, 5, 10 } |
+
+<p align="justify">Fungsi add() hanya menerima satu argumen. Jika Anda memasukkan array, maka array tersebut akan dianggap sebagai satu elemen sendiri. Nilai yang duplikat akan diabaikan.
+ </p>
+
+```plantuml
+const numberSet = new Set([1, 4, 6, 4, 1]);
+numberSet.add(5);
+numberSet.add(10);
+numberSet.add(6);
+
+numberSet.delete(4);
+
+console.log(numberSet);
+```
+
+|Output : |
+| :--     | 
+| Set(4) { 1, 6, 5, 10 }|
+
+### WeakMap and WeakSet
+<p align="justify">WeakMap merupakan varian dari Map yang mendukung garbage collection. Garbage collection adalah proses di mana interpreter JavaScript mengambil kembali memori yang tidak lagi “dapat dijangkau” dan tidak dapat digunakan oleh program[3]. Garbage collection di JavaScript dilakukan secara otomatis dan bukan menjadi urusan dari developer.</br>Yang dimaksud weak dalam WeakMap adalah referensi terhadap nilai yang disimpan. Apabila suatu nilai yang disimpan di WeakMap sudah tidak terjangkau atau tidak bisa lagi diakses, maka referensi ke memorinya akan dihapus.
+ </p>
+
+Berikut ini adalah beberapa hal yang membedakan antara Map dan WeakMap:
+<ul><li>
+<li>Key dari WeakMap harus berupa object atau array. Nilai primitif tidak bisa digunakan sebagai key karena tidak mendukung garbage collection.</li>
+<li>WeakMap memiliki methodget(), set(), has(), dan delete(). Namun, WeakMap tidak termasuk kategori iterable sehingga tidak memiliki method keys(), values(), atau forEach().</li>
+<li>WeakMap juga tidak memiliki property size. Ini karena ukuran WeakMap dapat berubah karena proses garbage collection.</li></ul>
+
+```plantuml
+let visitsCountMap = new Map(); // Menyimpan daftar user
+ 
+function countUser(user) {
+    let count = visitsCountMap.get(user) || 0;
+    visitsCountMap.set(user, count + 1);
+}
+ 
+let jonas = { name: "Jonas" };
+countUser(jonas);                // Menambahkan user "Jonas"
+ 
+jonas = null;                    // Data object "Jonas" dihapus
+ 
+console.log(visitsCountMap);
+```
+
+|Output : |
+| :--     | 
+| Map(1) { { name: 'Jonas' } => 1 } |
+
+<p align="justify">Ketika nilai jonas sudah tidak bisa dijangkau, object jonas akan dihapus dari memori termasuk informasi yang disimpan di dalam WeakMap.
+ </p>
+
+
+```plantuml
+let visitsCountMap = new WeakMap(); // Menyimpan daftar user
+
+function countUser(user) {
+    let count = visitsCountMap.get(user) || 0;
+    visitsCountMap.set(user, count + 1);
+}
+
+let jonas = { name: "Jonas" };
+countUser(jonas);                // Menambahkan user "Jonas"
+
+jonas = null;                    // Data object "Jonas" dihapus
+
+console.log(visitsCountMap);
 
 ```
 
 |Output : |
 | :--     | 
-| </br> |
+| WeakMap { <items unknown> } |
 
+Seperti halnya WeakMap, WeakSet adalah versi weak reference dari Set. Perbedaan antara WeakSet dan Set antara lain:
+<ul><li>
+WeakSet tidak bisa menyimpan nilai primitif.</li>
+<li>WeakSet bukan iterable dan hanya memiliki method add(), has(), dan delete().</li>
+<li>WeakSet tidak memiliki properti size.</li>
+</ul>
 <p align="justify">
  </p>
 
