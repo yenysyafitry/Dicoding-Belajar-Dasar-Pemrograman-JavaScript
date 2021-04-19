@@ -444,6 +444,7 @@ if(x > 70) {
     console.log("Nilai kurang dari 70");
 }
 ```
+
 |Output : |
 | :--     | 
 | Nilai kurang dari 70|
@@ -462,9 +463,9 @@ if(language === "English") {
 } else if(language === "Japanese") {
     greeting = "Ohayou Gozaimasu!"
 }
-
 console.log(greeting);
 ```
+
 |Output : |
 | :--     | 
 | Bonjour! |
@@ -478,6 +479,7 @@ const isMember = false;
 const discount = isMember ? 0.1 : 0;
 console.log(`Anda mendapatkan diskon sebesar ${discount * 100}%`)
 ```
+
 |Output : |
 | :--     | 
 | Anda mendapatkan diskon sebesar 0% |
@@ -516,7 +518,6 @@ if (name) {
 ### Switch Case Statement
 <p align="justify">Sebelumnya kita telah mempelajari bagaimana percabangan logika menggunakan if statement. Selain if, JavaScript juga mendukung switch statement untuk melakukan pengecekan banyak kondisi dengan lebih mudah dan ringkas.
  </p>
-
 
 ```plantuml
 switch (expression) {
@@ -580,10 +581,10 @@ console.log(10);
 
 <p align="justify">Bagaimana jika kita perlu menampilkan angka 1 sampai 100? Sudah terbayang repotnya, bukan? Maka dari itu kita perlu mempelajari teknik yang dapat mengatasi permasalahan tersebut, teknik ini disebut dengan looping. JavaScript memiliki banyak opsi untuk melakukan looping atau perulangan kode, antara lain:
 </p>
+
 ### For loop
 <p align="justify">Dari beberapa cara melakukan proses loop pada JavaScript, “for” merupakan salah satu cara yang banyak digunakan. Struktur dasar dari for tampak seperti berikut:
  </p>
-
 
 ```plantuml
 for(inisialisasi variabel; test kondisi; perubahan nilai variabel) {
@@ -599,21 +600,23 @@ for(let i = 0; i < 5; i++) {
     console.log(i);
 }
 ```
+
 |Output : |
 | :--     | 
 | 0</br>1</br>2</br>3</br>4 |
 
 <p align="justify">Lebih ringkas, bukan? Mungkin kode tersebut sulit dipahami, jadi mari kita bahas sedikit demi sedikit. Terdapat tiga bagian utama dalam sintaks for di atas:
-<ul><li>
+ </p><ul><li>
 <li>Pertama, variabel i sebagai index iterasi. Pada variabel ini kita menginisialisasi nilai awal dari perulangan.</li>
 <li>Kedua, operasi perbandingan. Pada bagian ini, JavaScript akan melakukan pengecekan kondisi apakah perulangan masih perlu dilakukan. Jika bernilai true, maka kode di dalam blok for akan dijalankan.</li>
 <li>Ketiga, increment/decrement. Di sini kita melakukan penambahan atau pengurangan variabel iterasi. Jadi, pada contoh di atas variabel i akan ditambah dengan 1 di setiap akhir perulangan. Perubahan nilai ini penting karena jika kita mengubah nilainya, proses perulangan dapat berjalan selamanya karena kondisi akan terus terpenuhi.</br></li>
-JIka diartikan, maka kode di atas bisa dimaknai dengan “Jika i kurang dari 5, maka tampilkan nilai i.”
- </p>
+JIka diartikan, maka kode di atas bisa dimaknai dengan “Jika i kurang dari 5, maka tampilkan nilai i.”</ul></li>
+
  
  ### For of loop
  <p align="justify">Cara lain dalam melakukan looping adalah menggunakan for..of. For of mulai hadir pada ECMAScript 2015 (ES6). Cara ini jauh lebih sederhana dan modern dibanding for loop biasa. Sintaks dasar dari for of loop adalah seperti ini:
  </p>
+ 
 ```plantuml
 for(arrayItem of myArray) {
     // do something
@@ -651,6 +654,7 @@ while (i <= 10) {
     i++;
 }
 ```
+
 |Output : |
 | :--     | 
 |1</br>2</br>3</br>4</br>5</br>6</br>7</br>8</br>9</br>10 |
@@ -667,6 +671,7 @@ do {
     i++;
 } while (i <= 100);
 ```
+
 |Output : |
 | :--     | 
 |1</br>2</br>3</br>4</br>5</br>6</br>7</br>8</br>9</br>10 |
