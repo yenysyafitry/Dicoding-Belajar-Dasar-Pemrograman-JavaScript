@@ -1548,23 +1548,23 @@ WeakSet tidak bisa menyimpan nilai primitif.</li>
 
 ```plantuml
 /**
- * TODO
- * 1. Buatlah variabel dengan nama restaurant yang object dengan ketentuan berikut:
- *    - Memiliki properti bernama "name"
- *       - Bertipe data string
- *       - Bernilai apa pun, asalkan tidak string kosong atau null.
- *    - Memiliki properti bernama "city"
- *       - Bertipe data string
- *       - Bernilai apa pun, asalkan tidak string kosong atau null.
- *    - Memiliki properti "favorite drink"
- *       - Bertipe data string
- *       - Bernilai apa pun, asalkan tidak string kosong atau null.
- *    - Memiliki properti "favorite food"
- *       - Bertipe data string
- *       - Bernilai apa pun, asalkan tidak string kosong atau null.
- *    - Memiliki properti "isVegan"
- *       - Bertipe data boolean
- *       - Bernilai boolean apa pun.
+ *TODO
+ *1. Buatlah variabel dengan nama restaurant yang object dengan ketentuan berikut:
+ *- Memiliki properti bernama "name"
+ *- Bertipe data string
+ *- Bernilai apa pun, asalkan tidak string kosong atau null.
+ *- Memiliki properti bernama "city"
+ *- Bertipe data string
+ *- Bernilai apa pun, asalkan tidak string kosong atau null.
+ *- Memiliki properti "favorite drink"
+ *- Bertipe data string
+ *- Bernilai apa pun, asalkan tidak string kosong atau null.
+ *- Memiliki properti "favorite food"
+ *- Bertipe data string
+ *- Bernilai apa pun, asalkan tidak string kosong atau null.
+ *- Memiliki properti "isVegan"
+ *- Bertipe data boolean
+ *- Bernilai boolean apa pun.
  *
  * 2. Buatlah variabel bernama name.
  *    Kemudian isi dengan nilai name dari properti object restaurant
@@ -1572,25 +1572,15 @@ WeakSet tidak bisa menyimpan nilai primitif.</li>
  *    Kemudian isi dengan nilai "favorite drink" dari properti object restaurant
  */
 const restaurant = {
-
-     name : "Yenni Syafitri",
-
+    name : "Yenni Syafitri",
     city : "Kota Dumai",
-
-     "favorite drink" : "Es teh",
-
+    "favorite drink" : "Es teh",
     "favorite food" : "Nasi kucing", 
-
     isVegan : false,
-
 };
-
 const name = restaurant.name;
 const favoriteDrink = restaurant["favorite drink"];
-
 // TODO
-
-
 /**
  * Hiraukan kode di bawah ini
  */
