@@ -1088,6 +1088,7 @@ const allFavorites = [...favorites, ...others];
 
 console.log(allFavorites);
 ```
+
 |Output : |
 | :--     | 
 | [ 'Seafood', 'Salad', 'Nugget', 'Soup', 'Cake', 'Pie', 'Donut' ]|
@@ -1097,6 +1098,7 @@ console.log(allFavorites);
  </p>
 
 <p align="justify">Array  </p>
+
 ```plantuml
 const foods = ['Pie', 'Cake', 'Honey']
 const myFood = foods[0]
@@ -1110,6 +1112,7 @@ console.log(myFood, yourFood, ourFood)
 | Pie Cake Honey |
 
 <p align="justify">Object </p>
+
 ```plantuml
 const profile = {
     firstName: "John",
@@ -1128,13 +1131,11 @@ console.log(firstName, lastName, age)
 | :--     | 
 | John Doe 18 |
 
-```plantuml
-
-```
 
 ### Destructuring Object
 <p align="justify">Penulisan sintaksis destructuring object pada ES6 menggunakan object literal ({ }) di sisi kiri dari operator assignment.
  </p>
+ 
 ```plantuml
 const profile = {
     firstName: "John",
@@ -1246,7 +1247,6 @@ console.log(localAge);
 <p align="justify">Destructuring array serupa dengan destructuring object. Object menggunakan tanda kurung kurawal { } sedangkan array menggunakan tanda kurung siku [ ]. Perbedaan lainnya adalah destructuring array bekerja berdasarkan posisi daripada penamaan propertinya. Berikut contoh dari destructuring array pada ES6:
  </p>
 
-
 ```plantuml
 const favorites = ["Seafood", "Salad", "Nugget", "Soup"];
  
@@ -1317,8 +1317,8 @@ b = temp;
 console.log("Setelah swap");
 console.log("Nilai a: " + a);
 console.log("Nilai b: " + b);
- 
 ```
+
 |Output : |
 | :--     | 
 | Sebelum swap</br>Nilai a: 1</br>Nilai b: 2</br>Setelah swap</br>Nilai a: 2</br>Nilai b: 1 |
@@ -1512,7 +1512,6 @@ console.log(visitsCountMap);
 <p align="justify">Ketika nilai jonas sudah tidak bisa dijangkau, object jonas akan dihapus dari memori termasuk informasi yang disimpan di dalam WeakMap.
  </p>
 
-
 ```plantuml
 let visitsCountMap = new WeakMap(); // Menyimpan daftar user
 
@@ -1544,7 +1543,6 @@ WeakSet tidak bisa menyimpan nilai primitif.</li>
 ### Kuis Coding: Object
 <p align="justify">Untuk menguji kemampuan praktikal Anda dalam memahami materi object di JavaScript, silakan selesaikan kuis berikut.
  </p>
-
 
 ```plantuml
 /**
@@ -1587,7 +1585,6 @@ const favoriteDrink = restaurant["favorite drink"];
 module.exports = { restaurant, name, favoriteDrink };
 ```
 
-
 ### Pertanyaan
 ```plantuml
 Diberikan sejumlah elemen yang harus disimpan secara berurutan. Manakah struktur data yang akan Anda gunakan?
@@ -1625,8 +1622,10 @@ function multiply(a, b) {
     return a * b;
 }
 ```
+
 <p align="justify">Argument merupakan nilai atau expression yang dimasukkan ke dalam fungsi. Contohnya:
  </p>
+ 
 ```plantuml
 multiply(3, 4);
 ```
@@ -1641,6 +1640,7 @@ function greeting() {
 
 greeting();
 ```
+
 |Output : |
 | :--     | 
 |Good Morning!|
@@ -1677,6 +1677,7 @@ function greeting(name, language) {
 
 greeting("Harry", "French");
 ```
+
 |Output : |
 | :--     | 
 |Bonjour Harry!|
@@ -1692,6 +1693,7 @@ function multiply(a, b) {
 let result = multiply(10, 2)
 console.log(result)
 ```
+
 |Output : |
 | :--     | 
 | 20 |
@@ -1761,6 +1763,7 @@ const sayName = function (name) {
 ```
 
 ### Arrow function
+
 ```plantuml
 // function expression
 const sayHello = (greet) => {
@@ -1861,7 +1864,6 @@ function parent() {
 
 <p align="justify">Kita harus berhati-hati dalam mendefinisikan variabel di dalam fungsi. Pasalnya, kita bisa mendapatkan hasil yang tidak diperkirakan, contohnya seperti berikut:
  </p>
-
 
 ```plantuml
 function multiply(num) {
