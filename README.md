@@ -1588,14 +1588,23 @@ module.exports = { restaurant, name, favoriteDrink };
 ```
 
 
-
-<p align="justify">
- </p>
-
+### Pertanyaan
 ```plantuml
-
+Diberikan sejumlah elemen yang harus disimpan secara berurutan. Manakah struktur data yang akan Anda gunakan?
+a. Map
+b. Object
+c. Set
+d. Array
+Jawaban yang benar d ,  Berikut adalah penjelasannya:
+Data yang disimpan pada array diindeks dan diakses melalui index urutannya.
 ```
 
+### Functions
+<p align="justify">Fungsi merupakan bagian penting dalam bahasa pemrograman. Tanpa sadar, sebenarnya kita sudah menggunakan sebuah fungsi pada contoh kode yang ada sebelumnya. log() pada console.log() merupakan sebuah function yang berguna untuk menampilkan data pada konsol. Tapi sebenarnya apa itu function? Bagaimana ia bisa bekerja?</br>Mirip dengan fungsi pada matematika, fungsi dalam pemrograman juga digunakan untuk menghasilkan output berdasarkan input tertentu.
+ </p>
+ ```plantuml
+
+```
 |Output : |
 | :--     | 
 | </br> |
