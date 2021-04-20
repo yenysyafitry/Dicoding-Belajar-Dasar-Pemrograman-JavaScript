@@ -52,6 +52,7 @@ Mengikuti perkembangan teknologi dan banyaknya bisnis yang mulai merambah ke ran
 ```plantuml 
  console.log("Hello, World!"); 
 ```
+
 |Output : |
 | :--     | 
 | Hello, World!|
@@ -71,6 +72,7 @@ Mengikuti perkembangan teknologi dan banyaknya bisnis yang mulai merambah ke ran
 lastName = "Skywalker";
 console.log(lastName);
 ```
+
 |Output : |
 | :--     | 
 |Skywalker|
@@ -85,6 +87,7 @@ Tipe data ini terbentuk ketika sebuah variabel tidak memiliki nilai. Artinya, ke
    let x;
    console.log(typeof(x));
 ```
+
 |Output : |
 | :--     | 
 |undefined |
@@ -104,14 +107,12 @@ Tipe data ini terbentuk ketika sebuah variabel tidak memiliki nilai. Artinya, ke
    console.log(a % b)
 ```
 
-
 |Output : |
 | :--     | 
 |21</br>3</br>108</br>1.3333333333333333</br>3|
 
 
 ### BigInt
-
 <p align="justify">Pada JavaScript, tipe data “Number” hanya mencakup nilai dari -(253 - 1) hingga (253 - 1). Untuk kebutuhan umum, sebenarnya nilai tersebut sudah sangat cukup. Namun, akan ada kebutuhan tertentu di mana kita membutuhkan cakupan nilai yang lebih besar, seperti untuk kriptografi atau menentukan waktu hingga presisi microsecond. Untuk nilai di luar Number, kita bisa menggunakan tipe BigInt. Untuk membedakan tipe BigInt dan Number, tambahkan karakter n di akhir angka. Contohnya adalah seperti kode di bawah ini. Bandingkan dengan yang bertipe Number. </p>
 
 ```plantuml
@@ -135,6 +136,7 @@ console.log(5n * 2n);
 console.log(5n / 2n);
 console.log(5n % 2n);
 ```
+
 |Output : |
 | :--     | 
 | 7n </br> 3n </br>10n </br> 2n </br> 1n |
@@ -146,6 +148,7 @@ console.log(5n % 2n);
 let greet = "Hello";
 console.log(typeof(greet))
 ```
+
 |Output : |
 | :--     | 
 | string |
@@ -377,7 +380,6 @@ console.log(aString === aNumber) //false, karena walaupun nilainya sama, tetapi 
 | Operator	| Deskripsi|
 | :--:     | :--     | 
 |&&|	Operator dan (and). Logika akan menghasilkan nilai true apabila semua kondisi terpenuhi (bernilai true).|
-| '||' |	Operator atau (or). Logika akan menghasilkan nilai true apabila ada salah satu kondisi terpenuhi (bernilai true).|
 |!| Operator tidak (not). Digunakan untuk membalikkan suatu kondisi.|
 
 <p align="justify">Berikut contoh penerapannya pada JavaScript:
@@ -706,6 +708,7 @@ for(let i = 1; i <= 5; i=1) {
 <p align="justify">Untuk menguji kemampuan praktikal Anda dalam memahami materi variabel dan tipe data di JavaScript, silakan selesaikan kuis berikut. Sebelum Anda mengerjakan kuis, ada beberapa hal yang perlu Anda perhatikan.</br> Mohon untuk membaca secara seksama perintah, kriteria, atau soal pada komentar kode yang diberi tanda TODO.  </br>
 Lakukan pengujian pada kode yang Anda tulis contohnya dengan menggunakan console.log() untuk memastikan hasil sesuai dengan yang Anda harapkan. Gunakan tombol Jalankan.
  </p>
+ 
 ```plantuml
 /**
  * TODO:
@@ -733,11 +736,10 @@ module.exports = {
   firstName, lastName, age, isMarried,
 };
 ```
+
 |Output : |
 | :--     | 
 | string</br>string</br>number</br>boolean |
-
-
 
 ```plantuml
 /**
@@ -897,7 +899,6 @@ console.log(spaceship);
 <p align="justify">Kita juga dapat menghapus property pada object menggunakan keyword delete seperti berikut:
  </p>
 
-
 ```plantuml
 const spaceship = {
     name: "Millenium Falcon",
@@ -913,6 +914,7 @@ delete spaceship.manufacturer;
 
 console.log(spaceship);
 ```
+
 |Output : |
 | :--     | 
 | { name: 'Millenium Falcon', maxSpeed: 1300, color: 'Glossy red' } |
@@ -932,7 +934,6 @@ console.log(myArray);
 
 <p align="justify">Perbedaan array dengan object adalah data pada array disusun secara berurutan dan diakses menggunakan index. Untuk mengakses nilai di dalam array, kita gunakan tanda kurung siku [] yang di dalamnya berisi angka yang merupakan posisi nilai yang ingin diakses.
  </p>
-
 
 ```plantuml
 let myArray = ["Coklat", 42.5, 22, true, "Programming"];
@@ -961,7 +962,6 @@ console.log("Panjang nilai myArray adalah " + myArray.length + ".");
 |Output : |
 | :--     | 
 | Coklat</br>42.5</br>22</br>true</br>Programming</br>undefined</br>Panjang nilai myArray adalah 5. |
-
 
 <p align="justify">Sejauh ini kita baru belajar menginisialisasi dan mengakses elemen dari sebuah array. Pastinya Anda bertanya, “Bagaimana kita memanipulasi data pada array tersebut?” Nah, untuk menambahkan data ke dalam array, kita bisa menggunakan metode push(). Fungsi push ini akan menambahkan data di akhir array.
  </p>
