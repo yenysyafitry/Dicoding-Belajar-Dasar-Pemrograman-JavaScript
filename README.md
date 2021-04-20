@@ -1602,173 +1602,376 @@ Data yang disimpan pada array diindeks dan diakses melalui index urutannya.
 ### Functions
 <p align="justify">Fungsi merupakan bagian penting dalam bahasa pemrograman. Tanpa sadar, sebenarnya kita sudah menggunakan sebuah fungsi pada contoh kode yang ada sebelumnya. log() pada console.log() merupakan sebuah function yang berguna untuk menampilkan data pada konsol. Tapi sebenarnya apa itu function? Bagaimana ia bisa bekerja?</br>Mirip dengan fungsi pada matematika, fungsi dalam pemrograman juga digunakan untuk menghasilkan output berdasarkan input tertentu.
  </p>
+ <p align="center">
+  <img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/20210330132056241306402771d7676d8fe698555a0239.png" width="350" title="hover text">
+</p>
+<p align="justify">Namun, fungsi juga bisa digunakan sebagai blok kode atau prosedur yang dapat digunakan secara berulang. Dalam arti lain, kita dapat berpikir bahwa function merupakan sebuah variabel yang berisi blok logika. Blok logika tersebut akan dieksekusi ketika variabelnya dipanggil.</br>
+Semua fungsi memiliki struktur yang sama. Fungsi dideklarasikan dengan keyword function dan nama fungsinya. Nama fungsi selalu diikuti dengan tanda kurung (parentheses) tanpa spasi, lalu terdapat sepasang kurung kurawal yang berisi logika dari fungsi tersebut.
+ </p>
+ <p align="center">
+  <img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/202103301322142b4107804a5df13e0d205e7e07fa75fb.png" width="350" title="hover text"> </p>
+ <p align="justify">Terkadang di dalam tanda kurung kita membutuhkan sebuah informasi tambahan yang disebut dengan parameter. Parameter merupakan data yang digunakan pada fungsi untuk diproses di dalamnya. Sebagai contoh, fungsi console.log() dapat menerima argument berupa string atau data lain untuk ditampilkan ke konsol.</br>
+Berikut merupakan ilustrasi dari struktur fungsi dengan parameter:
+ </p>
+  <p align="center">
+  <img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/202103301326359fac677eea8d73a094f207553eae77ed.png" width="350" title="hover text"> </p>
+ 
+ ### Parameter & Argument
+ <p align="justify">Di dalam fungsi kita akan banyak bertemu istilah parameter & argument. Penggunaan istilah ini sering kali tertukar, bahkan di kalangan developer.Perbedaan mendasar antara keduanya antara lain:</br>
+Parameter merupakan variabel yang didefinisikan sebagai inputan dari sebuah fungsi. Contoh:</br>
+ </p>
  ```plantuml
+function multiply(a, b) {
+    return a * b;
+}
+```
+<p align="justify">Argument merupakan nilai atau expression yang dimasukkan ke dalam fungsi. Contohnya:
+ </p>
+```plantuml
+multiply(3, 4);
+```
 
+<p align="justify">Setelah membuat fungsi kita dapat memanggilnya dengan menuliskan nama fungsi diikuti tanda kurung dan memasukkan argumen di dalamnya (jika ada).
+ </p>
+
+```plantuml
+function greeting() {
+    console.log("Good Morning!")
+}
+
+greeting();
 ```
 |Output : |
 | :--     | 
-| </br> |
+|Good Morning!|
 
-<p align="justify">
+
+<p align="justify">Untuk menambahkan parameter pada fungsi, tambahkan variabel di dalam tanda kurung fungsi. Namun, variabel tersebut tidak memerlukan keyword var, let, ataupun const. Kita juga bisa menambahkan lebih dari satu parameter dengan memberikan tanda koma antar variabel parameternya. Contohnya fungsi greeting akan kita tambahkan parameter name dan language seperti ini:
+ </p>
+
+```plantuml
+function greeting(name, language) {
+    if(language === "English") {
+        console.log(`Good Morning ${name}!`);
+    } else if (language === "French") {
+        console.log(`Bonjour ${name}!`);
+    } else {
+        console.log(`Selamat Pagi ${name}!`);
+    }
+}
+```
+
+<p align="justify">Sehingga dalam memanggilnya pun kita perlu mengirimkan dua buah nilainya sebagai argumen:
+ </p>
+
+```plantuml
+function greeting(name, language) {
+    if(language === "English") {
+        console.log(`Good Morning ${name}!`);
+    } else if (language === "French") {
+        console.log(`Bonjour ${name}!`);
+    } else {
+        console.log(`Selamat Pagi ${name}!`);
+    }
+}
+
+greeting("Harry", "French");
+```
+|Output : |
+| :--     | 
+|Bonjour Harry!|
+
+<p align="justify">Function dapat menghasilkan output atau mengembalikan sebuah nilai. Dengan nilai kembalian, kita dapat membuat function yang berfungsi untuk melakukan perhitungan matematika dan hasilnya dapat kita masukkan ke dalam sebuah variabel. Contohnya seperti ini:
+ </p>
+
+```plantuml
+function multiply(a, b) {
+    return a * b;
+}
+
+let result = multiply(10, 2)
+console.log(result)
+```
+|Output : |
+| :--     | 
+| 20 |
+
+<p align="justify">Agar fungsi bisa mengembalikan nilai, gunakan keyword return diikuti dengan nilai yang akan dikembalikan. Nilai kembalian tidak hanya number, bisa juga berupa string, boolean, object, array, atau tipe yang lain. Seperti inilah fungsi greeting() jika kita ubah agar mengembalikan nilai string:
+ </p>
+
+```plantuml
+function greeting(name, language) {
+    if(language === "English") {
+        return `Good Morning ${name}!`
+    } else if (language === "French") {
+        return `Bonjour ${name}!`;
+    } else {
+        return `Selamat Pagi ${name}!`;
+    }
+}
+
+let greetingMessage = greeting("Harry", "French");
+console.log(greetingMessage);
+```
+
+|Output : |
+| :--     | 
+| Bonjour Harry! |
+
+### Expression Function
+<p align="justify">Cara lain untuk membuat sebuah fungsi pada JavaScript adalah expression function. Ingat kembali bahwa expression adalah kode atau instruksi yang mengembalikan nilai, sehingga expression function bisa disimpan dalam sebuah variabel.</br>
+Pada expression function umumnya kita tidak perlu menuliskan nama fungsinya. Fungsi yang tidak bernama juga dikenal dengan anonymous function. Berikut ini merupakan contoh penulisan expression function:
+ </p>
+
+```plantuml
+const greeting = function(name, language) {
+    if(language === "English") {
+        return "Good Morning " + name + "!";
+    } else if (language === "French") {
+        return "Bonjour " + name + "!";
+    } else {
+        return "Selamat Pagi " + name + "!";
+    }
+}
+
+console.log(greeting('Ron', 'English'));
+```
+
+|Output : |
+| :--     | 
+| Good Morning Ron! |
+
+### Arrow Function
+<p align="justify">ES6 memperkenalkan fungsi baru yang dinamakan arrow function expression atau lebih dikenal sebagai arrow function. Arrow function mirip seperti regular function secara perilaku, tetapi berbeda dalam penulisannya. Sesuai namanya, fungsi didefinisikan menggunakan tanda panah atau fat arrow ( => ). Tentunya penulisan arrow function ini akan lebih singkat.
+
+Selain perbedaan sintaksis, terdapat perbedaan perilaku antara arrow function dan regular function. Regular function dapat berupa function declaration dan function expression. Namun, arrow function hanya berupa expression function saja. Itu sebabnya arrow function memiliki nama lengkap “arrow function expression”.
+ </p>
+
+### Regular function
+```plantuml
+// function declaration
+function sayHello(greet) {
+    console.log(`${greet}!`);
+}
+ 
+// function expression
+const sayName = function (name) {
+    console.log(`Nama saya ${name}`)
+}
+```
+
+### Arrow function
+```plantuml
+// function expression
+const sayHello = (greet) => {
+    console.log(`${greet}!`)
+}
+ 
+const sayName = (name) => {
+    console.log(`Nama saya ${name}`)
+}
+```
+
+<p align="justify">Pada arrow function kita tidak perlu menuliskan keyword function setiap membuat fungsi. Kita tetap menuliskan parameter di dalam tanda kurung lalu diikuti dengan tanda panah (=>) sebelum kurung kurawal.
+ </p>
+
+```plantuml
+const sayName = (name) => {
+    console.log(`Nama saya ${name}`)
+}
+```
+
+<p align="justify">Apabila fungsi hanya memiliki satu parameter, maka kita bisa menghapuskan tanda kurung seperti berikut:
+ </p>
+
+```plantuml
+const sayName = name => {
+    console.log(`Nama saya ${name}`)
+}
+
+sayName("Leia");
+```
+
+|Output : |
+| :--     | 
+| Nama saya Leia |
+
+<p align="justify">Namun, jika kita sama sekali tidak membutuhkan parameter, maka kita tetap menuliskan tanda kurung namun kosong seperti ini:
+ </p>
+
+```plantuml
+const sayHello = () => {
+    console.log("Selamat pagi semuanya!")
+};
+
+sayHello();
+```
+
+|Output : |
+| :--     | 
+| Selamat pagi semuanya! |
+
+<p align="justify">Satu hal yang menarik, ketika body dari function hanya terdiri dari satu baris, kita bisa menghapus tanda kurung kurawal. Tentunya ini akan menghemat baris kode yang kita tulis.
+ </p>
+
+```plantuml
+const sayName = name => console.log(`Nama saya ${name}`);
+sayName("Leia");
+
+const sayHello = () => console.log("Selamat pagi semuanya!");
+sayHello();
+```
+
+|Output : |
+| :--     | 
+| Nama saya Leia
+Selamat pagi semuanya! |
+
+<p align="justify">Ketika sebuah fungsi perlu mengembalikan nilai, kita tidak perlu lagi menuliskan return (hanya bekerja untuk fungsi satu baris).
+ </p>
+
+```plantuml
+const multiply = (a, b) => a * b;
+console.log(multiply(3, 4));
+```
+
+|Output : |
+| :--     | 
+| 12 |
+
+### Variable Scope
+<p align="justify">Variabel JavaScript menggunakan fungsi untuk mengelola cakupannya. Jika variabel didefinisikan di luar fungsi, maka variabel tersebut bersifat global. Jika variabel didefinisikan di dalam fungsi, maka variabel bersifat lokal dan cakupannya hanya pada fungsi tersebut beserta turunannya.</br>
+Berikut ini merupakan contoh scoping dalam kode:
+ </p>
+
+```plantuml
+// global variable, dapat diakses pada parent() dan child()
+const a = 'a'; 
+ 
+function parent() {
+    // local variable, dapat diakses pada parent() dan child(), tetapi tidak dapat diakses di luar dari fungsi tersebut.
+    const b = 'b'; 
+    
+    function child() {
+        // local variable, dapat diakses hanya pada fungsi child().
+        const c = 'c';
+    }
+}
+```
+
+<p align="justify">Kita harus berhati-hati dalam mendefinisikan variabel di dalam fungsi. Pasalnya, kita bisa mendapatkan hasil yang tidak diperkirakan, contohnya seperti berikut:
  </p>
 
 
 ```plantuml
+function multiply(num) {
+    total = num * num;
+    return total;
+}
 
+let total = 9;
+let number  = multiply(20);
+
+console.log(total)
 ```
+
 |Output : |
 | :--     | 
-| </br> |
+| 400 |
 
-
-<p align="justify">
+### Closure
+<p align="justify">Setelah mempelajari tentang scope pada materi selanjutnya, kali ini kita akan membahas seputar closure. Sebelumnya kita telah tahu bahwa fungsi dapat didefinisikan dalam lingkup global atau di dalam fungsi lain. Suatu fungsi yang dapat mengakses variabel di dalam lexical scope-nya disebut dengan closure. Lexical scope berarti pada sebuah fungsi bersarang, fungsi yang berada di dalam memiliki akses ke variabel di lingkup induknya.
  </p>
 
 ```plantuml
+function init() {
+    var name = 'Obi Wan';   // Variabel lokal di dalam scope fungsi init
+    
+    function greet() {      // Inner function, merupakan contoh closure
+        console.log(`Halo, ${name}`);   // Memanggil variabel yang dideklarasikan di parent function
+    }
+
+    greet();
+}
+
+init();
 
 ```
 
 |Output : |
 | :--     | 
-| </br> |
+| Halo, Obi Wan |
 
-
-<p align="justify">
+<p align="justify">Fungsi init() memiliki variabel lokal name dan fungsi greet(). Fungsi greet() adalah inner function yang didefinisikan di dalam init() dan hanya bisa diakses dari dalam fungsi init(). Perhatikan bahwa fungsi greet() tidak memiliki variabel lokal. Namun, karena inner function memiliki akses ke variabel di parent function-nya, sehingga greet() dapat mengakses variabel name. Itulah yang dimaksud dengan lexical scope. </br>Sekarang perhatikan contoh kode berikut:
  </p>
 
 ```plantuml
+unction init() {
+    var name = 'Obi Wan';
+
+    function greet() {
+        console.log(`Halo, ${name}`);
+    }
+
+    return greet;
+}
+
+let myFunction = init();
+myFunction();
 
 ```
+
 |Output : |
 | :--     | 
-| </br> |
+| Halo, Obi Wan |
 
 
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
+<p align="justify">JavaScript tidak memiliki cara untuk mendeklarasikan suatu fungsi atau variabel menjadi private seperti bahasa Java. Sehingga sebuah fungsi atau variabel bisa diakses dari mana pun. Kenapa kita membutuhkan private method? Salah satunya adalah untuk membatasi akses ke fungsi atau variabel. Perhatikan contoh berikut:
  </p>
 
 ```plantuml
+let counter = 0;
 
+let add = () => {
+    return ++counter;
+}
+
+console.log(add());
+console.log(add());
+counter = 23;
+console.log(add());
 ```
 
 |Output : |
 | :--     | 
-| </br> |
+| 1</br>2</br>24 |
 
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
+<p align="justify">Closure memungkinkan kita membuat fungsi dan variabel seolah menjadi private. Seperti inilah contoh program counter yang dibuat dengan closure:
  </p>
 
 
 ```plantuml
+let add = () => {
+    let counter = 0;
+    return () => {
+        return ++counter;
+    };
+}
 
-```
-|Output : |
-| :--     | 
-| </br> |
+let addCounter = add();
 
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-
-```plantuml
-
+console.log(addCounter());
+console.log(addCounter());
+console.log(addCounter());
 ```
 
 |Output : |
 | :--     | 
-| </br> |
+| 1</br>2</br>3 |
 
-<p align="justify">
+
+### Kuis Coding: Function
+<p align="justify">Mohon untuk membaca secara seksama perintah, kriteria, atau soal pada komentar kode yang diberi tanda TODO. 
  </p>
 
 
