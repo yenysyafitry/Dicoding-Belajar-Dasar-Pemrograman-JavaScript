@@ -2642,10 +2642,10 @@ const myDate = new Date(year,month,date,hour,minute,second,millisecond);
 <tr><td>getDate()	</td><td>Nilai kembaliannya adalah tanggal dari 1 sampai 31.	</td><td>myDate.getDate()</td></tr>
 <tr><td>getHours()	</td><td>Nilai kembaliannya adalah jam dari 0 sampai 23	</td><td>myDate.getHours()</td></tr>
 <tr><td>getMinutes()	</td><td>Nilai kembaliannya adalah menit dari 0 sampai 59 Nilai kembaliannya	</td><td>myDate.getMinutes()</td></tr>
-<tr><td>getSeconds()	Nilai kembaliannya adalah detik dari 0 sampai 59	</td><td>myDate.getSeconds()</td></tr>
-<tr><td>getMilliseconds()	Nilai kembaliannya adalah mili-detik dari 0 to 999	</td><td>myDate.getMilliseconds()</td></tr>
-<tr><td>getTime()	Nilai kembaliannya adalah waktu dalam bentuk epoch mili-detik (dimulai dari 1 January, 1970 yang berarti 0)	</td><td>myDate.getTime()</td></tr>
-<tr><td>getDay()	Nilai kembaliannya adalah hari dalam seminggu dari 0 sampai 6. 0 berarti minggu	</td><td>myDate.getDay()</td></tr>
+<tr><td>getSeconds()	</td><td>Nilai kembaliannya adalah detik dari 0 sampai 59	</td><td>myDate.getSeconds()</td></tr>
+<tr><td>getMilliseconds()</td><td>Nilai kembaliannya adalah mili-detik dari 0 to 999	</td><td>myDate.getMilliseconds()</td></tr>
+<tr><td>getTime()</td><td>Nilai kembaliannya adalah waktu dalam bentuk epoch mili-detik (dimulai dari 1 January, 1970 yang berarti 0)	</td><td>myDate.getTime()</td></tr>
+<tr><td>getDay()</td><td>Nilai kembaliannya adalah hari dalam seminggu dari 0 sampai 6. 0 berarti minggu	</td><td>myDate.getDay()</td></tr>
 </table>
 
 <p align="justify">Selain itu, juga terdapat static method yang dapat digunakan tanpa perlu melakukan instansiasi, yaitu: </p>
