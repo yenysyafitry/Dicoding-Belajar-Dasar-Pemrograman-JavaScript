@@ -2710,10 +2710,11 @@ Kita telah berada di akhir dari modul Object Oriented Programming. Mari kita ura
 
 <p align="justify"><b>Pertanyaan</b></br>
 Di antara pilihan berikut manakah yang tepat untuk menjadi method dari class Vehicle?</p>
-<ol type='a'><li>accelerate & numberOfSeats</li>
- <li>color & numberOfTyres</li>
- <li>numberOfTyres & brake</li>
- <li>turnLeft & turnRight</li></ol>
+<ol type='a'>
+<li>Accelerate & numberOfSeats</li>
+<li>Color & numberOfTyres</li>
+<li>NumberOfTyres & brake</li>
+<li>TurnLeft & turnRight</li></ol>
 <details>
   <summary>Jawaban Benar</summary>
   d.turnLeft & turnRight</br>
@@ -2722,206 +2723,453 @@ Kita bisa menentukan jumlah parameter sesuai kebutuhan fungsi yang kita buat.
 </details>
 
 
-
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
+<p align="justify"><b>Functional Programming</b></br>
+Seperti yang sudah disampaikan di awal, JavaScript adalah bahasa yang mendukung multiparadigm. Artinya, selain merupakan bahasa pemrograman berorientasi objek, penulisan syntax JavaScript juga menggunakan gaya functional programming. Sebelumnya kita telah mempelajari tentang paradigma OOP, kali ini kita akan melanjutkan dengan pendekatan paradigma yang lain, yakni Functional Programming.</br></br>
+Kita juga telah membahas mengenai Object Composition. Di mana konsep ini cukup membantu ketika membuat sebuah kelas tanpa harus melakukan proses pewarisan. Ia akan memecah-mecah fungsi yang umum digunakan agar dapat digunakan kembali (reusable) tanpa proses pewarisan.
+Nah, Functional Programming adalah pendekatan yang lebih dalam dari konsep tersebut.</br></br>
+<b>Pengenalan Functional Programming</b></br>
+Paradigma Functional Programming adalah paradigma pemrograman di mana proses komputasi didasarkan pada fungsi matematika murni. Functional Programming (selanjutnya akan kita singkat menjadi FP) ditulis dengan gaya deklaratif yang berfokus pada “what to solve” dibanding “how to solve” yang dianut oleh gaya imperatif.</br></br>
+Sebagai gambaran buat Anda yang belum tahu apa itu deklaratif dan imperatif lebih jauh, silakan simak contoh kode berikut.
  </p>
 
 ```plantuml
-
+const names = ['Harry', 'Ron', 'Jeff', 'Thomas'];
+const newNamesWithExcMark = [];
+for(let i = 0; i < names.length; i++) {
+  newNamesWithExcMark.push(`${names[i]}!`);
+}
+console.log(newNamesWithExcMark);
 ```
+
+
 |Output : |
 | :--     | 
-| </br> |
+| [ 'Harry!', 'Ron!', 'Jeff!', 'Thomas!' ]|
 
-<p align="justify">
- </p>
-
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
+<p align="justify">Contoh kode di atas merupakan salah satu gaya penulisan kode imperatif. Di mana proses pengisian nilai array baru (newNames) berdasarkan array lama (names) dilakukan secara manual. Inilah maksud dari “how to solve”, di mana kita perlu memikirkan bagaimana cara melakukan perulangannya (for); kapan perulangannya harus berhenti (i < names.length); bagaimana cara memasukkan nilai baru ke dalam array (newNamesWithExcMark.push). Huft, sangat melelahkan!</br></br>
+Lantas bagaimana dengan gaya deklaratif? Mari kita lihat kode dengan fungsi yang sama namun dengan gaya deklaratif.
  </p>
 
 
 ```plantuml
+const names = ['Harry', 'Ron', 'Jeff', 'Thomas'];
 
+const newNamesWithExcMark = names.map((name) => `${name}!`);
+
+console.log(newNamesWithExcMark);
 ```
 
 |Output : |
 | :--     | 
-| </br> |
+| [ 'Harry!', 'Ron!', 'Jeff!', 'Thomas!' ] |
 
-<p align="justify">
+<p align="justify">Konsep-Konsep Functional Programming
+Setelah Anda memiliki sedikit gambaran tentang bagaimana paradigma FP dapat membuat kode yang Anda tuliskan lebih mudah dibaca dan ringkas, kini saatnya Anda ketahui, apa saja konsep-konsep dasar yang ada di dalam paradigma FP.</br></br>
+Di sini kita akan membahas 3 konsep besar yang ada di FP. Yakni Pure Function, Immutability, dan High-Order Function.</br></br>
+<b>Pure Function</b></br>
+Salah satu konsep besar dari paradigma FP adalah Pure Function. Apa artinya? Pure Function merupakan konsep dari pembuatan fungsi yang mengharuskan fungsi untuk tidak bergantung terhadap nilai yang berada di luar fungsi atau parameternya. Sehingga mau seperti apa keadaanya, fungsi yang dibuat selalu menghasilkan sesuatu yang sama, terkecuali bila fungsi tersebut diberikan nilai parameter yang berbeda.</br></br>
+Untuk lebih jelasnya, simak kode berikut:
+ </p>
+
+```plantuml
+let PI = 3.14;
+
+const hitungLuasLingkaran = (jariJari) => {
+  return PI * (jariJari * jariJari); 
+}
+
+console.log(hitungLuasLingkaran(4)); // 50.24
+
+PI = 5; // tidak sengaja nilai PI berubah
+
+console.log(hitungLuasLingkaran(4)); // 80
+```
+
+|Output : |
+| :--     | 
+| 50.24 </br>80|
+
+
+<p align="justify">Menurut Anda, apakah fungsi hitungLuasLingkaran merupakan pure function atau impure function (lawan dari pure function)? Jika Anda menjawab impure function, Anda tepat sekali!</br></br>
+Fungsi tersebut tidak bisa dikatakan pure function karena ia membutuhkan nilai yang berada di luar dari fungsinya, yakni nilai PI. Bila nilai PI berubah, maka penggunaan fungsi menghasilkan nilai yang berbeda walaupun diberikan nilai parameter yang sama.</br></br>
+Lantas, bagaimana cara membuat fungsi tersebut menjadi pure? Mudah!
+ </p>
+
+```plantuml
+const hitungLuasLingkaran = (jariJari) => {
+  return 3.14 * (jariJari * jariJari); 
+}
+
+console.log(hitungLuasLingkaran(4)); // 50.24
+console.log(hitungLuasLingkaran(4)); // 50.24
+console.log(hitungLuasLingkaran(8)); // 200.96
+console.log(hitungLuasLingkaran(8)); // 200.96
+```
+
+|Output : |
+| :--     | 
+| 50.24</br> 50.24</br>200.96</br>200.96 |
+
+<p align="justify">Dengan memindahkan nilai PI secara konstan di dalam fungsi, maka dapat dipastikan nilai tersebut tidak akan berubah atau tak sengaja diubah. Dengan begitu fungsi selalu menghasilkan nilai yang sama bila nilai parameter yang diberikan sama.</br></br>
+Selain dilarang untuk bergantung terhadap nilai luar, pure function juga dilarang keras untuk mengubah nilai yang berada di luar baik secara sengaja atau tidak sengaja. Pure function tidak boleh menimbulkan efek samping (no side effect) ketika digunakan.</br></br>
+Untuk lebih jelasnya, coba lihat contoh kode berikut:
  </p>
 
 
 ```plantuml
+const createPersonWithAge = (age, person) => {
+  person.age = age;
+  return person;
+};
 
+const person = {
+  name: 'Bobo'
+};
+
+const newPerson = createPersonWithAge(18, person);
+
+console.log({
+  person,
+  newPerson
+});
 ```
+
 |Output : |
 | :--     | 
-| </br> |
+| {</br>person: { name: 'Bobo', age: 18 },</br>newPerson: { name: 'Bobo', age: 18 }</br>}|
 
-
-<p align="justify">
+<p align="justify">Fungsi createPersonWithAge bertujuan untuk membuat objek person baru dengan tambahan properti age dari objek person yang ada. Namun alih-alih hanya membuat objek baru, ia juga malah mengubah nilai dari objek lama. Nah, hal inilah yang menyebabkan fungsi createPersonWithAge bukanlah pure function.</br></br>
+Lalu bagaimana cara membuat fungsi tersebut menjadi pure? Mudah, kita manfaatkan destructuring object daripada mengubah objek tersebut secara langsung.
  </p>
 
-```plantuml
-
-```
-
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
 
 ```plantuml
+const createPersonWithAge = (age, person) => {
+  return { ...person, age };
+};
 
-```
-|Output : |
-| :--     | 
-| </br> |
+const person = {
+  name: 'Bobo'
+};
 
+const newPerson = createPersonWithAge(18, person);
 
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-
-|Output : |
-| :--     | 
-| </br> |
-
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
-
-```
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
- </p>
-
-```plantuml
+console.log({
+  person,
+  newPerson
+});
 
 ```
 
 |Output : |
 | :--     | 
-| </br> |
+| { person: { name: 'Bobo' }, newPerson: { name: 'Bobo', age: 18 } } |
 
-<p align="justify">
+
+<p align="justify"><b>Immutability</b></br>
+Konsep yang kedua adalah immutability. Immutable berarti sebuah objek tidak boleh diubah setelah objek tersebut dibuat. Kontras dengan mutable yang artinya objek boleh diubah setelah objek tersebut dibuat.</br></br>
+Konsep immutability sangat kental pada paradigma FP. Anda bisa lihat sebelumnya pada contoh penggunaan array map. Ketika menggunakan array.map(), alih-alih ia mengubah nilai dari array itu sendiri, malah ia membuat atau menghasilkan array baru.
  </p>
 
 ```plantuml
+const names = ['Harry', 'Ron', 'Jeff', 'Thomas'];
 
+const newNamesWithExcMark = names.map((name) => `${name}!`);
+
+console.log({
+    names,
+    newNamesWithExcMark,
+});
 ```
+
+|Output : |
+| :--     | 
+|{</br>names: [ 'Harry', 'Ron', 'Jeff', 'Thomas' ],</br>newNamesWithExcMark: [ 'Harry!', 'Ron!', 'Jeff!', 'Thomas!' ]</br>}|
+
+<p align="justify">Lantas, bagaimana bila kita benar-benar perlu mengubah nilai dari sebuah objek? Contohnya seperti ini:
+ </p>
+
+
+```plantuml
+const user = {
+    firstname: 'Harry',
+    lastName: 'Protter', // ups, typo!
+}
+const renameLastNameUser = (newLastName, user) => {
+    user.lastName = newLastName;
+}
+renameLastNameUser('Potter', user);
+console.log(user);
+```
+
+|Output : |
+| :--     | 
+| { firstname: 'Harry', lastName: 'Potter' } |
+
+
+<p align="justify">Yap! Tujuan Anda memang tercapai namun itu bukanlah konsep dari paradigma FP. Bila Anda ingin menerapkan FP sepenuhnya, hindari cara seperti di atas. Lantas bagaimana solusinya? Sama seperti fungsi array map(), alih-alih mengubah nilai objek secara langsung, terapkan perubahan tersebut pada nilai return dalam objek baru.
+ </p>
+
+```plantuml
+const user = {
+    firstname: 'Harry',
+    lastName: 'Protter', // ups, typo!
+}
+const createUserWithNewLastName = (newLastName, user) => {
+    return { ...user, lastName: newLastName }
+}
+const newUser = createUserWithNewLastName('Potter', user);
+console.log(newUser);
+```
+
+|Output : |
+| :--     | 
+| { firstname: 'Harry', lastName: 'Potter' }|
+
+
+<p align="justify">Hasilnya sama kan? Selain itu, Anda juga bisa menyesuaikan nama fungsinya dari renameLastNameUser menjadi createUserWithNewLastName. Hal itu perlu untuk mengindikasikan bahwa fungsi mengembalikan atau menghasilkan objek user baru.</br></br>
+<b>Higher-Order Function</b></br>
+JavaScript memiliki kemampuan First Class Functions, karena itu fungsi pada JavaScript dapat diperlakukan layaknya sebuah data. Kita bisa menyimpan function dalam variabel, memberikan function sebagai parameter pada fungsi lainnya, hingga mengembalikan function di dalam function.
+ </p>
+
+```plantuml
+const hello = () => {
+  console.log('Hello!')
+};
+
+const say = (someFunction) => {
+  someFunction();
+}
+
+const sayHello = () => {
+    return () => {
+        console.log('Hello!');
+    }
+}
+hello();
+say(hello);
+sayHello()();
+```
+
+|Output : |
+| :--     | 
+| Hello!</br>Hello!</br>Hello! |
+
+<p align="justify">Karena dengan kemampuan First Class Functions-nya itu, kita dapat membuat Higher-Order Function secara mudah. Tunggu, tunggu. Apa itu Higher-Order Function?
+Higher-Order Function menjadi bagian konsep pada paradigma FP. Higher-Order Function merupakan fungsi yang dapat menerima fungsi lainnya pada argumen; mengembalikan sebuah fungsi; atau bahkan keduanya.</br></br>
+Teknik Higher-Order Function biasanya digunakan untuk:</p>
+
+<ol align="justify"> <li>Mengabstraksi atau mengisolasi sebuah aksi, event, atau menangani alur asynchronous menggunakan callback, promise, dan lainnya.</li>
+<li>Membuat utilities yang dapat digunakan diberbagai tipe data.</li>
+<li>Membuat teknik currying atau function composition.</li>
+<li>Array map() merupakan salah satu contoh Higher-Order Function yang ada di JavaScript. Karena dalam penggunaanya, ia menerima satu buah argumen yang merupakan sebuah function.</li></ol>
+
+<p align="justify">Dengan mengetahui adanya Higher-Order Function, Anda bisa membuat fungsi map() versi Anda sendiri!
+ </p>
+
+```plantuml
+const names = ['Harry', 'Ron', 'Jeff', 'Thomas'];
+const arrayMap = (array, fn) => {
+    const newArray = [];
+    
+    for(let i = 0; i < array.length; i++) {
+        newArray.push(fn(array[i]));
+    } 
+    return newArray;
+}
+const newNames = arrayMap(names, (name) => `${name}!` );
+console.log({
+    names,
+    newNames,
+});
+```
+
+|Output : |
+| :--     | 
+| {</br>names: [ 'Harry', 'Ron', 'Jeff', 'Thomas' ],</br>newNames: [ 'Harry!', 'Ron!', 'Jeff!', 'Thomas!' ]</br>}|
+
+<p align="justify"><b>Reusable Function</b></br>
+Dengan menerapkan konsep-konsep yang ada di dalam paradigma FP, fungsi yang Anda buat akan bersifat reusable. Karena fungsi yang Anda buat merupakan pure function sehingga tidak akan dipengaruhi ataupun mempengaruhi keadaan di/dari luar. Hal ini tentu membuat fungsi dapat digunakan berkali-kali tanpa khawatir mendapatkan hasil di luar dari yang Anda ekspektasikan.</br></br>
+Pada materi kali ini kita tidak akan fokus bagaimana membuat banyak reusable function di JavaScript. Kami percaya, dengan memahami konsep functional programming secara matang, Anda dapat membuatnya sendiri sesuai kebutuhan Anda. Alih-alih membuatnya sendiri, kita akan coba membahas dan menggunakan beberapa reusable function yang sudah ada di JavaScript. Khususnya beberapa Higher-Order Function yang dimiliki array, seperti map, filter, dan forEach.</br></br>
+<b>Array Map</b></br>
+Fungsi array.map() merupakan fungsi bawaan dari array yang sangat berguna dan banyak sekali digunakan. Fungsi ini dapat dipanggil dari sebuah data bertipe array dan menerima satu buah callback function.
+ </p>
+
+```plantuml
+['Harry', 'Ron', 'Jeff', 'Thomas'].map(() => { });
+```
+
+<p align="justify">Callback function tersebut akan dipanggil sebanyak jumlah panjang array dan akan memiliki akses pada index array sesuai dengan iterasinya.
+ </p>
+
+```plantuml
+['Harry', 'Ron', 'Jeff', 'Thomas'].map((name) => { });
+```
+
+<p align="justify">Seperti yang Anda ketahui di awal, fungsi map akan mengembalikan array baru. Nilai tiap item pada array yang dikembalikan, dihasilkan dari kembalian callback function-nya. Karena callback function dapat mengakses item array, biasanya Developer menggunakannya untuk menghasilkan nilai baru.
+ </p>
+
+```plantuml
+const newArray = ['Harry', 'Ron', 'Jeff', 'Thomas'].map((name) => { return `${name}!`});
+console.log(newArray);
+```
+
+|Output : |
+| :--     | 
+| [ 'Harry!', 'Ron!', 'Jeff!', 'Thomas!' ] |
+
+<p align="justify"><b>Array Filter</b></br>
+Sama seperti array.map(), fungsi array.filter() merupakan fungsi bawaan dari data yang bertipe array di JavaScript. Sesuai namanya, fungsi ini sangat berguna untuk melakukan proses penyaringan (filtering) terhadap nilai array yang ada. Bila Anda memiliki kasus di mana Anda ingin menghilangkan beberapa item di array berdasarkan spesifikasi tertentu, fungsi ini sangatlah cocok Anda gunakan.</br></br>
+Cara kerja fungsi ini mirip seperti array.map(). Namun, callback function dari fungsi ini harus mengembalikan boolean. Di mana nilai boolean ini digunakan untuk menentukan apakah item array lolos saring atau tidak. Sama seperti fungsi map(), fungsi filter() juga akan mengembalikan array yang telah disaring dalam bentuk array baru. Contoh penggunaan ketika Anda ingin menghilangkan seluruh nilai falsy pada array:
+ </p>
+
+```plantuml
+const truthyArray = [1, '', 'Hallo', 0, null, 'Harry', 14].filter((item) => Boolean(item));
+console.log(truthyArray);
+```
+
+|Output : |
+| :--     | 
+|[ 1, 'Hallo', 'Harry', 14 ]|
+
+<p align="justify">Contoh lain, penggunaan filter untuk menyaring array dari objek siswa yang layak mendapatkan beasiswa berdasarkan nilai skor yang didapat.
+ </p>
+
+```plantuml
+const students = [
+  {
+    name: 'Harry',
+    score: 60,
+  },
+  {
+    name: 'James',
+    score: 88,
+  },
+  {
+    name: 'Ron',
+    score: 90,
+  },
+  {
+    name: 'Bethy',
+    score: 75,
+  }
+];
+
+const eligibleForScholarshipStudents = students.filter((student) => student.score > 85);
+
+console.log(eligibleForScholarshipStudents);
+```
+
+|Output : |
+| :--     | 
+| [ { name: 'James', score: 88 }, { name: 'Ron', score: 90 } ]|
+
+<p align="justify"><b>Array forEach</b></br>
+Array forEach merupakan fungsi bawaan dari array yang berfungsi untuk memanggil fungsi callback pada setiap iterasi index array. Berbeda dari fungsi array lain yang sudah kita bahas, fungsi ini tidak mengembalikan nilai apa pun. Jadi fungsi ini secara harfiah hanya berfungsi untuk memanggil fungsi callback-nya saja, tak lebih dari itu. Melalui fungsi ini, Anda dapat mengubah sintaks perulangan berdasarkan jumlah array secara imperatif menjadi deklaratif.
+ </p>
+
+<p align="justify">Cara imperatif</p>
+
+```plantuml
+const names = ['Harry', 'Ron', 'Jeff', 'Thomas'];
+ 
+for(let i = 0; i < names.length; i++) {
+  console.log(`Hello, ${names[i]}!`);
+}
+```
+
+|Output : |
+| :--     | 
+| Hello, Harry!</br>Hello, Ron!</br>Hello, Jeff!</br>Hello, Thomas! |
+
+<p align="justify">Cara deklaratif </p>
+
+```plantuml
+const names = ['Harry', 'Ron', 'Jeff', 'Thomas'];
+names.forEach((name) => {
+  console.log(`Hello, ${name}`);
+});
+```
+
+|Output : |
+| :--     | 
+| Hello, Harry!</br>Hello, Ron!</br>Hello, Jeff!</br>Hello, Thomas! |
+
+<p align="justify">Namun, ketahuilah bahwa ketika menggunakan forEach, kita tidak bisa menggunakan operator break atau continue pada proses perulangan (Anda bisa melakukannya pada perulangan for). Hal ini juga berlaku ketika pada fungsi map dan filter.
+ </p>
+
+```plantuml
+const names = ['Harry', 'Ron', 'Jeff', 'Thomas'];
+ 
+for(let i = 0; i < names.length; i++) {
+  if(names[i] === 'Jeff') continue; // Bisa!
+  
+  console.log(`Hello, ${names[i]}!`);
+}
+ 
+names.forEach((name) => {
+  if(names[i] === 'Jeff') continue; // Tidak Bisa!
+  console.log(`Hello, ${name}`);
+});
+```
+
 |Output : |
 | :--     | 
 | </br> |
 
-<p align="justify">
+<p align="justify"><b>Kuis Coding: Functional Programming</b>
  </p>
 
+```plantuml
+/**
+ * TODO:
+ * Buatlah variabel greatAuthors yang merupakan array
+ * berdasarkan hasil filter() dan map() dari books:
+ *   - Gunakan fungsi filter untuk mengembalikan nilai item books
+ *     yang hanya memiliki nilai sales lebih dari 1000000.
+ *   - Gunakan fungsi map pada books yang sudah ter-filter,
+ *     untuk mengembalikan nilai string dengan format:
+ *     - `${author} adalah penulis buku ${title} yang sangat hebat!`
+ *
+ * Catatan: Jangan ubah nilai atau struktur dari books
+ */
+
+const books = [
+  { title: 'The Da Vinci Code', author: 'Dan Brown', sales: 5094805 },
+  { title: 'The Ghost', author: 'Robert Harris', sales: 807311 },
+  { title: 'White Teeth', author: 'Zadie Smith', sales: 815586 },
+  { title: 'Fifty Shades of Grey', author: 'E. L. James', sales: 3758936 },
+  { title: 'Jamie\'s Italy', author: 'Jamie Oliver', sales: 906968 },
+  { title: 'I Can Make You Thin', author: 'Paul McKenna', sales: 905086 },
+  { title: 'Harry Potter and the Deathly Hallows', author: 'J.K Rowling', sales: 4475152 },
+];
+// TODO
+let greatAuthors=books.filter((books) => books.sales>1000000).map((item)=>{
+  let author = item.author;
+  let title = item.title;
+  return `${author} adalah penulis buku ${title} yang sangat hebat!`
+})
+/**
+ * Hiraukan kode di bawah ini
+ */
+module.exports = { books, greatAuthors };
+```
+
+
+
+<p align="justify"><b>Pertanyaan</b></br>
+Berikut ini yang bukan merupakan karakteristik dari functional programming, adalah...
+ </p>
+ <ol type='a'><li>Pure Function</li>
+<li>Immutability</li>
+<li>Higher-order</li>
+<li>Polymorphism</li></ol>
+<details>
+  <summary>Jawaban Benar</summary>
+  d.Polymorphism</br></br>
+  Berikut adalah penjelasannya:
+Polymorphism merupakan karakteristik dari OOP dan bukan karakterisitik FP.
+</details>
 
 ```plantuml
 
