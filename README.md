@@ -608,7 +608,7 @@ for(let i = 0; i < 5; i++) {
 | 0</br>1</br>2</br>3</br>4 |
 
 <p align="justify">Lebih ringkas, bukan? Mungkin kode tersebut sulit dipahami, jadi mari kita bahas sedikit demi sedikit. Terdapat tiga bagian utama dalam sintaks for di atas:
- </p><ul><li>
+ </p><ul align="justify">
 <li>Pertama, variabel i sebagai index iterasi. Pada variabel ini kita menginisialisasi nilai awal dari perulangan.</li>
 <li>Kedua, operasi perbandingan. Pada bagian ini, JavaScript akan melakukan pengecekan kondisi apakah perulangan masih perlu dilakukan. Jika bernilai true, maka kode di dalam blok for akan dijalankan.</li>
 <li>Ketiga, increment/decrement. Di sini kita melakukan penambahan atau pengurangan variabel iterasi. Jadi, pada contoh di atas variabel i akan ditambah dengan 1 di setiap akhir perulangan. Perubahan nilai ini penting karena jika kita mengubah nilainya, proses perulangan dapat berjalan selamanya karena kondisi akan terus terpenuhi.</br></li>
@@ -695,6 +695,7 @@ while (i <= 5) {
 ```
 
 dan 
+
 ```plantuml
 for(let i = 1; i <= 5; i=1) {
     console.log(i);
@@ -727,11 +728,9 @@ console.log(typeof(age));
 let isMarried = false;
 console.log(typeof(isMarried))
 // TODO
-
 /**
  * Hiraukan kode di bawah ini
  */
-
 module.exports = {
   firstName, lastName, age, isMarried,
 };
@@ -775,7 +774,6 @@ if (score >= 90) {
 }     else {
         result = 'Anda mendapatkan nilai E.';
       }  
-
   // Jangan hapus kode ini
   return result;
 }
@@ -793,7 +791,7 @@ module.exports = scoreChecker;
 
 ### Rangkuman Materi
 <p align="justify">Pada modul ini kita telah mempelajari logika dan sintaksis dasar JavaScript sebelum membuat aplikasi yang lebih kompleks ke depannya.Beberapa hal yang telah kita bahas pada modul ini, antara lain: </p>
-<ol><li>
+<ol align="justify"><li>
 Gunakan comments untuk memberitahu interpreter supaya mengabaikan kode atau teks yang kita tulis. Ini akan berguna untuk membuat dokumentasi atau penjelasan atas kode yang kita tulis.</li>
 <li>Kita dapat menyimpan suatu nilai ke dalam variabel. ES6 mengenalkan dua cara baru untuk mendefinisikan variabel, yaitu let dan const. Gunakan const untuk menyimpan nilai yang tidak akan berubah setelah diinisialisasi. Gunakan let apabila nilai di dalam variabel bisa berubah atau diinisialisasi ulang.
 <li>Terdapat tujuh (7) tipe data primitif yang mendefinisikan suatu nilai dalam JavaScript. Ketujuh nilai tersebut antara lain: Undefined, Number, BigInt, String, Boolean, Null, dan Symbol.</li>
@@ -810,6 +808,7 @@ const user = {};
 
 <p align="justify">Object berisi pasangan key dan value yang juga dikenal dengan property. Key berperan mirip seperti nama variabel yang menyimpan sebuah nilai. Sementara, value berisi nilai dengan tipe data apa pun termasuk objek lain. Key dan value di dalam object dituliskan seperti berikut:
  </p>
+ 
 ```plantuml
 let object = {key1: "value1", key2: "value2", key3: "value3"}
 ```
@@ -824,7 +823,6 @@ const user = {
     age: 19,
     isJedi: true,
 };
-
 console.log(`Halo, nama saya ${user.firstName} ${user.lastName}`);
 console.log(`Umur saya ${user.age} tahun`);
 ```
@@ -848,6 +846,7 @@ console.log(`Halo, nama saya ${user.firstName} ${user.lastName}`);
 console.log(`Umur saya ${user.age} tahun`);
 console.log(`Saya berasal dari ${user["home world"]}`);
 ```
+
 |Output : |
 | :--     | 
 | Halo, nama saya Luke Skywalker</br>Umur saya 19 tahun</br>Saya berasal dari Tattooine |
@@ -863,7 +862,6 @@ const spaceship = {
     maxSpeed: 1200,
     color: "Light gray"
 };
-
 spaceship.color = "Glossy red";
 spaceship["maxSpeed"] = 1300;
 console.log(spaceship);
@@ -884,11 +882,9 @@ const spaceship = {
     maxSpeed: 1200,
     color: "Light gray"
 };
-
 spaceship.color = "Glossy red";
 spaceship["maxSpeed"] = 1300;
 spaceship.class = "Light freighter";
-
 console.log(spaceship);
 ```
 
@@ -906,12 +902,9 @@ const spaceship = {
     maxSpeed: 1200,
     color: "Light gray"
 };
-
 spaceship.color = "Glossy red";
 spaceship["maxSpeed"] = 1300;
-
 delete spaceship.manufacturer;
-
 console.log(spaceship);
 ```
 
@@ -968,7 +961,6 @@ console.log("Panjang nilai myArray adalah " + myArray.length + ".");
 
 ```plantuml
 const myArray = ["Coklat", 42.5, 22, true, "Programming"];
-
 myArray.push('JavaScript');
 console.log(myArray);
 ```
@@ -982,7 +974,6 @@ console.log(myArray);
 
 ```plantuml
 const myArray = ["Orange", 42.5, 22, true, "Programming"];
-
 myArray.pop();
 console.log(myArray);
 ```
@@ -996,10 +987,8 @@ console.log(myArray);
 
 ```plantuml
 const myArray = ["Cokelat", 42.5, 22, true, "Programming"];
-
 myArray.shift();
 myArray.unshift("Apple");
-
 console.log(myArray);
 ```
 
@@ -1012,7 +1001,6 @@ console.log(myArray);
 
 ```plantuml
 const myArray = ["Cokelat", 42.5, 22, true, "Programming"];
-
 delete myArray[1];
 console.log(myArray);
 ```
@@ -1026,7 +1014,6 @@ console.log(myArray);
 
 ```plantuml
 const myArray = ["Cokelat", 42.5, 22, true, "Programming"];
-
 myArray.splice(2, 1);   // Menhapus dari index 2 sebanyak 1 elemen
 console.log(myArray);
 ```
@@ -1041,7 +1028,6 @@ console.log(myArray);
 
 ```plantuml
 const favorites = ["Seafood", "Salad", "Nugget", "Soup"];
- 
 console.log(favorites);
 ```
 
@@ -1054,9 +1040,9 @@ console.log(favorites);
 
 ```plantuml
 const favorites = ["Seafood", "Salad", "Nugget", "Soup"];
-
 console.log(...favorites);
 ```
+
 |Output : |
 | :--     | 
 |Seafood Salad Nugget Soup |
@@ -1067,9 +1053,7 @@ console.log(...favorites);
 ```plantuml
 const favorites = ["Seafood", "Salad", "Nugget", "Soup"];
 const others = ["Cake", "Pie", "Donut"];
-
 const allFavorites = [favorites, others];
-
 console.log(allFavorites);
 ```
 
@@ -1083,9 +1067,7 @@ console.log(allFavorites);
 ```plantuml
 const favorites = ["Seafood", "Salad", "Nugget", "Soup"];
 const others = ["Cake", "Pie", "Donut"];
-
 const allFavorites = [...favorites, ...others];
-
 console.log(allFavorites);
 ```
 
@@ -1119,11 +1101,9 @@ const profile = {
     lastName: "Doe",
     age: 18
 }
- 
 const firstName = profile.firstName
 const lastName = profile.lastName
 const age = profile.age
- 
 console.log(firstName, lastName, age)
 ```
 
@@ -1187,10 +1167,7 @@ const profile = {
     lastName: "Doe",
     age: 18
 }
- 
- 
 const {firstName, age, isMale} = profile;
- 
 console.log(firstName)
 console.log(age)
 console.log(isMale)
@@ -1208,11 +1185,8 @@ const profile = {
     firstName: "John",
     lastName: "Doe",
     age: 18
-}
- 
- 
+} 
 const {firstName, age, isMale = false} = profile;
- 
 console.log(firstName)
 console.log(age)
 console.log(isMale)
@@ -1249,9 +1223,7 @@ console.log(localAge);
 
 ```plantuml
 const favorites = ["Seafood", "Salad", "Nugget", "Soup"];
- 
-const [firstFood, secondFood, thirdFood, fourthFood] = favorites;
- 
+const [firstFood, secondFood, thirdFood, fourthFood] = favorites; 
 console.log(firstFood);
 console.log(secondFood);
 console.log(thirdFood);
@@ -1268,9 +1240,7 @@ console.log(fourthFood);
 
 ```plantuml
 const favorites = ["Seafood", "Salad", "Nugget", "Soup"];
- 
-const [, , thirdFood ] = favorites;
- 
+const [, , thirdFood ] = favorites; 
 console.log(thirdFood);
 ```
 
@@ -1283,13 +1253,10 @@ console.log(thirdFood);
  </p>
 
 ```plantuml
-const favorites = ["Seafood", "Salad", "Nugget", "Soup"];
- 
+const favorites = ["Seafood", "Salad", "Nugget", "Soup"]; 
 let myFood = "Ice Cream";
-let herFood = "Noodles";
- 
-[myFood, herFood] = favorites;
- 
+let herFood = "Noodles"; 
+[myFood, herFood] = favorites; 
 console.log(myFood);
 console.log(herFood);
 ```
@@ -1304,16 +1271,13 @@ console.log(herFood);
 ```plantuml
 var a = 1;
 var b = 2;
-var temp;
- 
+var temp; 
 console.log("Sebelum swap");
 console.log("Nilai a: " + a);
-console.log("Nilai b: " + b);
- 
+console.log("Nilai b: " + b); 
 temp = a;
 a = b;
 b = temp;
- 
 console.log("Setelah swap");
 console.log("Nilai a: " + a);
 console.log("Nilai b: " + b);
@@ -1328,14 +1292,11 @@ console.log("Nilai b: " + b);
 
 ```plantuml
 let a = 1;
-let b= 2;
- 
+let b= 2; 
 console.log("Sebelum swap");
 console.log("Nilai a: " + a);
-console.log("Nilai b: " + b);
- 
-[a, b] = [b, a]
- 
+console.log("Nilai b: " + b); 
+[a, b] = [b, a] 
 console.log("Setelah swap");
 console.log("Nilai a: " + a);
 console.log("Nilai b: " + b);
@@ -1350,8 +1311,7 @@ console.log("Nilai b: " + b);
 
 ```plantuml
 const favorites = ["Seafood"];
-const [myFood, herFood] = favorites
- 
+const [myFood, herFood] = favorites 
 console.log(myFood);
 console.log(herFood);
 ```
@@ -1364,10 +1324,8 @@ console.log(herFood);
  </p>
 
 ```plantuml
-const favorites = ["Seafood"];
- 
-const [myFood, herFood = "Salad"] = favorites
- 
+const favorites = ["Seafood"]; 
+const [myFood, herFood = "Salad"] = favorites 
 console.log(myFood);
 console.log(herFood);
 ```
@@ -1386,7 +1344,6 @@ const myMap = new Map([
     [1, 'a number key'],
     [true, true]
 ]);
-
 console.log(myMap);
 ```
 
@@ -1403,7 +1360,6 @@ const capital = new Map([
     ["London", "England"],
     ["Tokyo", "Japan"]
 ]);
-
 console.log(capital.size);
 console.log(capital.get("London"));
 capital.set("New Delhi", "India");
@@ -1421,7 +1377,6 @@ console.log(capital.get("New Delhi"));
 ```plantuml
 const wrongMap = new Map();
 wrongMap["My Key"] = "My Value";
-
 console.log(wrongMap.has("My Key"));
 console.log(wrongMap.delete("My Key"));
 ```
@@ -1436,7 +1391,6 @@ console.log(wrongMap.delete("My Key"));
 
 ```plantuml
 const numberSet = new Set([1, 4, 6, 4, 1]);
-
 console.log(numberSet);
 ```
 
@@ -1453,7 +1407,6 @@ const numberSet = new Set([1, 4, 6, 4, 1]);
 numberSet.add(5);
 numberSet.add(10);
 numberSet.add(6);
-
 console.log(numberSet);
 ```
 
@@ -1469,9 +1422,7 @@ const numberSet = new Set([1, 4, 6, 4, 1]);
 numberSet.add(5);
 numberSet.add(10);
 numberSet.add(6);
-
 numberSet.delete(4);
-
 console.log(numberSet);
 ```
 
@@ -1484,24 +1435,20 @@ console.log(numberSet);
  </p>
 
 Berikut ini adalah beberapa hal yang membedakan antara Map dan WeakMap:
-<ul><li>
+<ul align="justify"><li>
 <li>Key dari WeakMap harus berupa object atau array. Nilai primitif tidak bisa digunakan sebagai key karena tidak mendukung garbage collection.</li>
 <li>WeakMap memiliki methodget(), set(), has(), dan delete(). Namun, WeakMap tidak termasuk kategori iterable sehingga tidak memiliki method keys(), values(), atau forEach().</li>
 <li>WeakMap juga tidak memiliki property size. Ini karena ukuran WeakMap dapat berubah karena proses garbage collection.</li></ul>
 
 ```plantuml
 let visitsCountMap = new Map(); // Menyimpan daftar user
- 
 function countUser(user) {
     let count = visitsCountMap.get(user) || 0;
     visitsCountMap.set(user, count + 1);
-}
- 
+} 
 let jonas = { name: "Jonas" };
-countUser(jonas);                // Menambahkan user "Jonas"
- 
-jonas = null;                    // Data object "Jonas" dihapus
- 
+countUser(jonas);                // Menambahkan user "Jonas" 
+jonas = null;                    // Data object "Jonas" dihapus 
 console.log(visitsCountMap);
 ```
 
@@ -1514,19 +1461,14 @@ console.log(visitsCountMap);
 
 ```plantuml
 let visitsCountMap = new WeakMap(); // Menyimpan daftar user
-
 function countUser(user) {
     let count = visitsCountMap.get(user) || 0;
     visitsCountMap.set(user, count + 1);
 }
-
 let jonas = { name: "Jonas" };
 countUser(jonas);                // Menambahkan user "Jonas"
-
 jonas = null;                    // Data object "Jonas" dihapus
-
 console.log(visitsCountMap);
-
 ```
 
 |Output : |
@@ -1534,7 +1476,7 @@ console.log(visitsCountMap);
 | WeakMap { <items unknown> } |
 
 Seperti halnya WeakMap, WeakSet adalah versi weak reference dari Set. Perbedaan antara WeakSet dan Set antara lain:
-<ul><li>
+<ul align="justify"><li>
 WeakSet tidak bisa menyimpan nilai primitif.</li>
 <li>WeakSet bukan iterable dan hanya memiliki method add(), has(), dan delete().</li>
 <li>WeakSet tidak memiliki properti size.</li>
@@ -1586,6 +1528,7 @@ module.exports = { restaurant, name, favoriteDrink };
 ```
 
 ### Pertanyaan
+
 ```plantuml
 Diberikan sejumlah elemen yang harus disimpan secara berurutan. Manakah struktur data yang akan Anda gunakan?
 a. Map
@@ -1617,6 +1560,7 @@ Berikut merupakan ilustrasi dari struktur fungsi dengan parameter:
  <p align="justify">Di dalam fungsi kita akan banyak bertemu istilah parameter & argument. Penggunaan istilah ini sering kali tertukar, bahkan di kalangan developer.Perbedaan mendasar antara keduanya antara lain:</br>
 Parameter merupakan variabel yang didefinisikan sebagai inputan dari sebuah fungsi. Contoh:</br>
  </p>
+ 
  ```plantuml
 function multiply(a, b) {
     return a * b;
@@ -1637,7 +1581,6 @@ multiply(3, 4);
 function greeting() {
     console.log("Good Morning!")
 }
-
 greeting();
 ```
 
@@ -1674,7 +1617,6 @@ function greeting(name, language) {
         console.log(`Selamat Pagi ${name}!`);
     }
 }
-
 greeting("Harry", "French");
 ```
 
@@ -1689,7 +1631,6 @@ greeting("Harry", "French");
 function multiply(a, b) {
     return a * b;
 }
-
 let result = multiply(10, 2)
 console.log(result)
 ```
@@ -1711,7 +1652,6 @@ function greeting(name, language) {
         return `Selamat Pagi ${name}!`;
     }
 }
-
 let greetingMessage = greeting("Harry", "French");
 console.log(greetingMessage);
 ```
@@ -1744,12 +1684,12 @@ console.log(greeting('Ron', 'English'));
 | Good Morning Ron! |
 
 ### Arrow Function
-<p align="justify">ES6 memperkenalkan fungsi baru yang dinamakan arrow function expression atau lebih dikenal sebagai arrow function. Arrow function mirip seperti regular function secara perilaku, tetapi berbeda dalam penulisannya. Sesuai namanya, fungsi didefinisikan menggunakan tanda panah atau fat arrow ( => ). Tentunya penulisan arrow function ini akan lebih singkat.
-
+<p align="justify">ES6 memperkenalkan fungsi baru yang dinamakan arrow function expression atau lebih dikenal sebagai arrow function. Arrow function mirip seperti regular function secara perilaku, tetapi berbeda dalam penulisannya. Sesuai namanya, fungsi didefinisikan menggunakan tanda panah atau fat arrow ( => ). Tentunya penulisan arrow function ini akan lebih singkat.</br>
 Selain perbedaan sintaksis, terdapat perbedaan perilaku antara arrow function dan regular function. Regular function dapat berupa function declaration dan function expression. Namun, arrow function hanya berupa expression function saja. Itu sebabnya arrow function memiliki nama lengkap “arrow function expression”.
  </p>
 
 ### Regular function
+
 ```plantuml
 // function declaration
 function sayHello(greet) {
@@ -1791,7 +1731,6 @@ const sayName = (name) => {
 const sayName = name => {
     console.log(`Nama saya ${name}`)
 }
-
 sayName("Leia");
 ```
 
@@ -1806,7 +1745,6 @@ sayName("Leia");
 const sayHello = () => {
     console.log("Selamat pagi semuanya!")
 };
-
 sayHello();
 ```
 
@@ -1820,15 +1758,13 @@ sayHello();
 ```plantuml
 const sayName = name => console.log(`Nama saya ${name}`);
 sayName("Leia");
-
 const sayHello = () => console.log("Selamat pagi semuanya!");
 sayHello();
 ```
 
 |Output : |
 | :--     | 
-| Nama saya Leia
-Selamat pagi semuanya! |
+| Nama saya Leia</br>Selamat pagi semuanya! |
 
 <p align="justify">Ketika sebuah fungsi perlu mengembalikan nilai, kita tidak perlu lagi menuliskan return (hanya bekerja untuk fungsi satu baris).
  </p>
@@ -2009,6 +1945,7 @@ console.log(power(7,3))
  */
 module.exports = { minimal, power };
 ```
+
 |Output : |
 | :--     | 
 | 2</br>343 |
@@ -2032,7 +1969,7 @@ Bisa satu atau dua</li>
 <li> Sesuai kebutuhan</li></ol>
 <details>
   <summary>Jawaban Benar</summary>
-  e.Sesuai kebutuhan</br>
+  d.Sesuai kebutuhan</br>
   Berikut adalah penjelasannya:
 Kita bisa menentukan jumlah parameter sesuai kebutuhan fungsi yang kita buat.
 </details>
@@ -2096,10 +2033,10 @@ Contoh lainnya, misalkan base template dari sebuah object adalah Animal dan dapa
  <p align="justify"><b>Class</b>
 Class adalah hal yang sangat penting dalam pemrograman berorientasi objek. Hal itu karena class menyediakan informasi tentang suatu object. Jadi dapat dikatakan object adalah instance dari sebuah class. Class sendiri dalam paradigma OOP secara teknis merupakan sebuah blueprint dalam mendefinisikan karakteristik dari sebuah objek. Sebagai contoh, misalkan terdapat blueprint untuk mendefinisikan objek Mail. Yang mana sms dan postman adalah object dari class Mail.</p>
 
-|      Nama      |              Class	Mail      |
-|    :--         |                :--           |
-|Karakteristik   |	pengirim, penerima, isi pesan|
-|Kapabilitas/aksi|	kirim pesan, terima pesan    |
+|      Nama      |              Class	Mail   |
+|    :--         |                :--          |
+|Karakteristik   |pengirim, penerima, isi pesan|
+|Kapabilitas/aksi|kirim pesan, terima pesan    |
 
  <p align="justify">Penulisan kelas di JavaScript sendiri bisa menggunakan sintaks class ataupun fungsi.</p>
 
@@ -2136,8 +2073,6 @@ mail1.sendMessage('hallo', 'penerima@dicoding.com');
 |Output : |
 | :--     | 
 | you send: hallo to penerima@dicoding.com from pengirim@dicoding.com |
-
-
 
 
 ```plantuml
@@ -2260,8 +2195,6 @@ class Mail{
     this._contacts.push(to);
     };
 }
- 
- 
 /** 
 cara 3, menambahkan prefix # , cara ini dapat digunakan pada penulisan kelas menggunakan statement `class` saja 
   **/
@@ -2456,42 +2389,344 @@ console.log(wa1.myProfile());
 | :--     | 
 | my name dicoding, is Business |
 
-<p align="justify">
+<p align="justify">Kita juga dapat mengakses attribute maupun method dari parent class yang Accessible. Misalkan:
  </p>
 
 ```plantuml
-
+wa1.sendMessage('halo', 089000999888);
 ```
+
+<p align="justify"><b>Polymorphism</b></br>
+Polymorphism dalam bahasa Yunani berarti “banyak bentuk.” Sederhananya objek dapat memiliki bentuk atau implementasi yang berbeda-beda pada satu metode yang sama. Semua jenis Mail dapat mengirim pesan, namun whatsapp, email, sms tentunya memiliki cara yang berbeda dalam mengirim pesan, misalkan: whatsapp dapat mengirim pesan suara sedangkan yang lainnya tidak, email dapat menyaring konten spam saat mengirim pesan sedangkan yang lain tidak. Perbedaan bentuk atau cara mengirim pesan tersebut merupakan contoh dari polymorphism.</br></br>
+<b>Overriding Method</b></br>
+Overriding adalah teknik untuk kita melakukan perombakan (baik total ataupun tidak) pada sebuah method ataupun constructor yang dimiliki oleh parent class sehingga dapat disesuaikan dengan behavior di child class.</br></br>
+<b>Overriding Constructor</b></br>
+Sebelumnya kita telah mempelajari tentang constructor dan juga pewarisan. Pada contoh kasus di inheritance atau pewarisan, kita menemukan kasus seperti di bawah ini.
+ </p>
+
+```plantuml
+class WhatsApp extends Mail{
+  username = 'dicoding';
+    isBussinessAccount = true;
+  ....
+}
+//pemanggilan
+const wa1 = new WhatsApp(080111000222);
+```
+
+<p align="justify">Sekarang bagaimana jika kita menambahkan username dan isBussinessAccount ke dalam constructor? Jika kita membuat constructor baru kodenya akan seperti ini:
+ </p>
+
+```plantuml
+class WhatsApp extends Mail{
+    constructor(username, isBussinessAccount, phone) {
+        this.from=phone;
+    this.username = username;
+    this.isBussinessAccount = true;
+    }
+}
+ 
+const wa1 = new WhatsApp('dicoding', true, 089989090898);
+/** 
+Error:
+Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+**/
+```
+
+<p align="justify">Akan terjadi error tersebut dikarenakan constructor pada kelas parent gagal dieksekusi, meskipun kita telah menggunakan operator this.nameOfProperty. Solusinya kita menggunakan operator super() untuk mengeksekusi method parent-nya. Sehingga constructor pada kelas WhatsApp menjadi seperti ini.
+ </p>
+
+```plantuml
+constructor(username, isBussinessAccount, phone) {
+  super(phone);
+  this.username = username;
+  this.isBussinessAccount = true;
+}
+```
+
+<p align="justify">Overriding Method
+Hampir sama dengan overriding constructor, namun yang di-override di sini adalah method-method yang ada pada parent class. Pada dasarnya semua method yang ada pada kelas parent dapat diakses langsung di child kelasnya (as is).
+ </p>
+
+```plantuml
+super.methodName();
+```
+
+<p align="justify">Kadang kita tidak menggunakan sebuah method seutuhnya sama seperti parent kelasnya. namun dapat menambahkan perintah tertentu ataupun menguranginya. Berikut merupakan contoh override pada method sendMessage.
+ </p>
+
+```plantuml
+class WhatsApp extends Mail{
+  constructor(username, isBussinessAccount, phone) {
+    super(phone);
+    this.username = username;
+    this.isBussinessAccount = true;
+  }
+    
+  // Overriding method => Melakukan Override Total
+  sendMessage = function(msg, to) {
+    console.log('Send by WA');
+  }
+}
+```
+
+<p align="justify">Dari contoh tersebut, ketika kita memanggil method sendMessage hanya akan mengeksekusi kode yang ada pada child class.
+ </p>
+
+```plantuml
+const wa1 = new WhatsApp('di', true, 089000999888);
+wa1.sendMessage('halo', 089000999888);
+```
+
 |Output : |
 | :--     | 
-| </br> |
+| Send by WA|
 
-<p align="justify">
+
+<p align="justify">Untuk tetap melakukan eksekusi kode pada parent class maka perlu menggunakan operator super.methodName().
  </p>
 
 ```plantuml
-
+sendMessage = function(msg, to) {
+    super.sendMessage(msg, to);
+    console.log('Send by WA');
+}
 ```
+
+<p align="justify"><b>Catatan:</b></br>
+super(...) digunakan untuk memanggil constructor parent, dan hanya dapat digunakan di constructor.</br>
+super.methodName(...) digunakan untuk memanggil parent method.
+ </p>
+
+<p align="justify"><b>Object Composition</b></br>
+Setelah konsep dari OOP kita pelajari, pasti sudah ada gambaran terkait dengan bagaimana membuat sebuah Parent Class kemudian membuat berbagai Child Class yang mana mewarisi sifat-sifat dari Parent nya, serta dapat menambahkan, mengubah, bahkan merombak setiap method yang ada.</br>
+Perlu diketahui bahwasanya sebuah paradigma OOP akan menghasilkan hirarki, di mana semakin besar software yang kita buat maka akan semakin besar dan rumit juga hirarkinya.
+ </p>
+
+<p align="justify"><img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/20210331102921eb2aa008d7687e65a8eb5fcd5e77f661.png"></p>
+
+<p align="justify">Coba bayangkan saja jika kita ingin membuat Child Class bernama PersonalEnterpriseWhatsApp di mana blueprint kelas tersebut kita ingin menggunakan method dan attribute yang ada di PersonalWhatsApp dan BussinessWhatsApp.  Dapat dibayangkan kita akan merombak kembali kelas-kelas parent-nya hanya untuk membuat sebuah kelas baru. Nah, pendekatan object composition di sini berperan.</br></br>
+Object composition adalah prinsip komposisi dari sebuah alur bisnis tanpa perlu melakukan pewarisan dari parent-nya. Prinsip ini didasarkan di mana kita telah mendefinisikan kumpulan-kumpulan perilaku (method/function) sehingga ketika kita ingin membuat alur bisnis lain dengan beberapa perilaku (method) yang sama, kita dapat menggunakan yang sudah ada tanpa melakukan inheritance/pewarisan.</br></br>
+Pada dasarnya konsep yang harus dilakukan adalah:</br>
+1. Memisahkan fungsi-fungsi umum yang biasa digunakan
+ </p>
+
+```plantuml
+const yourGenericAction = params => ({
+  actionA: () => { /** do action A **/},
+  actionB: () => { /** do action B **/},  
+});
+```
+
+<p align="justify">2. Membuat Class seperti biasa.
+ </p>
+
+```plantuml
+const YourClassName = (paramA, paramB) => {
+}
+```
+
+<p align="justify">3. Kita dapat menyimpan attribute yang kita punya ke dalam sebuah object, biasanya seorang engineer menggunakan konstanta dengan nama self atau state untuk menampung attribute.
+ </p>
+
+```plantuml
+const YourClassName = (paramA, paramB) => {
+  const self = {
+    paramsA,
+    paramsB
+  };
+}
+```
+
+<p align="justify">4. Menambahkan perilaku (method/function) yang hanya ada pada kelas tersebut.
+ </p>
+
+```plantuml
+const YourClassName = (paramA, paramB) => {
+  const self = {
+    paramsA,
+    paramsB
+  };
+  
+  const yourSpecificActions = self => ({
+    specificActinA: { /** do action A **/},
+  });
+}
+```
+
+<p align="justify">5. Membuat kumpulan attribute, generic method, dan spesific method menjadi satu objek
+ </p>
+
+```plantuml
+const YourClassName = (paramA, paramB) => {
+  const self = {
+    paramsA,
+    paramsB
+  };
+  
+  const yourSpecificActions = self => ({
+    specificActinA: { /** do action A **/},
+  });
+  
+  return Object.assign(self, yourGenericAction(self), yourSpecificActions(self))
+}
+```
+
+
+<p align="justify">Sebagai contoh, dari hirarki Mail yang sudah kita buat sebelumnya. kita akan merombak dan membuatnya dengan pendekatan Object composition.
+ </p>
+
+```plantuml
+// [1] list of abstractions
+const canSendMessage = self => ({
+    sendMessage: () => console.log('send message:', self.message)
+  });
+
+const checkIsValidPhone = self => ({
+    isValid: () => console.log('valid phone', self.from)
+  });
+
+// [2] crate object composition
+const personalEnterprise = (from, message, store) => {
+  // [3] attributes
+  const self = {
+    from,
+    message,
+    store
+  };
+  // [4] method
+  const personalEnterpriseBehaviors = self => ({
+    createCatalog: () => console.log('Catalog has created: ', self.store)
+  });
+  
+  // [5] create object composition
+  return Object.assign(self, personalEnterpriseBehaviors(self), canSendMessage(self), checkIsValidPhone(self));
+};
+
+const pe1 = personalEnterprise('pengirim@gmail.com', 'hei produk baru nih', 'Dicoding Store');
+pe1.createCatalog(); //Catalog has created:  Dicoding Store
+pe1.sendMessage(); //send message: hei produk baru nih
+```
+
 |Output : |
 | :--     | 
-| </br> |
+| Catalog has created:  Dicoding Store</br>send message: hei produk baru nih |
 
-<p align="justify">
+<p align="justify">Penjabaran kode di atas: </p>
+<ol align="justify"><li>
+Kita membuat sebuah abstraksi untuk method-method yang umum digunakan (di sini misalkan method mengirim pesan, dan validasi nomor hp).</li>
+<li>Kita membuat sebuah kelas baru dengan nama personalEnterprise, di mana seperti biasa kita dapat menggunakan parameter yang akan digunakan.</li>
+<li>Pada  object composition ini, penggunaan parameter biasa digunakan untuk mendaftarkan attribute-attribute dari kelas tersebut. Pada contoh di atas, kita mengumpulkan attribute tersebut pada konstanta bernama self atau state.</li>
+<li>Method, kita dapat juga menambahkan method/fungsi yang spesifik hanya ada pada kelas tersebut (kapabilitasnya hanya pada kelas tersebut / tidak umum).</li>
+<li>Proses pembuatan object dengan perintah Object.assign(attribute, method1, method2, methodN).</li></ol>
+<p align="justify">Dari contoh kode di atas maka kita dapat membuat sebuah object dengan nama personalEnterprise tanpa harus melakukan pewarisan.</br></br>
+<b>Built-in Class</b></br>
+Dalam JavaScript sendiri terdapat built-in Object bawaan, misalkan Date, Object, Array, Math, dan String yang dapat digunakan untuk memanipulasi data-data terkait dengan array, perintah matematik, manipulasi karakter, dan manipulasi objek.</br></br>
+Date merupakan core object bawaan dari bahasa pemrograman JavaScript yang digunakan untuk utilitas terkait tanggal dan waktu. Ini sangat membantu kita ketika dalam program yang kita buat terdapat penggunaaan dan manipulasi tanggal dan waktu.</br></br>
+Untuk menggunakannya kita dapat me-instansiasi Date object tersebut dengan 4 cara:	
  </p>
 
 ```plantuml
-
+// #1 tanpa parameter, yang berarti `myDate` akan berisi tanggal dan waktu saat ini
+const myDate = new Date(); 
+// #2 parameter tanggal dalam bentuk string, misal  "January 01, 2021" 
+const myDate = new Date(dateString); 
+// #3 parameter dalam bentuk number, misal 87400000
+const myDate = new Date(miliseconds);  
+// #4 parameter tanggal dalam bentuk number (7 parameter), [hour,minute,second,millisecond] bersifat opsional
+const myDate = new Date(year,month,date,hour,minute,second,millisecond); 
 ```
-|Output : |
-| :--     | 
-| </br> |
 
-<p align="justify">
+<p align="justify">Dalam object Date terdapat beberapa method yang dapat kita gunakan. Berikut adalah daftar method yang umum digunakan.
+ </p>
+
+<table><tr><td>Methods </td><td>	Penjelasan</td><td>	Contoh penggunaan</td></tr>
+<tr><td>getMonth()	</td><td>Nilai kembaliannya adalah bulan dalam bentuk angka (0 sampai 11), 0 berarti Januari.	</td><td>myDate.getMonth()</td></tr>
+<tr><td>getFullYear()	</td><td>Nilai kembaliannya adalah tahun, misalkan 2021.	</td><td>myDate.getFullYear()</td></tr>
+<tr><td>getDate()	</td><td>Nilai kembaliannya adalah tanggal dari 1 sampai 31.	</td><td>myDate.getDate()</td></tr>
+<tr><td>getHours()	</td><td>Nilai kembaliannya adalah jam dari 0 sampai 23	</td><td>myDate.getHours()</td></tr>
+<tr><td>getMinutes()	</td><td>Nilai kembaliannya adalah menit dari 0 sampai 59 Nilai kembaliannya	</td><td>myDate.getMinutes()</td></tr>
+<tr><td>getSeconds()	Nilai kembaliannya adalah detik dari 0 sampai 59	</td><td>myDate.getSeconds()</td></tr>
+<tr><td>getMilliseconds()	Nilai kembaliannya adalah mili-detik dari 0 to 999	</td><td>myDate.getMilliseconds()</td></tr>
+<tr><td>getTime()	Nilai kembaliannya adalah waktu dalam bentuk epoch mili-detik (dimulai dari 1 January, 1970 yang berarti 0)	</td><td>myDate.getTime()</td></tr>
+<tr><td>getDay()	Nilai kembaliannya adalah hari dalam seminggu dari 0 sampai 6. 0 berarti minggu	</td><td>myDate.getDay()</td></tr>
+</table>
+
+<p align="justify">Selain itu, juga terdapat static method yang dapat digunakan tanpa perlu melakukan instansiasi, yaitu: </p>
+
+<table><tr><td>Method	Penjelasan</td><td>	Contoh Penggunaan</td></tr>
+parse(datestring)	</td><td>digunakan untuk merubah tanggal dalam format string, menjadi epoch miliseconds	</td><td>Date.parse("2021-01-01")</td></tr>
+UTC(year, [..params])	</td><td>digunakan untuk merubah tanggal dalam format string, menjadi epoch miliseconds	</td><td>Date.UTC(2021, 01, 01)</td></tr>
+</table>
+
+<p align="justify"><b>Date String Format</b>
+ketika kita menggunakan tanggal dan waktu, kita perlu memahami format yang dipakai oleh standar dunia. Ini berguna dan memudahkan kita untuk melakukan konversi dan manipulasi sebuah tanggal. Format date string sendiri, secara umum terdiri dari:</p>
+
+<table><tr><td>Format	</td><td>Penjelasan</td></tr>
+<tr><td>YYYY	</td><td>4 digit tahun, misalkan : 2021</td></tr>
+<tr><td>MM	</td><td>2 digit bulan, misalkan : 01 berarti Januari</td></tr>
+<tr><td>DD	</td><td>2 digit tanggal 0 sampai 31</td></tr>
+<tr><td>HH	</td><td>2 digit jam 0 sampai 23</td></tr>
+<tr><td>mm	</td><td>2 digit menit 0 sampai 59</td></tr>
+<tr><td>ss	</td><td>2 detik detik 0 sampai 49</td></tr>
+<tr><td>sss	</td><td>3 digit milidetik 0 sampai 999</td></tr>
+<tr><td>-	</td><td>Pemisah untuk tanggal</td></tr>
+<tr><td>:	</td><td>Pemisah untuk waktu</td></tr>
+<tr><td>Z	</td><td>Berarti tanggal akan diatur sebagai UTC</td></tr>
+	</table>
+	
+	
+<p align="justify">Dari tabel format di atas, ketika misalnya kita akan melakukan parsing baik dari string ke milliseconds ataupun sebaliknya, kita dapat memanfaat format di atas. Untuk Date Object javascript sendiri, nilai epoch dimulai dari 0 untuk tanggal 1 January, 1970, 00:00:00 UTC</br></br>
+<b>Contoh Penggunaan Date</b></br>
+Berikut ini adalah kode misalkan kita ingin menghitung berapa umur kita dengan memanfaatkan object date.</p>
+
+```plantuml
+// parameter birthday dapat berupa miliseconds ataupun date string
+const myAge = birthday => {
+  const birtday = new Date(birthday);
+  const today = Date.now(); // today menghasilkan nilai miliseconds saat ini
+  
+  const diff_ms = today - birtday.getTime(); // menghitung selisih nilai miliseconds hari ini dan tanggal lahir
+  const diffDate = new Date(diff_ms);
+  return diffDate.getFullYear() - 1970; // 1970 adalah representasi 0 dari miliseconds
+};
+myAge('2000-01-22'); // 21 tahun
+```
+
+<p align="justify">Selain Date, kita juga dapat menggunakan built-in class javascript yang lainnya.
  </p>
 
 ```plantuml
-
+const listOfContent = [1,2,”President”, {}];
+console.log(Array.isArray(listOfContent)); 
+// result is true
+const splitText = "12:20:00".split(':');
+// result is [ '12', '20', '00' ]
 ```
+
+<p align="justify"><b>Rangkuman Materi</b></br>
+Kita telah berada di akhir dari modul Object Oriented Programming. Mari kita uraikan materi yang sudah Anda pelajari.</p>
+<ol align="justify"><li>
+OOP merupakan paradigma yang berdasarkan pada konsep objek yang memiliki atribut serta dapat melakukan operasi atau prosedur tertentu.</li>
+<li>Terdapat 4 (empat) pilar dalam object oriented programming, antara lain: encapsulation, abstraction, inheritance, dan polymorphism.</li>
+<li>Class merupakan blueprint untuk mendefinisikan karakteristik dari sebuah objek.</li>
+<li>Object composition memungkinkan penyusunan kumpulan perilaku/method untuk menghindari pewarisan dan hirarki yang kompleks.</li></ol>
+
+
+<p align="justify"><b>Pertanyaan</b></br>
+Di antara pilihan berikut manakah yang tepat untuk menjadi method dari class Vehicle?</p>
+<ol type='a'><li>accelerate & numberOfSeats</li>
+ <li>color & numberOfTyres</li>
+ <li>numberOfTyres & brake</li>
+ <li>turnLeft & turnRight</li></ol>
+<details>
+  <summary>Jawaban Benar</summary>
+  d.turnLeft & turnRight</br>
+  Berikut adalah penjelasannya:
+Kita bisa menentukan jumlah parameter sesuai kebutuhan fungsi yang kita buat.
+</details>
+
+
 
 |Output : |
 | :--     | 
