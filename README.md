@@ -3113,9 +3113,6 @@ names.forEach((name) => {
 });
 ```
 
-|Output : |
-| :--     | 
-| </br> |
 
 <p align="justify"><b>Kuis Coding: Functional Programming</b>
  </p>
