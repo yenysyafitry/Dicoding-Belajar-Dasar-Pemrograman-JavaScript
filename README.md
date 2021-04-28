@@ -1978,87 +1978,483 @@ console.log(addCounter());
 
 
 ```plantuml
-
+/**
+ * TODO:
+ * 1. Buatlah fungsi bernama minimal dengan ketentuan berikut:
+ *    - Menerima dua buah argumen number, a dan b.
+ *    - Mengembalikan nilai terkecil antara a atau b.
+ *    - Bila nilai keduanya sama, maka kembalikan dengan nilai a
+ *
+ *    contoh:
+ *    minimal(1, 4) // 1
+ *    minimal(3, 2) // 2
+ *    minimal(3, 3) // 3
+ *
+ * 2. Buatlah fungsi bernama power dengan ketentuan berikut:
+ *    - Menerima dua buah argumen number, a dan b.
+ *    - Mengembalikan nilai dari hasil perkalian a * a sebanyak b (fungsi kuadrat).
+ *
+ *    contoh:
+ *    power(7, 3) // 343
+ *    power(3, 3) // 27
+ *    power(4, 0.5) // 2
+ */
+// TODO
+const minimal = (a,b) => a==b ? a : a<b ? a:b
+const power = (a,b) => a**b
+console.log(minimal(3,2))
+console.log(power(7,3))
+/**
+ * Hiraukan kode di bawah ini
+ */
+module.exports = { minimal, power };
 ```
 |Output : |
 | :--     | 
-| </br> |
+| 2</br>343 |
 
 
-<p align="justify">
+<p align="justify"><b>Rangkuman Materi</b></br>Untuk membuat kode yang bersih dan mudah dipahami, salah satu cara yang bisa kita lakukan adalah dengan menggunakan function. Beberapa hal yang telah kita bahas pada modul ini, antara lain:
+</p>
+<ol align="justify"><li>
+ Function/fungsi adalah blok atau kumpulan kode yang memungkinkan untuk dipanggil berkali-kali.</li>
+<li>Penamaan fungsi harus mendeskripsikan fungsi dengan jelas. Penamaan yang bagus akan langsung memberi kita pemahaman tentang apa yang dilakukan atau dikembalikan.</li>
+<li>Function dapat menerima masukan nilai melalui parameter.</li>
+<li>Fungsi dapat mengembalikan nilai. Jika tidak, maka hasilnya adalah undefined.</li>
+<li>Karena fungsi berupa nilai, fungsi dapat ditetapkan atau dideklarasikan di setiap tempat kode, termasuk variabel atau parameter dari fungsi lain.</li></ol>
+
+<p align="justify"><b>Pertanyaan</b></br>
+Berapa banyak parameter yang bisa dimiliki oleh suatu function?</p>
+ <ol type='a'><li>
+Bisa satu atau dua</li>
+<li> Hanya satu</li>
+<li> Minimal tiga</li>
+<li> Sesuai kebutuhan</li></ol>
+<details>
+  <summary>Jawaban Benar</summary>
+  e.Sesuai kebutuhan</br>
+  Berikut adalah penjelasannya:
+Kita bisa menentukan jumlah parameter sesuai kebutuhan fungsi yang kita buat.
+</details>
+
+<p align="justify"><b>Object-Oriented Programming (OOP)</b></br>
+<b>Object Oriented Programming atau OOP</b> adalah salah satu paradigma pemrograman yang sangat umum digunakan oleh developer di dunia. Paradigma OOP berdasarkan pada konsep objek yang memiliki atribut serta dapat melakukan operasi atau prosedur tertentu.Meskipun JavaScript bukan bahasa pemrograman yang berbasis class seperti Java.Java sepenuhnya mengusung paradigma OOP, tetapi JavaScript tetap bisa menerapkan dan memanfaatkan fitur OOP.</p>
+
+<p align="justify"><b>Introduction to OOP</b></br>
+Object Oriented Programming (OOP) adalah salah satu paradigma dalam dunia pemrograman komputer. Ia adalah pendekatan berbasiskan objek, di mana suatu objek terdiri dari kumpulan atribut dan method di dalamnya. Di dalam JavaScript, atribut adalah variable, yang digunakan untuk menyimpan nilai. Sementara method adalah fungsi, yang digunakan untuk menjalankan suatu proses.</br></br>
+Untuk lebih mudah memahami apa itu OOP, kita bisa menggunakan pemodelan hal-hal dunia nyata ke dalam program yang kita buat. Ambil contoh Kucing, ia berperan sebagai objek.
+Kita ibaratkan ada seekor yang kucing memiliki karakteristik bulunya berwarna kuning, tinggi badan 23 cm, dan juga berat badan 4kg. Kucing tersebut juga memiliki kemampuan khusus yaitu mampu berlari, melompat, dan juga tidur. </br></br>
+Nah, dalam konteks OOP, karakteristik kucing (warna bulu, tinggi badan, dan berat badan) merupakan atribut dari suatu objek kucing, ia adalah nilai-nilai yang dimiliki oleh seekor kucing. Sedangkan kemampuan (berlari, melompat, tidur) adalah method dari seekor kucing, ia adalah suatu aktivitas yang bisa dilakukan oleh seekor kucing.
+JavaScript memiliki kapabilitas untuk membuat program dengan menerapkan paradigma OOP. Meskipun ada beberapa perbedaan dan perdebatan mengenai OOP di JavaScript dengan yang ada di bahasa pemrograman lain.</br></br>
+Sebelumnya kita sudah mengenal dan mempelajari object. Di mana object dapat merepresentasikan sebuah layer data. Jika string dianalogikan sebagai kata (kumpulan karakter), number sebagai angka, dan boolean sebagai pernyataan benar atau salah; object dianalogikan sebagai sebuah benda yang lebih kompleks. OOP-pun sama, namun lebih kompleks lagi karena di dalam paradigma OOP terdapat 4 pilar utama, yaitu encapsulation, abstraction, inheritance, dan polymorphism.</br></br>
+Sebagai contoh, kita memiliki sebuah data object bernama mail seperti contoh di bawah ini.</p>
+
+
+```plantuml
+const mail = {
+    from: "pengirim@dicoding.com",
+  sendMessage: function(msg, to) {
+    console.log(`you send: ${msg} to ${to} from ${this.from}`);
+  } 
+};
+console.log(mail.from);
+mail.sendMessage('apakabar', 'penerima@dicoding.com');
+```
+
+|Output : |
+| :--     | 
+| you send: apakabar to penerima@dicoding.com from pengirim@dicoding.com |
+
+<p align="justify">Object di atas memiliki atribut dengan tipe data string (from) dan sebuah fungsi atau method untuk mengirim pesan (sendMessage). Selain itu kita juga dapat mengubah isi dari salah satu atribut dari objek tersebut. Contohnya:
  </p>
 
 ```plantuml
+mail.from = "pengirim2@dicoding.com";
+```
 
+<p align="justify">Atau, menambahkan sebuah fungsi baru bernama saveContact. </p>
+
+```plantuml
+mail.saveContact = function(addr) {
+  console.log('email saved:', addr);
+}
+```
+
+<p align="justify">Contoh di atas adalah penulisan dengan gaya format object literal, yaitu penulisan object dengan langsung menuliskan key dan value-nya dalam Object yang dibuat. Hal-hal tersebut belum sepenuhnya merangkum konsep object dalam OOP.</br></br>
+Misalkan akan ada pertanyaan: </p><ol align="justify"><li>
+Bagaimana jika saya ingin membuat objek baru bernama mail2 dengan atribut yang sama namun value yang berbeda dengan mail? Apakah harus mendefinisikan attribute dan function/method yang sama secara berulang?</li>
+<li>Bagaimana jika saya ingin membuat mail2 tanpa attribute saveContact?</li>
+<li>Bagaimana jika saya ingin menambahkan fungsi tambahan pada mail2?</li></ol>
+<p align="justify">Dari sedikit pertanyaan di atas, maka fungsi paradigma OOP dapat menjadi solusi dikarenakan memiliki 4 pilar yang sudah disebutkan sebelumnya, di mana sederhananya kita akan membuat base template dari sebuah object, kemudian dari base tersebut kita dapat meng-instansiasi dalam bermacam bentuk objek. Di bawah ini adalah gambaran di mana Mail adalah base template dan sms, email, mailgroup adalah instansiasi dari Mail.</p>
+
+ <p align="justify"><img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/2021033109272405b54a1be326c130d0120c59bff3361a.png" >
+</p>
+
+ <p align="justify">
+Contoh lainnya, misalkan base template dari sebuah object adalah Animal dan dapat merepresentasikan berbagai bentuk misalkan aves, mamalia, pisces, dll. Untuk membuat base template tersebut maka kita akan mempelajari Class terlebih dahulu.</p>
+
+ <p align="justify"><b>Class</b>
+Class adalah hal yang sangat penting dalam pemrograman berorientasi objek. Hal itu karena class menyediakan informasi tentang suatu object. Jadi dapat dikatakan object adalah instance dari sebuah class. Class sendiri dalam paradigma OOP secara teknis merupakan sebuah blueprint dalam mendefinisikan karakteristik dari sebuah objek. Sebagai contoh, misalkan terdapat blueprint untuk mendefinisikan objek Mail. Yang mana sms dan postman adalah object dari class Mail.</p>
+
+|      Nama      |              Class	Mail      |
+|    :--         |                :--           |
+|Karakteristik   |	pengirim, penerima, isi pesan|
+|Kapabilitas/aksi|	kirim pesan, terima pesan    |
+
+ <p align="justify">Penulisan kelas di JavaScript sendiri bisa menggunakan sintaks class ataupun fungsi.</p>
+
+```plantuml
+// Cara 1
+class YourClassName{}
+class YourAnotherClassName{
+    constructor(property1, property2) {}
+}
+// Cara 2
+function YourClassName() {}
+function YourAnotherClassName(property1, property2) {}
+// pemanggilannya
+const nameOfObject = YourClassName();
+const nameOfObject2 = new YourAnotherClassName('value of property', 123);
+```
+
+<p align="justify">Sebagai contoh, kita akan membuat blueprint untuk Mail, yang mana memiliki attribute from dan method sendMessage.</p>
+
+<p align="justify">function</p>
+
+```plantuml
+function Mail() {
+    this.from = 'pengirim@dicoding.com';
+    this.sendMessage = function(msg, to) {
+        console.log('you send:', msg, 'to', to, 'from', this.from);
+    };
+};
+ 
+const mail1 = new Mail();
+mail1.sendMessage('hallo', 'penerima@dicoding.com');
 ```
 
 |Output : |
 | :--     | 
-| </br> |
+| you send: hallo to penerima@dicoding.com from pengirim@dicoding.com |
 
-<p align="justify">
+
+
+
+```plantuml
+class Mail{
+  from = 'pengirim@dicoding.com';
+    sendMessage = function(msg, to) {
+        console.log('you send:', msg, 'to', to, 'from', this.from);
+    };
+}
+ 
+const mail1 = new Mail();
+mail1.sendMessage('hallo', 'penerima@dicoding.com');
+```
+
+
+|Output : |
+| :--     | 
+| you send: hallo to penerima@dicoding.com from pengirim@dicoding.com |
+
+
+<p align="justify">Kedua cara di atas adalah contoh penulisan dan instansiasi object dari sebuah Class.</br></br><b>Property & Method
+Property</b></br>Property adalah atribut dari sebuah objek, property sendiri dapat berupa tipe data primitive--seperti yang sebelumnya dibahas-- bahkan bisa juga berbentuk object dan fungsi. Misalkan isi pesan, list penerima, data pengirim, perintah kirim, dll. Sebagai contoh
  </p>
 
-
 ```plantuml
-
+// cara 1
+class Mail{
+  from = 'pengirim@dicoding.com';
+    contacts = [];
+    sendMessage = function(msg, to) {
+        console.log('you send:', msg, 'to', to, 'from', this.from);
+    this.contacts.push(to); // menyimpan kontak baru
+    };
+}
+// cara 2
+function Mail() {
+    this.from = 'pengirim@dicoding.com';
+    this.contacts = [];
+    this.sendMessage = function(msg, to) {
+        console.log('you send:', msg, 'to', to, 'from', this.from);
+    this.contacts.push(to); // menyimpan kontak baru
+    };
+};
 ```
-|Output : |
-| :--     | 
-| </br> |
 
-
-<p align="justify">
+<p align="justify">Contoh class di atas memiliki 3 (tiga) property dan method. Yang perlu diingat adalah, this merupakan representasi bahwasanya field yang ditunjuk adalah field global dan dapat diakses dari method ataupun property di dalam kelas tersebut dengan menambahkan this di depannya. Sebagai gambaran, kita akan coba ubah kode di atas menjadi seperti berikut ini:
  </p>
 
 ```plantuml
+class Mail{
+  from = 'pengirim@dicoding.com';
+	contacts = [];
+	sendMessage = function(msg, to, from) {
+		console.log('you send:', msg, 'to', to, 'from', from); // from di sini merujuk ke `from` parameter, bukan ke `from` dari global value yaitu pengirim@dicoding.com
+    this.contacts.push(to);
+	};
+}
 
+const mail1 = new Mail();
+mail1.sendMessage('hallo', 'penerima@dicoding.com', 'aku@gmail.com');
+
+/**
+you send: hallo to penerima@dicoding.com from aku@gmail.com
+**/
 ```
+
 
 |Output : |
 | :--     | 
-| </br> |
+| you send: hallo to penerima@dicoding.com from aku@gmail.com |
 
 
-<p align="justify">
+<p align="justify">Contoh di atas menunjukan bahwa ketika kita ingin menginisialisasi ataupun mengakses sebuah attribute global dari sebuah kelas, maka harus menggunakan this.attributeName. Dalam OOP sendiri, properti dibagi menjadi 2: </p>
+<ol  align="justify"><li>
+Internal interface : method dan property yang dapat diakses oleh method lain namun tidak bisa diambil/dijalankan di luar kelas tersebut.</li>
+<li>External interface : method dan property yang dapat diakses di luar kelas itu sendiri.</li></ol>
+<p align="justify">Sedangkan di dalam JavaScript sendiri terdapat 2 jenis akses identifier untuk sebuah field:</p>
+<ol  align="justify"><li>Public : dapat diakses dari mana pun.</li>
+<li>Private : hanya dapat diakses dari dalam kelas itu sendiri.</li></ol>
+
+<p align="justify">Secara default, semua atribut yang didefinisikan adalah public. Sehingga semua attribute tersebut dapat diakses oleh objek yang telah meng-instansiasi kelas tersebut. Sebagai contoh</p>
+
+
+```plantuml
+const mail1 = new Mail();
+mail1.from; // 'pengirim@dicoding.com'
+mail1.contacts; // ['penerima@dicoding.com']
+mail1.sendMessage('hallo', 'penerima@dicoding.com'); // method mengirim pesan
+```
+
+<p align="justify">Dari contoh tersebut, bagaimana jika kita ingin mengubah attribute contacts yang tidak dapat diakses langsung oleh objek yang telah meng-instansiasi. Kita perlu mengubah sedikit pada kode class Mail yang kita miliki:
  </p>
 
 ```plantuml
-
+/** 
+cara 1, menggunakan var (hanya dapat digunakan pada penulisan kelas menggunakan statement `function`)
+**/
+var contacts = [];
+// contoh
+function Mail(){
+  this.from = 'pengirim@dicoding.com';
+    var contacts = [];
+    sendMessage = function(msg, to) {
+        console.log('you send:', msg, 'to', to, 'from', this.from);
+                      contacts.push(to);
+    };
+}
+ 
+ 
+/**
+cara 2, cara ini dapat digunakan pada penulisan kelas menggunakan statement `function` dan `class`
+**/
+_contacts = []
+// contoh
+class Mail{
+  from = 'pengirim@dicoding.com';
+    _contacts = [];
+    sendMessage = function(msg, to) {
+        console.log('you send:', msg, 'to', to, 'from', this.from);
+    this._contacts.push(to);
+    };
+}
+ 
+ 
+/** 
+cara 3, menambahkan prefix # , cara ini dapat digunakan pada penulisan kelas menggunakan statement `class` saja 
+  **/
+#contacts = [];
+// contoh
+class Mail{
+  from = 'pengirim@dicoding.com';
+    #contacts = [];
+    sendMessage = function(msg, to) {
+        console.log('you send:', msg, 'to', to, 'from', this.from);
+    this.#contacts.push(to);
+    };
+}
 ```
+
+<p align="justify">Dari contoh di atas, ketika kita ingin mengakses attribute contacts secara langsung melalui objek yang menginisiasi maka return-nya adalah undefined. Ketiga cara tersebut juga dapat digunakan pada sebuah method atau function.
+ </p>
+ 
+ ```plantuml
+const mail = new Mail();
+mail.contacts; // undefined
+```
+ 
+ <p align="justify"><b>Class Method</b></br>
+Class Method adalah function atau method yang ada di dalam sebuah object. Untuk menggunakannya, sebuah class harus di-instantiate terlebih dahulu menjadi object baru bisa dijalankan. Contoh class mail di atas, kita akan menggunakan method sendMessage maka kita harus meng-instantiate Mail terlebih dahulu.
+ </p>
+ 
+ ```plantuml
+const mail1 = new Mail();
+mail1.sendMessage('hallo', 'penerima@dicoding.com');
+```
+ 
 |Output : |
 | :--     | 
-| </br> |
+| you send: hallo to penerima@dicoding.com from pengirim@dicoding.com|
 
-
+<p align="justify">Kita tidak dapat langsung mengakses sendMessage tanpa melakukan instansiasi terlebih dahulu, misalkan:
+ </p> 
 
 ```plantuml
-
+Mail.sendMessage('hallo', 'penerima@dicoding.com');
 ```
+
 |Output : |
 | :--     | 
-| </br> |
+| TypeError: Mail.sendMessage is not a function |
 
-<p align="justify">
+<p align="justify"><b>Static Method</b></br>
+Static method adalah function atau method yang sama seperti class method, akan tetapi untuk mengaksesnya tidak perlu meng-instantiate class, kita cukup menuliskan nama kelas dan nama method-nya secara langsung (NamaClass.namaMehod()).</br></br>
+Sebagai contoh, kita menambahkan sebuah method untuk memeriksa apakah sebuah input adalah nomor handphone:
  </p>
 
 ```plantuml
-
+class Mail{
+  static isValidPhone(phone) {
+    return typeof phone === 'number';
+  }
+}
 ```
 
-|Output : |
-| :--     | 
-| </br> |
-
-<p align="justify">
+<p align="justify">Dari contoh di atas, kita dapat memanggil fungsi tersebut tanpa membuat instance kelas Mail terlebih dahulu.
  </p>
 
 ```plantuml
-
+Mail.isValidPhone(089000000000) //true
 ```
+
+<p align="justify"><b>Constructor</b></br>
+Ketika kita membuat sebuah objek, adakalanya karakteristik dari blueprint yang kita buat harus sudah didefinisikan bersamaan dengan sebuah objek saat pertama kali diinisiasi. Constructor adalah sebuah method/function yang dijalankan pertama kali ketika object dibuat. Dari contoh kelas yang kita buat sebelumnya, kita akan membuat from sebagai sebuah value yang harus ditulis ketika sebuah objek di inisiasi. Maka dalam JavaScript ada dua cara, yaitu:
+ </p>
+
+```plantuml
+// cara 1, jika kita menggunakan statement class
+class YourClassName{
+  constructor(params1, params2, ....) {
+    // do something here
+  };
+} 
+// cara 2, jika kita menggunakan statemen function
+function Mail(params1, params2, ....) {
+    this.yourPropertyName = params1;
+  // do something here
+}
+```
+
+<p align="justify">Contoh penerapannya sebagai berikut:
+ </p>
+
+```plantuml
+// cara 1
+class Mail{
+  constructor(author) {
+    this.from = 'pengirim@dicoding.com';
+    console.log('is instantiated', author);
+  };
+}
+// cara 2
+function Mail(author) {
+    this.from = author;
+  console.log('is instantiated', author);
+}
+```
+
+<p align="justify">Dari contoh constructor di atas, maka cara pemanggilannya menjadi seperti di bawah ini:
+ </p>
+
+```plantuml
+const mail1 = new Mail("emailku@dicoding.com");
+```
+
+<p align="justify">Karena JavaScript bukan bahasa dengan dukungan static type maka sebenarnya kita dapat melakukan instansiasi dengan parameter sesuka kita:
+ </p>
+
+```plantuml
+const mail1 = new Mail(085000111222); // misalkan untuk SMS
+const mail2 = new Mail("emailku@dicoding.com"); // misalkan untuk Email
+```
+
+<p align="justify"><b> 4 Pilar OOP</b>
+Seperti yang sempat kita singgung pada awal modul OOP, terdapat empat pilar dalam OOP, yaitu encapsulation, abstraction, inheritance, dan polymorphism.</br></br>
+<b>Encapsulation</b>
+Enkapsulasi adalah kondisi di mana attribute atau method di dalam class dibungkus dan bersifat privat. Artinya objek lain tidak bisa mengakses atau mengubah nilai dari property secara langsung. Pada contoh kasus Mail kita tidak bisa langsung mengubah daftar contact, namun kita bisa menambahkannya melalui fungsi saat kirim pesan atau mengambil data tersebut melalui method showAllContacts.
+ </p>
+
+<p align="justify"><img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/2021033110152837f7fc725e54468b736219807f4a2b2f.png"></p>
+
+```plantuml
+class Mail{
+    _contacts = [];
+    constructor(author) {
+        this.from = author;
+    }
+    sendMessage = function(msg, to) {
+        console.log('you send:', msg, 'to', to, 'from', this.from);
+        this._contacts.push(to);
+    }
+    showAllContacts() {
+        return this._contacts;
+    }
+}
+```
+
+<p align="justify"><b>Abstraction<b></br>
+Abstraksi dapat dikatakan merupakan penerapan alami dari enkapsulasi. Abstraksi berarti sebuah objek hanya menunjukkan operasinya secara high-level. Misalnya kita cukup tahu bagaimana bagaimana pesan dikirim atau diterima, namun kita tidak perlu tahu seperti apa proses enkripsi dan deskripsi isi pesan, atau bagaimana sebuah daftar  contact dapat bertambah.</br></br>
+<b>Inheritance<b></br>
+Beberapa objek bisa memiliki beberapa karakteristik atau perilaku yang sama, tetapi mereka bukanlah objek yang sama. Di sinilah inheritance atau pewarisan berperan. SMS dan jenis pesan lainnya memiliki karakteristik umum yang dimiliki juga oleh jenis pesan lainnya, seperti memiliki konten pesan, alamat/nomor pengirim, alamat/nomor penerima, dsb. Maka dari itu Email sebagai objek turunan (subclass) mewarisi semua sifat dan perilaku dari objek induknya (superclass) Mail. Begitu juga dengan objek Whatsapp juga mewarisi sifat dan perilaku yang sama, namun whatsapp bisa membuat grup, mengirim broadcast message sedangkan Email tidak (*misalkan).
+ </p>
+<p align="justify"><img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/20210331101812f297bf560a9a74da5feaa334a070eeab.png"></p>
+<p align="justify">Dari contoh di atas, misalkan kita ingin membuat 2 (dua) child class yaitu WhatsApp dan Email. Maka dalam JavaScript cara menuliskan pewarisan terdapat 2 cara, yaitu sebagai berikut:</p>
+
+
+```plantuml
+// cara 1: menggunakan keyword `extends` jika menggunakan statement `class`
+class ChildClassName extends ParentClassName{}
+// cara 2: menggunakan `prototype` jika menggunakan statement `function` / `class`
+ChildClassName.prototype = new ParentClassName()
+```
+
+<p align="justify">Misalkan kita akan membuat sebuah child class bernama WhatsApp yang mewarisi kelas Mail. Maka contoh kodenya adalah sebagai berikut:
+ </p>
+
+```plantuml
+class Mail{
+  _contacts = [];
+         constructor(author) {
+                     this.from = author;
+           };
+	sendMessage = function(msg, to) {
+		console.log('you send:', msg, 'to', to, 'from', this.from);
+                     this._contacts.push(to);
+	};
+	showAllContacts() {
+    return this._contacts;
+  }
+}
+
+class WhatsApp extends Mail{
+           username = 'dicoding';
+	isBussinessAccount = true;
+	
+	myProfile = function() {
+                   return `my name ${this.username}, is ${this.isBussinessAccount? 'Business': 'Personal'}`;
+            };
+}
+
+const wa1 = new WhatsApp(080111000222);
+console.log(wa1.myProfile());
+// my name dicoding, is Business
+```
+
 |Output : |
 | :--     | 
-| </br> |
+| my name dicoding, is Business |
 
 <p align="justify">
  </p>
