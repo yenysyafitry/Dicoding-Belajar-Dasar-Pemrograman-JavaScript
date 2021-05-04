@@ -3196,6 +3196,104 @@ Eksekusi kode dengan Node.js sangat cepat karena berjalan pada V8 JavaScript Eng
 Node.js menggunakan model single thread dengan event looping. Mekanisme ini membantu server untuk merespon secara asynchronous dan menjadikan server lebih scalable dibandingkan server tradisional yang menggunakan banyak thread untuk menangani permintaan.
 Node.js dirancang untuk aplikasi dengan proses I/O yang intensif seperti network server atau backend API. Pemrograman dengan multithreading relatif lebih berat dan sulit untuk dilakukan. Jika kita ingin membuat web server yang bisa menangani ratusan request bersamaan, menggunakan ratusan thread akan membutuhkan memori yang besar. Oleh karena itu, karakteristik Node yang asynchronous dan single thread dirancang untuk memungkinkan implementasi server yang dapat menangani banyak request pada waktu yang sama.</li></ol>
 
-Bagaimana jika langsung mencoba Node.js pada perangkat kita? Kita akan mulai dengan langkah instalasi Node.js pada materi berikutnya.
+<p align="justify">Bagaimana jika langsung mencoba Node.js pada perangkat kita? Kita akan mulai dengan langkah instalasi Node.js pada materi berikutnya.</br></br>
+<b>Instalasi Node</b></br>
+Untuk bisa menjalankan Node pada perangkat lokal, kita perlu menginstal Node.js. Node.js memiliki dua versi rilis, yaitu LTS dan current. LTS merupakan kepanjangan dari Long Term Support. Artinya, versi tersebut mendapat dukungan dalam jangka waktu yang lama, sehingga lebih disarankan menggunakan versi ini. Sementara, versi current berisi fitur-fitur baru yang dirilis untuk Node.js.</br></br>
+<b>Windows</b></br>
+Jika Anda menggunakan sistem operasi Windows, kunjungi situs https://nodejs.org/ lalu unduh Node.js versi LTS.</p>
+<p align="center">
+  <img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/202103302338003b4c7e291c774db3340e0f090cefb3ef.jpeg"></p>
+
+<p align="justify">Setelah berhasil mengunduh, buka berkas yang baru saja diunduh dan ikuti instruksi yang diberikan.	</p>
+<p align="center">
+  <img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/20210330233822ac64eba0c4d13fa6c8ceca466699677a.jpeg"></p>
+<p align="justify">Jika Anda ingin mengubah lokasi instalasi, Anda bisa menentukan lokasi yang Anda inginkan.</p>
+<p align="center">
+  <img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/20210330233840403fa2cd98ab0fa47872670e460b8c85.jpeg"></p>
+
+<p align="justify">Pada bagian selanjutnya, kita juga dapat melihat komponen apa saja yang akan diterapkan (bundling) dalam pemasangan node.js ini.</p>
+<p align="center">
+  <img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/20210330233904ba06737816dc936710f9aed14471fda9.jpeg"></p>
+  
+  <p align="justify">Lalu ikuti instruksi selanjutnya dan tunggu proses instalasi hingga selesai. Jika instalasi selesai dan berhasil, maka pesan seperti ini akan tampil.</p>
+ <p align="center"><img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/20210330233925675ea80c3be4c19da83b4d0b322fc9dc.jpeg"></p>
+  
+  <p align="justify"><b>  Membuat Project JavaScript</b></br>
+Setelah berhasil menginstal text editor dan juga Node.js di komputer, artinya peralatan “perang” kita sudah siap.</br></br>
+Sebenarnya kita bisa membuat berkas atau project JavaScript secara manual dengan membuat folder dan meletakkan berkas berekstensi .js di dalamnya. Namun, untuk memudahkan pengembangan ke depannya, kita akan membuat proyek menggunakan Node Package Manager (NPM). NPM digunakan untuk mengelola package tambahan untuk mempermudah kita mengembangkan aplikasi. Akan ada modul tersendiri yang membahas lebih rinci terkait NPM. Untuk saat ini, kita baru akan menggunakan NPM untuk membuat proyek Node.js.</br></br>
+Pada direktori komputer Anda, buatlah folder baru sebagai folder utama dari proyek yang akan kita buat. Di sini kita beri nama folder tersebut dengan “CoffeeMachine”. Kemudian buka folder tersebut menggunakan Visual Studio Code. Anda dapat melakukannya dengan memilih menu File → Open Folder … → Lalu pilih folder project Anda.</p
+<p align="center"><img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/20210330234708bff755c85f94965d94892d3ce27d1f33.jpeg"></p>
+<p align="justify">
+Lalu buka terminal/command prompt pada project tersebut dengan memilih menu Terminal → New Terminal. Ketika terminal muncul jalankan perintah:</p>
+
+```plantuml 
+npm init
+```
+
+<p align="justify">Selanjutnya Anda akan diberikan beberapa pertanyaan untuk mengisi nilai package name, version, description, dsb. Semua itu merupakan informasi dasar tentang aplikasi yang kita buat.</p>
+<p align="center"><img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/20210330234821e2129a309167e41fcd68ab054946ac1b.jpeg"></p>
+  <p align="justify">Nilai yang berada di dalam tanda kurung merupakan nilai default. Jika nilai default tersebut sudah cocok dengan yang diharapkan, kita dapat menggunakan nilainya dengan langsung menekan tombol enter. Setelah mengisi seluruh pertanyaan yang diberikan, kita akan diminta untuk melihat dan memverifikasi informasi yang akan disimpan.</p>
+ <p align="center"><img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/20210330234842357b0b736b54f1cbeb48212f7fa04a5d.jpeg"></p>
+<p align="justify">
+Jika nilai yang ditampilkan sudah sesuai, tekan tombol enter. Nilai tersebut akan tersimpan dalam berkas package.json. Jika, berkas package.json dibuka, hasilnya terlihat seperti gambar di bawah ini.</p>
+<p align="center"><img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/202103302349129b91e31846b3f8cd3ee7acae9d876211.jpeg"></p>
+<p align="justify">
+Berkas tersebut digunakan untuk menyimpan informasi aplikasi yang kita buat. Untuk membuat berkas package.json, sebenarnya kita dapat membuatnya sendiri layaknya membuat berkas baru pada umumnya. Namun, cara tersebut bukan pendekatan yang baik. Dalam membuat berkas package.json, sebaiknya gunakan perintah npm init pada Terminal di dalam project yang kita buat.</p>
+ <p align="center"><img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/20210330235057d6419a63ca8267c4de1a7669d1bbbcc7.gif"></p>
+<p align="justify">Pada berkas inilah kita bisa mulai menuliskan kode JavaScript. Sebagai permulaan, cetak sejumlah proses pembuatan kopi dari mesin kopi kita. Tambahkan kode berikut ke dalam file index.js:	</p>
+
+```plantuml 
+console.log("Menyalakan mesin kopi");
+console.log("Menggiling biji kopi");
+console.log("Memanaskan air");
+console.log("Mencampurkan air dan kopi");
+console.log("Menuangkan kopi ke dalam gelas");
+console.log("Menuangkan susu ke dalam gelas");
+console.log("Kopi Anda sudah siap!");
+```
+
+<p align="justify">Untuk menjalankan file JavaScript di atas juga cukup mudah, cukup jalankan perintah berikut pada terminal:</p>
 	
+```plantuml 
+node index.js
+```
+
+<p align="justify">Node.js akan mengeksekusi setiap baris kode yang kita tulis lalu menampilkannya ke konsol terminal.</p>
+ <p align="center"><img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/202103302351436547577bcbfdd87d8bf4127417997c83.gif"></p>
+<p align="justify"><b>Run Scripts</b></br>
+Pada berkas package.json terdapat beberapa object yang penting untuk kita perhatikan, salah satunya adalah object scripts. Secara default object tersebut akan terbentuk ketika package.json dibuat menggunakan perintah init. Nilai default dari scripts adalah seperti ini:</p>
+
+```plantuml 
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
+
+<p align="justify">Object scripts merupakan objek yang mengandung kumpulan script di dalamnya. Script tersebut dapat dijalankan kapan saja pada proyek kita. Untuk menjalankan script, gunakan perintah npm run <script-name> yang dapat Anda tulis seperti di bawah ini:</p>
 	
+```plantuml 
+npm run test
+```
+
+<p align="justify">Dengan menjalankan script test, artinya kita mengeksekusi kode yang berada di dalam nilai test, yaitu:</p>
+
+```plantuml 
+"echo \"Error: no test specified\" && exit 1"
+```
+
+<p align="justify">Sehingga, pada terminal akan menghasilkan output seperti berikut:</p>
+<p align="center"><img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/202103302353102bac9853ccb0912d2c3a5a3f5c432d81.jpeg"></p>
+<p align="justify">Pada object scripts biasanya kita menetapkan script yang sering digunakan secara berkala, seperti menjalankan aplikasi (selama proses development), compiling source code ke tahap produksi, atau melakukan testing.</br></br>
+Untuk menetapkan nilai baru pada object scripts, kita tuliskan nama script sebagai properti. Kemudian tuliskan perintah yang akan dieksekusi sebagai nilai dari properti tersebut. Mari kita buat script baru untuk menjalankan kode dari berkas index.js.</br></br>
+Pada object scripts, tuliskan nilai baru dengan properti bernama start, kemudian tambahkan perintah untuk mengeksekusi berkas sebagai nilainya:</p>
+
+```plantuml 
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+```
+
+<p align="justify">Kini kita bisa menjalankan program dengan perintah npm run start seperti di bawah ini</p>
+<p align="center"><img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/20210330235401d8067fab72ef881f9f39997d80af2808.jpeg"></p>
+
