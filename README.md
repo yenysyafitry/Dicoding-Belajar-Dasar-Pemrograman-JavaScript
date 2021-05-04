@@ -3169,3 +3169,33 @@ Polymorphism merupakan karakteristik dari OOP dan bukan karakterisitik FP.
 </details>
 
 
+<p align="justify"><b>Text Editor</b></br>
+Dalam mengembangkan aplikasi, kita akan banyak menuliskan kode. Maka dari itu, tools yang wajib kita miliki adalah sebuah <b>text editor</b>. Beberapa sistem operasi sebenarnya sudah menyediakan text editor bawaan. Contohnya Windows memiliki Notepad, Linux memiliki Text Editors, dan Mac OS memiliki TextEdit. Ketiga aplikasi tersebut bisa kita gunakan untuk belajar membuat aplikasi dengan JavaScript, meskipun masih banyak alternatif text editor lainnya selama masih dapat menyimpan sebuah plain text dengan format .js.</br></br></br>
+Perlu diperhatikan bahwa kode yang kita tulis merupakan sebuah plain text. Pastikan Anda menggunakan text editor yang tepat. Jangan pernah gunakan Microsoft Word untuk menuliskan sebuah kode. Ini penting karena aplikasi tersebut menampilkan teks yang telah diformat atau biasa disebut dengan rich text.
+Selain text editor bawaan dari sistem operasi, ada beberapa teks editor lain yang memang dirancang khusus untuk menulis kode pemrograman. Teks editor ini umumnya dilengkapi dengan banyak fitur berguna yang mendukung kita dalam mengembangkan aplikasi.</br></br>
+Tutorial dan contoh di kelas ini selanjutnya akan menggunakan teks editor Visual Studio Code. Visual Studio Code merupakan text editor yang dikembangkan oleh Microsoft. Dalam Visual Studio Code terdapat fitur debugging, Git control, syntax highlighting, code completion, snippets, dan code refactoring. Visual Studio Code tersedia untuk sistem operasi Windows, Mac, maupun Linux. Selain itu, text editor ini bisa kita gunakan secara gratis. Untuk mengunduhnya, silakan kunjungi website berikut: https://code.visualstudio.com/.</br></br>
+<b>Terminal</b></br>
+Pada materi selanjutnya kita akan sering menuliskan command line untuk menjalankan program menggunakan Node.js. Tentunya command line dituliskan dalam sebuah terminal. Sebenarnya Anda tidak perlu menyiapkan atau mengunduh aplikasi apa pun untuk ini, karena sistem operasi baik Windows, MacOS, dan Linux sudah menyediakan Terminal usungannya masing-masing. Untuk menuliskan command line pada Linux dan MacOS, gunakan aplikasi yang bernama “Terminal.” Pada Windows kita bisa menuliskannya melalui “CMD” atau “PowerShell”.</br></br>
+<b>JavaScript Runtime</b></br>
+Sesuai yang telah dijelaskan pada modul-modul awal, JavaScript mulanya hanya digunakan pada lingkungan web browser. Saat ini pun browser masih merupakan lingkungan eksekusi yang paling umum untuk kode JavaScript [4]. Lingkungan web browser memungkinkan kode JavaScript untuk menerima inputan dari mouse dan keyboard pengguna. Selain itu, JavaScript juga dapat menampilkan output kepada pengguna melalui HTML dan CSS.</br></br>
+Salah satu cara termudah untuk menjalankan kode JavaScript di lingkungan browser adalah menggunakan browser itu sendiri. Kita dapat menggunakan developer tools yang disediakan oleh browser. Developer tools bisa kita akses melalui shortcut ctrl + shift + i atau klik kanan -> Inspect Element. Setelah itu pilih tab console. Developer tools ini dilengkapi dengan interpreter yang akan menjalankan kode yang kita tulis.</p>
+
+<p align="center">
+  <img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/2021033023344410b356d490abee14fbef6be09af432011.jpeg"></p>
+  
+<p align="justify">Selain browser, terdapat runtime lain yang bisa menjalankan JavaScript, yaitu Node.js. Node.js memungkinkan JavaScript dapat berjalan di berbagai platform, tidak hanya browser. Itulah kenapa JavaScript yang awalnya terkenal sebagai bahasa untuk front-end web, kini mulai merambah juga ke ranah back-end dari website.</br></br>
+Node memberikan akses JavaScript ke seluruh sistem operasi, memungkinkan program JavaScript dapat membaca dan menulis file; mengirim dan menerima data melalui jaringan; serta membuat dan melayani permintaan HTTP. Selanjutnya kita akan fokus untuk pengembangan program JavaScript pada lingkungan Node. Tentunya kita perlu menginstal Node.js terlebih dulu. Penasaran bagaimana caranya? Kita akan bahas pada materi selanjutnya.</br></br>
+<b>Node.js</b></br>
+Node.js adalah runtime environment untuk JavaScript yang bersifat open-source dan cross-platform. Dengan Node.js kita dapat menjalankan kode JavaScript di mana pun, tidak hanya terbatas pada lingkungan browser. Node.js menjalankan V8 JavaScript engine (yang juga merupakan inti dari Google Chrome) di luar browser. Ini memungkinkan Node.js memiliki performa yang tinggi. Node.js juga menyediakan banyak library/module JavaScript yang membantu menyederhanakan pengembangan aplikasi web. Berikut ini adalah beberapa fitur penting dari Node.js yang menjadikannya pilihan utama dalam pengembangan aplikasi:</p>
+<ol align="justify"><li>
+Asynchronous & Event-driven</br>
+Semua API dari Node.js bersifat asynchronous, artinya tidak memblokir proses lain sembari menunggu satu proses selesai. Server Node.js akan melanjutkan ke ke pemanggilan API berikutnya lalu memanfaatkan mekanisme event notification untuk mendapatkan respon dari panggilan API sebelumnya.</li>
+<li>Very Fast</br>
+Eksekusi kode dengan Node.js sangat cepat karena berjalan pada V8 JavaScript Engine dari Google Chrome.</li>
+<li>Single Threaded but Highly Scalable</br>
+Node.js menggunakan model single thread dengan event looping. Mekanisme ini membantu server untuk merespon secara asynchronous dan menjadikan server lebih scalable dibandingkan server tradisional yang menggunakan banyak thread untuk menangani permintaan.
+Node.js dirancang untuk aplikasi dengan proses I/O yang intensif seperti network server atau backend API. Pemrograman dengan multithreading relatif lebih berat dan sulit untuk dilakukan. Jika kita ingin membuat web server yang bisa menangani ratusan request bersamaan, menggunakan ratusan thread akan membutuhkan memori yang besar. Oleh karena itu, karakteristik Node yang asynchronous dan single thread dirancang untuk memungkinkan implementasi server yang dapat menangani banyak request pada waktu yang sama.</li></ol>
+
+Bagaimana jika langsung mencoba Node.js pada perangkat kita? Kita akan mulai dengan langkah instalasi Node.js pada materi berikutnya.
+	
+	
