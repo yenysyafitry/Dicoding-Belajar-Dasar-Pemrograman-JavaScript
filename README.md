@@ -3297,3 +3297,211 @@ Pada object scripts, tuliskan nilai baru dengan properti bernama start, kemudian
 <p align="justify">Kini kita bisa menjalankan program dengan perintah npm run start seperti di bawah ini</p>
 <p align="center"><img src="https://github.com/yenysyafitry/Dicoding-Belajar-Dasar-Pemrograman-JavaScript/blob/main/20210330235401d8067fab72ef881f9f39997d80af2808.jpeg"></p>
 
+```plantuml
+  Kategori: Set Environment
+
+1.Bagaimana cara memeriksa versi NPM yang terinstal saat ini?
+  A. npm --version
+  B. npm help
+  C. npm --ver
+  D.semua salah
+```
+
+|Output : |
+| :--     | 
+|A. npm --version |
+
+```plantuml
+2.Bagaimanakah karakteristik API pada Node.js?
+  A. Asynchronous
+  B. Synchronous
+  C. Semua Benar
+  D. Semua Salah
+```
+
+|Output : |
+| :--     | 
+|A. Asynchronous|
+
+
+<p align="justify"><b>Export & Import</b></br>
+Modul bekerja dengan cara exporting dan importing nilai. Baik itu nilai variabel, fungsi, array, object, atau class agar bisa digunakan pada berkas JavaScript lain. Satu berkas JavaScript terdiri dari satu module yang dapat kita export menjadi lebih dari satu nilai.</br></br>
+Dalam environment Node.js, gunakan perintah module.exports untuk melakukan proses export module. Setiap berkas JavaScript yang berjalan pada Node, memiliki objek module lokal yang memiliki properti exports. Properti tersebut digunakan untuk mendefinisikan nilai apa yang akan diekspor dari berkas tersebut.</br></br>
+Buatlah berkas baru bernama state.js pada project Anda. Kode di bawah ini merupakan contoh bagaimana melakukan export nilai menggunakan module.exports.</p>
+
+```plantuml
+const coffeeStock = {
+  arabica: 100,
+  robusta: 150,
+  liberica: 200
+}
+module.exports = coffeeStock;
+```
+
+<p align="justify">Kode module.exports = coffeeStock membuat object coffeeStock ditetapkan sebagai nilai dari module.exports. Nilai properti exports ini nantinya bisa di-import dan digunakan pada berkas JavaScript lain. Jika Anda mencoba melihat nilai module yang ada pada berkas state.js dengan menambahkan kode console.log(module) di akhir berkas, maka kita akan melihat object coffeeStock menjadi nilai dari properti exports.</p>
+
+```plantuml
+Module {
+  id: '.',
+  path: '/home/dicoding/Playground/javascript/CoffeeMachine',
+  exports: { arabica: 100, robusta: 150, liberica: 200 },
+  parent: null,
+  filename: '/home/dicoding/Playground/javascript/CoffeeMachine/state.js',
+  loaded: false,
+  children: [],
+  paths: [
+    '/home/dicoding/Playground/javascript/CoffeeMachine/node_modules',
+    '/home/dicoding/Playground/javascript/node_modules',
+    '/home/dicoding/Playground/node_modules',
+    '/home/dicoding/node_modules',
+    '/home/node_modules',
+    '/node_modules'
+  ]
+}
+```
+
+<p align="justify">Lalu bagaimana caranya untuk melakukan import atau menggunakan object yang sudah di-export? Caranya adalah menggunakan method require().</br></br>index.js
+</p>
+
+```plantuml
+const coffeeStock = require('./state');
+console.log(coffeeStock);
+```
+
+|Output : |
+| :--     | 
+|{ arabica: 100, robusta: 150, liberica: 200 }|
+
+<p align="justify">state.js</p>
+
+```plantuml
+const coffeeStock = {
+    arabica: 100,
+    robusta: 150,
+    liberica: 200
+};
+ 
+module.exports = coffeeStock;
+```
+
+|Output : |
+| :--     | 
+|{ arabica: 100, robusta: 150, liberica: 200 }|
+
+
+<p align="justify">Dalam inisialisasi variabel coffeeStock (nama variabel bebas kita tentukan), kita gunakan method require() dengan memberikan parameter lokasi berkas state.js. Dengan begitu variabel coffeeStock akan memiliki nilai module.exports yang sama pada berkas state.js. Setelah mendapatkan nilainya, kita bebas menggunakannya seperti variabel lokal pada umumnya.</p>
+
+```plantuml
+const coffeeStock = require('./state');
+const makeCoffee = (type, miligrams) => {
+    if (coffeeStock[type] >= miligrams) {
+        console.log("Kopi berhasil dibuat!");
+    } else {
+        console.log("Biji kopi habis!");
+    }
+}
+makeCoffee("robusta", 80);
+```
+
+|Output : |
+| :--     | 
+|Kopi berhasil dibuat!|
+
+<p align="justify">Lalu untuk mendapatkan nilai yang diekspor melalui named export, kita gunakan destructuring object.</p>
+
+```plantuml
+import { coffeeStock, isCoffeeMachineReady } from './state.js';
+console.log(coffeeStock);
+console.log(isCoffeeMachineReady);
+```
+
+|Output : |
+| :--     | 
+|{ arabica: 100, robusta: 150, liberica: 200 } </br>true|
+
+<p align="justify"><b>Kuis Coding : Module</b></p>
+
+```plantuml
+import { coffeeStock, isCoffeeMachineReady } from './state.js';
+console.log(coffeeStock);
+console.log(isCoffeeMachineReady);
+```
+
+|Output : |
+| :--     | 
+|{ arabica: 100, robusta: 150, liberica: 200 } </br>true|
+
+<p align="justify"><b>Kuis Coding : Module</b></p>
+<p align="justify"><b>1. main.js</b></p>
+
+```plantuml
+/**
+ * TODO 1 (Tiger.js):
+ * Ekspor nilai dari class Tiger
+ *
+ * TODO 2 (Wolf.js)
+ * Ekspor nilai dari class Wolf
+ *
+ * TODO 3 (main.js)
+ * Impor class Tiger dan Wolf
+ *
+ * TODO 4 (main.js)
+ * Ekspor fungsi fight, myTiger, myWolf, dan result
+ *
+ */
+
+// TODO 3
+const Tiger = require("./Tiger.js");
+const Wolf = require("./Wolf.js");
+const fight = (tiger, wolf) => {
+  if (tiger.strength > wolf.strength) {
+    return tiger.growl();
+  }
+  if (wolf.strength > tiger.strength) {
+    return wolf.howl();
+  }
+  return 'Harimau dan serigala sama-sama kuat!';
+};
+const myTiger = new Tiger();
+const myWolf = new Wolf();
+const result = fight(myTiger, myWolf);
+// TODO 4
+module.exports= {fight,myTiger,myWolf,result};
+console.log(module.exports);
+```
+
+<p align="justify"><b>2. Tiger.js</b></p>
+
+```plantuml
+class Tiger {
+  constructor() {
+    this.strength = Math.floor(Math.random() * 100);
+  }
+  growl() {
+    return 'grrrrrrr';
+  }
+}
+// TODO: 1
+module.exports = Tiger;
+```
+
+<p align="justify"><b>3. Wolf.js</b></p>
+
+```plantuml
+class Wolf {
+  constructor() {
+    this.strength = Math.floor(Math.random() * 100);
+  }
+  howl() {
+    return 'Auuuuuuuuu';
+  }
+}
+// TODO 2
+module.exports = Wolf;
+```
+
+
+|Output main.js, Tiger.js, Wolf.js: |
+| :--     | 
+|{</br>fight: [Function: fight],</br>myTiger: Tiger { strength: 7 },</br>myWolf: Wolf { strength: 79 },</br>result: 'Auuuuuuuuu'</br>}|
+
