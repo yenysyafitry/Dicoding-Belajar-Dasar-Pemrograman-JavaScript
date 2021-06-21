@@ -702,6 +702,7 @@ for(let i = 1; i <= 5; i=1) {
 <p align="justify">Dapatkah Anda menemukan apa yang salah dari kode di atas sehingga terjadi infinite loop? Jawabannya adalah karena variabel i selalu bernilai 1. Alhasil, kondisi i <= 5 akan selalu bernilai true yang mengakibatkan aplikasi akan terus mencetak 1 ke konsol sehingga mengalami crash.
  </p>
 
+<!---
 ### Kuis Coding: Variabel dan Tipe Data
 <p align="justify">Untuk menguji kemampuan praktikal Anda dalam memahami materi variabel dan tipe data di JavaScript, silakan selesaikan kuis berikut. Sebelum Anda mengerjakan kuis, ada beberapa hal yang perlu Anda perhatikan.</br> Mohon untuk membaca secara seksama perintah, kriteria, atau soal pada komentar kode yang diberi tanda TODO.  </br>
 Lakukan pengujian pada kode yang Anda tulis contohnya dengan menggunakan console.log() untuk memastikan hasil sesuai dengan yang Anda harapkan. Gunakan tombol Jalankan.
@@ -785,6 +786,8 @@ module.exports = scoreChecker;
 |Output : |
 | :--     | 
 | Anda mendapatkan nilai B. |
+
+
 
 ### Rangkuman Materi
 <p align="justify">Pada modul ini kita telah mempelajari logika dan sintaksis dasar JavaScript sebelum membuat aplikasi yang lebih kompleks ke depannya.Beberapa hal yang telah kita bahas pada modul ini, antara lain: </p>
@@ -3591,3 +3594,5 @@ try {
 |Output : |
 | :--     | 
 |Awal blok try</br>Akhir blok try</br>Akan tetap dieksekusi|
+
+--->
